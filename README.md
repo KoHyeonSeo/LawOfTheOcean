@@ -4,6 +4,7 @@
 - <b>같이 merge 금지!</b>
 - <b>merge시 issue에 글남기기</b>
 - <b>merge시 issue 보고 pull 받은 후 merge 하기</b> 
+- <b>먼저 작업 전 pull하기!!</b> 
 ## 개요
 ---
 팀명: 수산시장<br>
