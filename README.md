@@ -1,4 +1,9 @@
 # LawOfTheOcean
+### ⛔<b>깃허브 push, pull, merge 주의점</b>
+- <b>merge할 때는 유니티 끄고 merge진행!!!</b>
+- <b>같이 merge 금지!</b>
+- <b>merge시 issue에 글남기기</b>
+- <b>merge시 issue 보고 pull 받은 후 merge 하기</b> 
 ## 개요
 ---
 팀명: 수산시장<br>
