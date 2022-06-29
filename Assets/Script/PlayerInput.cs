@@ -8,6 +8,8 @@ public class PlayerInput : MonoBehaviour
     public const string ZAxis = "Vertical";
     public const string ShootButton = "Fire1";
     public const string YAxis = "Jump";
+    public const string XMouseName = "Mouse X";
+    public const string YMouseName = "Mouse Y";
 
     //좌: -1,정지:0,  우: 1
     public float XAxisDir { get; private set; }
@@ -17,6 +19,11 @@ public class PlayerInput : MonoBehaviour
     public bool IsShootingButton { get; private set; }
     //스페이스바 사용시 1(true), 0(false)
     public bool YAxisDir { get; private set; }
+    //마우스 커서의 x입력값 반환
+    public float XMouseOut { get; private set; }
+    //마우스 커서의 x입력값 반환
+    public float YMouseOut { get; private set; }
+
 
 
     void Update()
@@ -25,5 +32,8 @@ public class PlayerInput : MonoBehaviour
         ZAxisDir = Input.GetAxis(ZAxis);
         IsShootingButton = Input.GetButtonDown(ShootButton);
         YAxisDir = Input.GetButtonDown(YAxis);
+        XMouseOut = Input.GetAxis(XMouseName);
+        YMouseOut = Input.GetAxis(YMouseName);
+
     }
 }
