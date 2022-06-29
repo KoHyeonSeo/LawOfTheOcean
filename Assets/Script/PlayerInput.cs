@@ -21,9 +21,10 @@ public class PlayerInput : MonoBehaviour
     public bool YAxisDir { get; private set; }
     //마우스 커서의 x입력값 반환
     public float XMouseOut { get; private set; }
-    //마우스 커서의 x입력값 반환
+    //마우스 커서의 y입력값 반환
     public float YMouseOut { get; private set; }
-
+    //마우스 위치를 반환
+    public Vector3 MousePosition { get; private set; }
 
 
     void Update()
@@ -34,6 +35,7 @@ public class PlayerInput : MonoBehaviour
         YAxisDir = Input.GetButtonDown(YAxis);
         XMouseOut = Input.GetAxis(XMouseName);
         YMouseOut = Input.GetAxis(YMouseName);
+        MousePosition = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
 
     }
 }
