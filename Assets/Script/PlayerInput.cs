@@ -35,7 +35,6 @@ public class PlayerInput : MonoBehaviour
         YAxisDir = Input.GetButtonDown(YAxis);
         XMouseOut = Input.GetAxis(XMouseName);
         YMouseOut = Input.GetAxis(YMouseName);
-        //MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MousePosition = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
 
     }

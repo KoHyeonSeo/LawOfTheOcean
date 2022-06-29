@@ -21,16 +21,17 @@ public class Bullet : MonoBehaviour
         if (playerShooter.IsEnemyHit)
         {
             dir = playerShooter.EnemyPosition - this.transform.position;
-            dir.Normalize();
+            playerShooter.IsEnemyHit = false;
         }
         else
         {
             dir = playerShooter.BulletMaxDirection;
         }
+        transform.rotation = Quaternion.LookRotation(dir).normalized;
     }
     void Update()
     {
         //총알을 이동시킨다.
-        this.transform.position += dir * speed* Time.deltaTime;
+        this.transform.position += dir.normalized * speed* Time.deltaTime;
     }
 }
