@@ -6,6 +6,9 @@ public class PlayerMove : MonoBehaviour
 {
     private PlayerInput playerInput;
     public float speed = 5;
+
+    public Transform characterbody;
+    public Transform cameraArm; 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +23,12 @@ public class PlayerMove : MonoBehaviour
         float z = playerInput.ZAxisDir;
 
         Vector3 dir = Vector3.right * x + Vector3.forward * z;
-        transform.position += dir * speed * Time.deltaTime;
         dir.Normalize();
+        dir = Camera.main.transform.TransformDirection(dir);
+        transform.position += dir * speed * Time.deltaTime;
+
         
-        // 마우스 포인트 위치로
-        // 플레이어가 바라본다.
-
-
 
     }
+   
 }
