@@ -111,5 +111,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7dbdb21d8fa51746a0ba87fd461196b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  shootRange: 500
+  speed: 50

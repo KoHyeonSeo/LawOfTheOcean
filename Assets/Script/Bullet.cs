@@ -6,22 +6,27 @@ public class Bullet : MonoBehaviour
 {
     [Header("총알 속성")]
     [SerializeField] private float speed = 10;
-    [SerializeField] private float shootRange = 100f;
     private GameObject player;
-    private PlayerInput playerInput;
+    private PlayerShooter playerShooter;
     private Vector3 dir;
     //총알을 마우스 포인터 방향으로 이동시킨다.
     private void Awake()
     {
         //필요속성: 입력값
         player = GameObject.Find("Player");
-        playerInput = player.GetComponent<PlayerInput>();
+        playerShooter = player.GetComponent<PlayerShooter>();
     }
     private void Start()
     {
-        //마우스 포인터 방향으로
-        dir = new Vector3(this.transform.position.x + playerInput.MousePosition.x,playerInput.MousePosition.y, this.transform.position.z + shootRange);
-        dir.Normalize();
+        if (playerShooter.IsEnemyHit)
+        {
+            dir = playerShooter.EnemyPosition - this.transform.position;
+            dir.Normalize();
+        }
+        else
+        {
+            dir = playerShooter.BulletMaxDirection;
+        }
     }
     void Update()
     {
