@@ -19,7 +19,6 @@ public class EnemyHealth : EntityHealth
     {
         base.Heal(healing);
     }
-    public override float Health { get => base.Health; set => base.Health = value; }
 
     public override void Die()
     {

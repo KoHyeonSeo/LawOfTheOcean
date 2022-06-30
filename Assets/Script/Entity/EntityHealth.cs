@@ -7,7 +7,7 @@ public abstract class EntityHealth : MonoBehaviour
     [SerializeField] private float maxHealth;
     [SerializeField] protected float currentHealth;
     
-    public virtual float Health
+    public float Health
     {
         get { return currentHealth; }
         set
