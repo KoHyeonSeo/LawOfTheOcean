@@ -6,6 +6,9 @@ public class DeadZone : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
+        if (collision.gameObject.tag != "DeadZone")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         string colliderTag = collision.gameObject.tag;
-        if (colliderTag != "Player" && colliderTag != "DeadZone")
+        if (colliderTag != "Player" && colliderTag != "DeadZone" && colliderTag != "Platform")
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
