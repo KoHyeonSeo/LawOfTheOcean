@@ -34,13 +34,22 @@ public class Bullet : MonoBehaviour
         //총알을 이동시킨다.
         this.transform.position += dir.normalized * speed* Time.deltaTime;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        string colliderTag = collision.gameObject.tag;
+        string colliderTag = other.gameObject.tag;
         if (colliderTag != "Player" && colliderTag != "DeadZone" && colliderTag != "Platform")
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            if (colliderTag == "Enemy")
+            {
+                other.gameObject.GetComponent<EnemyHealth>().Damage(10);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
+    
 }

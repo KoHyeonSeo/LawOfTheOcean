@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Entity : MonoBehaviour
+public abstract class EntityHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
-    [SerializeField] protected float health;
+    [SerializeField] protected float currentHealth;
 
     public virtual float Health
     {
-        get { return health; }
+        get { return currentHealth; }
         set
         {
-            health = value >= 0f ? value : 0f;
-            if (health > maxHealth)
-                health = maxHealth;
+            currentHealth = value >= 0f ? value : 0f;
+            if (currentHealth > maxHealth)
+                currentHealth = maxHealth;
         }
     }
 
@@ -24,9 +24,9 @@ public abstract class Entity : MonoBehaviour
         set
         {
             maxHealth = value >= 0f ? value : 0f;
-            if (health > maxHealth)
+            if (currentHealth > maxHealth)
             {
-                health = maxHealth;
+                currentHealth = maxHealth;
             }
         }
     }
@@ -44,11 +44,16 @@ public abstract class Entity : MonoBehaviour
     }
     public virtual void Damage(float power)
     {
-        health -= power;
-        if(health <= 0f&&!DeadCheck)
+        currentHealth -= power;
+        if(currentHealth <= 0f&&!DeadCheck)
         {
-            DeadCheck = true;
+            Die();
         }
+    }
+    public virtual void Die()
+    {
+        DeadCheck = true;
+
     }
     
 }
