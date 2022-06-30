@@ -7,6 +7,7 @@ public class PlayerHealth : EntityHealth
     [SerializeField] private float playerHealth = 100;
     private void Awake()
     {
+        DeadCheck = false;
         this.Health = playerHealth;
         this.MaxHealth = playerHealth;
     }

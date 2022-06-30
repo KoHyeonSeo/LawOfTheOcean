@@ -6,7 +6,7 @@ public abstract class EntityHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] protected float currentHealth;
-
+    
     public virtual float Health
     {
         get { return currentHealth; }
@@ -30,22 +30,15 @@ public abstract class EntityHealth : MonoBehaviour
             }
         }
     }
-    public bool DeadCheck { get; protected set; }
-
-    public virtual void OnEnable()
-    {
-        DeadCheck = false;
-        Health = MaxHealth;
-    }
-
     public virtual void Heal(float healing)
     {
         Health += healing;
     }
+    public bool DeadCheck { get; protected set; }
     public virtual void Damage(float power)
     {
         currentHealth -= power;
-        if(currentHealth <= 0f&&!DeadCheck)
+        if (currentHealth <= 0f && !DeadCheck)
         {
             Die();
         }
