@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
     }
     private void Start()
     {
+        //적을 맞췄으면 적 쪽으로 bullet이 향하게 하고 싶다.
         if (playerShooter.IsEnemyHit)
         {
             dir = playerShooter.EnemyPosition - transform.position;
@@ -26,6 +27,7 @@ public class Bullet : MonoBehaviour
         }
         else
         {
+            //아니면 그냥 가던길 가자.
             dir = playerShooter.BulletMaxDirection;
         }
         transform.rotation = Quaternion.LookRotation(dir).normalized;
@@ -37,19 +39,31 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        
         string colliderTag = other.gameObject.tag;
+        //맞은 오브젝트가 player, platform,Deadzone이 아니라면,
         if (colliderTag != "Player" && colliderTag != "DeadZone" && colliderTag != "Platform")
         {
+            //맞은 오브젝트가 enemy라면
             if (colliderTag == "Enemy")
             {
+                //enemy에 Damage주기
                 other.gameObject.GetComponent<EnemyHealth>().Damage(damage);
+                //자기 자신 사라지기
                 Destroy(gameObject);
             }
             else
             {
+                //아니면 상대도 죽고 나도 죽고
                 Destroy(other.gameObject);
                 Destroy(gameObject);
             }
+        }
+        //맞은 오브젝트가 player, platform,Deadzone라면,
+        else
+        {
+            //나만 죽기
+            Destroy(gameObject);
         }
     }
     

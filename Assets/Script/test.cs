@@ -7,6 +7,6 @@ public class test : Skill
     public override void UseSkill()
     {
         Debug.Log("Skill ¹ßµ¿");
-        Debug.Log($"power = {this.Power}");
+        Debug.Log($"object = {this.name}");
     }
 }

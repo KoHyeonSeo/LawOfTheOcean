@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Skill : ScriptableObject
 {
+    [Header("스킬 속성")]
     [SerializeField] private float power;
     [SerializeField] private float cooltime;
     [SerializeField] private float percentage;
