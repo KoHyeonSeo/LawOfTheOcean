@@ -7,8 +7,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerInput playerInput;
     public float speed = 5;
 
-    public Transform characterbody;
-    public Transform cameraArm; 
+   
     // Start is called before the first frame update
     void Start()
     {
