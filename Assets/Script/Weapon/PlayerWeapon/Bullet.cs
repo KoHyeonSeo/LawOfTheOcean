@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [Header("총알 속성")]
     [SerializeField] private float speed = 10;
+    [SerializeField] private float damage = 10;
     private GameObject player;
     private PlayerShooter playerShooter;
     private Vector3 dir;
@@ -20,7 +21,7 @@ public class Bullet : MonoBehaviour
     {
         if (playerShooter.IsEnemyHit)
         {
-            dir = playerShooter.EnemyPosition - this.transform.position;
+            dir = playerShooter.EnemyPosition - transform.position;
             playerShooter.IsEnemyHit = false;
         }
         else
@@ -32,7 +33,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         //총알을 이동시킨다.
-        this.transform.position += dir.normalized * speed* Time.deltaTime;
+        transform.position += dir.normalized * speed* Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -41,7 +42,7 @@ public class Bullet : MonoBehaviour
         {
             if (colliderTag == "Enemy")
             {
-                other.gameObject.GetComponent<EnemyHealth>().Damage(10);
+                other.gameObject.GetComponent<EnemyHealth>().Damage(damage);
                 Destroy(gameObject);
             }
             else

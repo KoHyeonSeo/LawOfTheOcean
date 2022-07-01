@@ -21,7 +21,7 @@ public class PlayerShooter : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 dir = new Vector3(this.transform.position.x + playerInput.MousePosition.x, playerInput.MousePosition.y, this.transform.position.z + bulletMaxDistance);
+        Vector3 dir = new Vector3(transform.position.x + playerInput.MousePosition.x, playerInput.MousePosition.y, this.transform.position.z + bulletMaxDistance);
         Debug.DrawRay(transform.position, dir.normalized * bulletMaxDistance, Color.red);
         //어딘가에 닿았다면(deadzone 제외)
         if (Physics.Raycast(transform.position, dir.normalized, out hit, bulletMaxDistance) && hit.collider.tag != "DeadZone")
@@ -48,7 +48,7 @@ public class PlayerShooter : MonoBehaviour
             {
                 BulletMaxDirection = dir;
                 //총알을 생성한다.
-                bullet.transform.position = this.transform.position;
+                bullet.transform.position = transform.position;
                 Instantiate(bullet);
             }
         }  
