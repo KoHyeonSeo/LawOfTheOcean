@@ -43,36 +43,30 @@ public class EnemySkill : MonoBehaviour
     {
         //랜덤 수 얻기
         float randomNum = Random.Range(1, 101);
+
         isCallingComplete = false;
+
         //어느 범위에 해당되는 스킬인지 알고 싶다.
-        if (skills.Count == 2)
+        int left = 0;
+        int right = perList.Count - 1;
+        mid = (left + right) / 2;
+        while (mid >= right)
         {
-            if (perList[0] <= randomNum)
-                mid = 0;
-            else
-                mid = 1;
-        }
-        else {
-            int left = 0;
-            int right = perList.Count;
-            mid = (left + right) / 2;
-            while (mid >= right)
+            if (perList[mid] <= randomNum)
             {
-                if (perList[mid] <= randomNum)
-                {
-                    left = mid + 1;
-                }
-                else
-                {
-                    right = mid;
-                }
-                mid = (left + right) / 2;
-                yield return null;
+                left = mid + 1;
             }
+            else
+            {
+                right = mid;
+            }
+            mid = (left + right) / 2;
+            yield return null;
         }
         //그 해당되는 스킬을 사용하고 싶다.
         skills[mid].UseSkill();
         yield return new WaitForSeconds(5);
+
         isCallingComplete = true;
     }
 }
