@@ -1,24 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class test : MonoBehaviour
+[CreateAssetMenu(menuName = "EnemySkill/testSkill")]
+public class test : Skill
 {
-    private PlayerInput playerInput;
-    // Start is called before the first frame update
-    void Start()
+    public override void UseSkill()
     {
-
-        playerInput = GetComponent<PlayerInput>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (playerInput.IsShootingButton)
-        {
-            Debug.Log("발사");
-        }
+        Debug.Log("Skill 발동");
+        Debug.Log($"power = {this.Power}");
     }
 }
