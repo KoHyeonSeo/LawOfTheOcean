@@ -43,7 +43,7 @@ public abstract class EntityHealth : MonoBehaviour
             Die();
         }
     }
-    public virtual void Die()
+    protected virtual void Die()
     {
         DeadCheck = true;
 

@@ -20,7 +20,7 @@ public class EnemyHealth : EntityHealth
         base.Heal(healing);
     }
 
-    public override void Die()
+    protected override void Die()
     {
         base.Die();
         Destroy(gameObject);

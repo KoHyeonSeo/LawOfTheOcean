@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class EnemySkill : MonoBehaviour
 {
+    //[System.Serializable]
+    //public struct SkillSystem
+    //{
+    //    public Skill skill;
+    //    public float percent;
+    //}
+
     //ScriptableObject로 만든 스킬과 스킬 발동될 확률 넣기
     [SerializeField] private List<Skill> skills;
     //각 스킬의 확률범위 중 끝부분을 넣는 리스트
@@ -14,7 +21,6 @@ public class EnemySkill : MonoBehaviour
     //error나올 때 나타내는 부울 플래그
     private bool isError = false;
     private int mid;
-
     private void Start()
     {
         //각 스킬의 확률 범위 중 끝범위 리스트에 넣기
@@ -25,9 +31,9 @@ public class EnemySkill : MonoBehaviour
             perList.Add(per);
         }
         //모든 확률의 퍼센트가 100이 아닐 때, 에러창 
-        if (per != 100)
+        if (per != 1)
         {
-            Debug.LogError("퍼센트를 100으로 맞춰주세요.");
+            Debug.LogError("퍼센트를 1로 맞춰주세요.");
             isError = true;
         }
     }
@@ -42,7 +48,7 @@ public class EnemySkill : MonoBehaviour
     private IEnumerator CallSkill()
     {
         //랜덤 수 얻기
-        float randomNum = Random.Range(1, 101);
+        float randomNum = Random.Range(0, 1);
 
         isCallingComplete = false;
 
@@ -50,7 +56,7 @@ public class EnemySkill : MonoBehaviour
         int left = 0;
         int right = perList.Count - 1;
         mid = (left + right) / 2;
-        while (mid >= right)
+        while (mid < right)
         {
             if (perList[mid] <= randomNum)
             {
