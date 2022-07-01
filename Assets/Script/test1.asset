@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038c1fbad4d18c54c93da44c92e69552, type: 3}
   m_Name: test1
   m_EditorClassIdentifier: 
-  power: 0
+  power: 100
   cooltime: 0
-  percentage: 0
+  percentage: 50
