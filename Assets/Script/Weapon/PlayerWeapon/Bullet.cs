@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
+        //test
         string colliderTag = other.gameObject.tag;
         //맞은 오브젝트가 player, platform,Deadzone이 아니라면,
         if (colliderTag != "Player" && colliderTag != "DeadZone" && colliderTag != "Platform")
