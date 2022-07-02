@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: test2
   m_EditorClassIdentifier: 
   power: 50
-  cooltime: 0
-  percentage: 0.5
+  cooltime: 5
