@@ -1,40 +1,42 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 
 public class EnemySkill : MonoBehaviour
 {
-    //[System.Serializable]
-    //public struct SkillSystem
-    //{
-    //    public Skill skill;
-    //    public float percent;
-    //}
 
-    //ScriptableObject로 만든 스킬과 스킬 발동될 확률 넣기
-    [SerializeField] private List<Skill> skills;
+    [Serializable]
+    //스킬의 정보를 넣을 구조체 생성
+    public struct SkillSystem
+    {
+        public Skill skill;
+        public float percent;
+    }
+
+    [Header("스킬")]
+    [SerializeField] private List<SkillSystem> skills;
     //각 스킬의 확률범위 중 끝부분을 넣는 리스트
     private List<float> perList = new List<float>();
     //CallSkill 코루틴이 실행되기 위한 부울 플래그
     private bool isCallingComplete = true;
     //error나올 때 나타내는 부울 플래그
     private bool isError = false;
+
     private int mid;
+    //ScriptableObject로 만든 스킬과 스킬 발동될 확률 넣기
     private void Start()
     {
-        //각 스킬의 확률 범위 중 끝범위 리스트에 넣기
         float per = 0;
-        foreach(var skill in skills)
+        foreach (var skill in skills)
         {
-            per += skill.Percentage;
+            per += skill.percent;
             perList.Add(per);
         }
-        //모든 확률의 퍼센트가 100이 아닐 때, 에러창 
         if (per != 1)
         {
-            Debug.LogError("퍼센트를 1로 맞춰주세요.");
-            isError = true;
+            Debug.LogError("퍼센트의 합은 1이 되어야합니다.");
         }
     }
     private void Update()
@@ -48,8 +50,7 @@ public class EnemySkill : MonoBehaviour
     private IEnumerator CallSkill()
     {
         //랜덤 수 얻기
-        float randomNum = Random.Range(0, 1);
-
+        float randomNum = Random.Range(0.0f, 1.0f);
         isCallingComplete = false;
 
         //어느 범위에 해당되는 스킬인지 알고 싶다.
@@ -69,9 +70,11 @@ public class EnemySkill : MonoBehaviour
             mid = (left + right) / 2;
             yield return null;
         }
+
         //그 해당되는 스킬을 사용하고 싶다.
-        skills[mid].UseSkill();
-        yield return new WaitForSeconds(5);
+        skills[mid].skill.UseSkill();
+        //그 해당되는 스킬의 쿨타임만큼 기다린다.
+        yield return new WaitForSeconds(skills[mid].skill.CoolTime);
 
         isCallingComplete = true;
     }
