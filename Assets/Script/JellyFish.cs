@@ -8,7 +8,7 @@ public class JellyFish : MonoBehaviour
     // 플레이어가 해파리의 감지범위에 들어오면
     // 플레이어에게 일정 다가온뒤
 
-    // 플레이어를 쫓아오며 공격한다.
+    // 플레이어를 쫓아오며 원거리 공격을한다.
     // 공격할때 플레이어의 hp를 달게하고
     // 경직효과를 준다
     // 플레이어가 범위를 벗어나면
@@ -23,7 +23,7 @@ public class JellyFish : MonoBehaviour
         Return
     }
 
-    State state;
+    public State state;
 
     GameObject target;
 
@@ -44,7 +44,7 @@ public class JellyFish : MonoBehaviour
         }
         else if (state == State.Move)
         {
-            StartCoroutine("IeMove");
+            UpdateMove();
         }
         else if (state == State.Attack)
         {
@@ -52,10 +52,10 @@ public class JellyFish : MonoBehaviour
         }
         else if (state == State.Return)
         {
-
+            UpdateReturn();
         }
     }
-    float detect = 10;
+    public float detect = 15;
     Vector3 start;
     private void UpdateIdle()
     {
@@ -69,25 +69,10 @@ public class JellyFish : MonoBehaviour
         }
         // Move상태로 전이한다.
     }
-    float speed = 3;
-    float attackDistance = 1;
-    //private void UpdateMove()
-    //{
-    //    // 타겟의 방향으로
-    //    Vector3 dir = target.transform.position - transform.position;
-    //    dir.Normalize();
-    //    // 계속 이동한다.
-    //    //transform.position += dir * speed * Time.deltaTime;
-    //    transform.position = Vector3.Lerp(transform.position,new Vector3(transform.position.x,target.transform.position.y,transform.position.z) , 0.05f);
-    //    float distance = Vector3.Distance(target.transform.position, transform.position);
-    //    // 만약 타겟과의 거리가 공격범위보다 작으면
+    public float speed = 3;
+    public float attackDistance = 5;
 
-    //    if (attackDistance > distance)
-    //    {
-    //    // Attack 상태로 바뀐다.
-    //        state = State.Attack;
-    //    }
-    //}
+   
 
     float currentTime;
     [SerializeField] private float createTime = 2;
@@ -107,43 +92,58 @@ public class JellyFish : MonoBehaviour
             // 5. 만약 공격범위를 벗어나면
             if (distance > attackDistance)
             {
-                state = State.Move;
                 // 6. Move상태로 전이한다.
+                state = State.Move;
             }
         }
     }
-    IEnumerator IeMove()
+    private void UpdateMove()
     {
-        // start coroutine하는 시점
+        
         // 1. 플레이어게 향하는 방향으로 일정거리 다가오고
         Vector3 dir = target.transform.position - transform.position;
         dir.Normalize();
         // 2. 플레이어에게 닿을때 반복한다.
+        transform.position += dir * speed * Time.deltaTime;
+        
         float distance = Vector3.Distance(target.transform.position, transform.position);
-        while (distance > attackDistance)
-       {
-            transform.position += dir * speed * Time.deltaTime;
-            yield return new WaitForSeconds(2f);
-     
-       }
-
-      
-       
-        
-        
-       
         if (attackDistance > distance)
         {
             // Attack 상태로 바뀐다.
             state = State.Attack;
         }
-   
-       
-
+        if (detect < distance)
+        {
+            state = State.Return;
+        }
     }
     private void UpdateReturn()
     {
+        // 만일, 나의 현재위치가 start 위치에서 10센티미터 이상이라면..
+
+        Vector3 back = start - transform.position;
+        if(back.magnitude > 0.1f)
+        {
+        // start 방향으로
+        // 되돌아간다.
+            transform.position += back.normalized * speed * Time.deltaTime;
+        }
+        // 그렇지 않다면, 나의 위치를 start으로 설정한다.       
+        else
+        {
+            transform.position = start;
+            state = State.Idle;
+            
+
+        }
         float distance = Vector3.Distance(target.transform.position, transform.position);
+
+        // 만약 플레이어와의 거리가 감지거리보다 작으면
+        if (detect > distance)
+        {
+        // Move상태로 전이한다.
+            state = State.Move;
+        }
 
     }
 }
