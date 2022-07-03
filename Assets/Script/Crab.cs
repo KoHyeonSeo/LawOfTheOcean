@@ -158,6 +158,7 @@ public class Crab : MonoBehaviour
         // 되돌아간다.
             transform.position += back.normalized * speed * Time.deltaTime;
         }
+        // 그렇지 않다면, 나의 위치를 start으로 설정한다.       
         else
         {
             transform.position = start;
@@ -173,7 +174,6 @@ public class Crab : MonoBehaviour
             state = State.Move;
         }
         // Move상태로 전이한다.
-        // 그렇지 않다면, 나의 위치를 start으로 설정한다.       
     }
 
 
