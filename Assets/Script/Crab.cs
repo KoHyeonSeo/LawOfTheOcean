@@ -171,9 +171,9 @@ public class Crab : MonoBehaviour
         // 만약 플레이어와의 거리가 감지거리보다 작으면
         if (detect > distance)
         {
+        // Move상태로 전이한다.
             state = State.Move;
         }
-        // Move상태로 전이한다.
     }
 
 
