@@ -26,7 +26,8 @@ public class PlayerInput : MonoBehaviour
     public float YMouseOut { get; private set; }
     //마우스 위치를 반환
     public Vector3 MousePosition { get; private set; }
-    //마우스 위치를 반환
+    //스킬 swap 하기위한 입력
+    //tab을 누르면 true 반환 
     public bool SwapButton { get; private set; }
 
 
