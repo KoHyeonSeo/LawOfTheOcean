@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     public const string YAxis = "Jump";
     public const string XMouseName = "Mouse X";
     public const string YMouseName = "Mouse Y";
+    public const string SwapName = "Swap";
 
     //좌: -1,정지:0,  우: 1
     public float XAxisDir { get; private set; }
@@ -25,6 +26,8 @@ public class PlayerInput : MonoBehaviour
     public float YMouseOut { get; private set; }
     //마우스 위치를 반환
     public Vector3 MousePosition { get; private set; }
+    //마우스 위치를 반환
+    public bool SwapButton { get; private set; }
 
 
     void Update()
@@ -36,6 +39,6 @@ public class PlayerInput : MonoBehaviour
         XMouseOut = Input.GetAxis(XMouseName);
         YMouseOut = Input.GetAxis(YMouseName);
         MousePosition = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
-
+        SwapButton = Input.GetButtonDown(SwapName);
     }
 }
