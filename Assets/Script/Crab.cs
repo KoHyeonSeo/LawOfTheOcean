@@ -117,7 +117,7 @@ public class Crab : MonoBehaviour
             }
     }
     bool sta = true;
-    Vector3 back;
+   
     IEnumerator IeMove()
     {
 
