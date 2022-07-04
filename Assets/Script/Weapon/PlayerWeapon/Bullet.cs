@@ -4,6 +4,7 @@ using UnityEngine;
 //필요 속성: 마우스 포인터 위치, 총알 속도
 public class Bullet : MonoBehaviour
 {
+    
     [Header("총알 속성")]
     [SerializeField] private float speed = 10;
     [SerializeField] private float damage = 10;
