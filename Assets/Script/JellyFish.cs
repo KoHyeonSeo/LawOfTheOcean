@@ -50,16 +50,15 @@ public class JellyFish : MonoBehaviour
         {
             UpdateAttack();
         }
-        else if (state == State.Return)
-        {
-            UpdateReturn();
-        }
     }
     public float detect = 15;
-    Vector3 start;
+    
     private void UpdateIdle()
     {
-        start = transform.position;
+        Vector3 dir = Vector3.forward;
+        dir.Normalize();
+        transform.position += dir * speed * Time.deltaTime;
+      
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
         // 만약 플레이어와의 거리가 감지거리보다 작으면
@@ -76,15 +75,20 @@ public class JellyFish : MonoBehaviour
 
     float currentTime;
     [SerializeField] private float createTime = 2;
+    public GameObject bulletFactory;
     private void UpdateAttack()
     {
         // 1. 시간이 흐르다가  
         currentTime += Time.deltaTime;
-        // 2. 일정시간외되면
+        // 2. 일정시간이 되면
         if (currentTime > createTime)
         {
             // 2. 공격을 한다.
-
+            // 총알공장에서 총알을 생성해
+            GameObject bullet = Instantiate(bulletFactory);
+            // 내 위치에 가져다 놓는다.
+            bullet.transform.position = transform.position;
+           
             // 3. 공격을 한뒤에는 시간을 초기화한다.
             currentTime = 0;
             // 4. 타겟과의 거리가
@@ -98,8 +102,7 @@ public class JellyFish : MonoBehaviour
         }
     }
     private void UpdateMove()
-    {
-        
+    {   
         // 1. 플레이어게 향하는 방향으로 일정거리 다가오고
         Vector3 dir = target.transform.position - transform.position;
         dir.Normalize();
@@ -114,36 +117,8 @@ public class JellyFish : MonoBehaviour
         }
         if (detect < distance)
         {
-            state = State.Return;
-        }
-    }
-    private void UpdateReturn()
-    {
-        // 만일, 나의 현재위치가 start 위치에서 10센티미터 이상이라면..
-
-        Vector3 back = start - transform.position;
-        if(back.magnitude > 0.1f)
-        {
-        // start 방향으로
-        // 되돌아간다.
-            transform.position += back.normalized * speed * Time.deltaTime;
-        }
-        // 그렇지 않다면, 나의 위치를 start으로 설정한다.       
-        else
-        {
-            transform.position = start;
             state = State.Idle;
-            
-
         }
-        float distance = Vector3.Distance(target.transform.position, transform.position);
-
-        // 만약 플레이어와의 거리가 감지거리보다 작으면
-        if (detect > distance)
-        {
-        // Move상태로 전이한다.
-            state = State.Move;
-        }
-
     }
+   
 }
