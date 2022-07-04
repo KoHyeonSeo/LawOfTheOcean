@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [Header("Player가 copy한 Enemy Skill 갯수")]
     [SerializeField] private List<SkillInfo> skills;
 
+    
     /// <summary>
     /// skill과 카피가능 갯수를 구조체에 담아 리스트 형태로 반환하는 읽기 전용 프로퍼티
     /// [인덱스 정보]
