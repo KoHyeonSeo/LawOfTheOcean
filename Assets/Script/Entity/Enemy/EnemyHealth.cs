@@ -25,4 +25,12 @@ public class EnemyHealth : EntityHealth
         base.Die();
         Destroy(gameObject);
     }
+
+    public float EnemyHealthProp
+    {
+        get
+        {
+            return enemyHealth;
+        }
+    }
 }

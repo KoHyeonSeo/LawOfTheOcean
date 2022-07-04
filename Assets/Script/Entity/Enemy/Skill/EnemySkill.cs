@@ -28,7 +28,6 @@ public class EnemySkill : MonoBehaviour
     //ScriptableObject로 만든 스킬과 스킬 발동될 확률 넣기
     private void Start()
     {
-        GameManager.instance.EnemySkillNum = skills.Count;
         float per = 0;
         foreach (var skill in skills)
         {

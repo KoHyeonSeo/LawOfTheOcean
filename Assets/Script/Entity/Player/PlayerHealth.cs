@@ -25,4 +25,9 @@ public class PlayerHealth : EntityHealth
         base.Die();
         Destroy(gameObject);
     }
+
+    public float PlayerHealthProp
+    {
+        get { return playerHealth; }
+    }
 }
