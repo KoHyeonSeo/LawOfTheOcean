@@ -10,5 +10,4 @@ public class test : Skill
         GameObject bulletPre = Instantiate(bullet);
         bulletPre.transform.position = User.transform.position;
     }
-
 }
