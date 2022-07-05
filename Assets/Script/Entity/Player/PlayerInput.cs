@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     public const string XMouseName = "Mouse X";
     public const string YMouseName = "Mouse Y";
     public const string SwapName = "Swap";
+    public const string StealName = "Steal Skill";
 
     //ÁÂ: -1,Á¤Áö:0,  ¿ì: 1
     public float XAxisDir { get; private set; }
@@ -41,5 +42,11 @@ public class PlayerInput : MonoBehaviour
         YMouseOut = Input.GetAxis(YMouseName);
         MousePosition = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
         SwapButton = Input.GetButtonDown(SwapName);
+        if (IsShootingButton)
+        {
+            GameManager.instance.StealSkillButton = false;
+        }
+        if(!GameManager.instance.StealSkillButton)
+            GameManager.instance.StealSkillButton = Input.GetButtonDown(StealName);
     }
 }

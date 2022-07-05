@@ -13,8 +13,11 @@ public class PlayerShooter : MonoBehaviour
     public Vector3 EnemyPosition { get; private set; }
     public Vector3 BulletMaxDirection { get; private set; }
     public bool IsEnemyHit { get; set; }
+    //스킬을 사용했는가
+    public bool IsStealUse { get; set; }
     private void Start()
     {
+        IsStealUse = false;
         IsEnemyHit = false;
         //playerInput이 필요하다.
         playerInput = GetComponent<PlayerInput>();
@@ -43,13 +46,20 @@ public class PlayerShooter : MonoBehaviour
         //deadzone또는 어느곳에도 닿지 않았을 경우
         else
         {
-            //마우스 왼클릭이 입력된다면
-            if (playerInput.IsShootingButton)
+            if (GameManager.instance.StealSkillButton)
             {
-                BulletMaxDirection = dir;
-                //총알을 생성한다.
-                bullet.transform.position = transform.position;
-                Instantiate(bullet);
+                //마우스 왼클릭이 입력된다면
+                if (playerInput.IsShootingButton)
+                {
+                    //SteaSkillButton 초기화
+                    GameManager.instance.StealSkillButton = false;
+                    IsStealUse = true;
+
+                    BulletMaxDirection = dir;
+                    //총알을 생성한다.
+                    bullet.transform.position = transform.position;
+                    Instantiate(bullet);
+                }
             }
         }  
     }

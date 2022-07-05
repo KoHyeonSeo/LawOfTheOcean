@@ -7,9 +7,9 @@ public class JellyFishBullet : MonoBehaviour
     [SerializeField] private float speed = 5;
     private GameObject user;
     private float damage;
-    //½ºÅ³À» »ç¿ëÇÏ´Â User°¡ ´©±¸ÀÎÁö ¾Ë ¼ö ÀÖ´Â ÇÁ·ÎÆÛÆ¼
+    //ï¿½ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Userï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼
     public GameObject User { get { return user; } set { user = value; } }
-    //µ¥¹ÌÁö Áï, Power°¡ ¾î´À Á¤µµÀÎÁö ¾Ë ¼ö ÀÖ´Â ÇÁ·ÎÆÛÆ¼
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, Powerï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼
     public float BulletDamage { get { return damage; } set { damage = value; } }
     
     public Transform target;
@@ -33,20 +33,20 @@ public class JellyFishBullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //ºÎµúÈù °ÍÀÌ ½ºÅ³ »ç¿ëÀÚ°¡ ¾Æ´Ï°í »ý¸íÃ¼(Entity)¶ó¸é
+        //ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Æ´Ï°ï¿½ ï¿½ï¿½ï¿½Ã¼(Entity)ï¿½ï¿½ï¿½
         if (other.gameObject != user && other.gameObject.layer == 7)
         {
-            //Player¶ó¸é µ¥¹ÌÁö ±ðÀ½
+            //Playerï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             if (other.gameObject.CompareTag("Player"))
             {
                 other.gameObject.GetComponent<PlayerHealth>().Damage(damage);
             }
-            //Enemy¶ó¸é µ¥¹ÌÁö ±ðÀ½
+            //Enemyï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             else
             {
                 other.gameObject.GetComponent<EnemyHealth>().Damage(damage);
             }
-            //ÃÑ¾Ë »èÁ¦
+            //ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½
             Destroy(gameObject);
         }
 

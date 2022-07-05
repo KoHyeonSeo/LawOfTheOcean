@@ -59,6 +59,10 @@
 - 죽인 물고기 수 <b> - 신정훈</b>
 ### Object
 - item.cs <b>- 고현서</b>
+### Skill Structure
+![image](https://user-images.githubusercontent.com/76097749/177246976-2dbe747a-5673-4db8-b7d8-31cc574927ef.png)
+
+
 ---
 ## <b>강사님 피드백</b>
 1. 30초 안에 핵심만 보여야함

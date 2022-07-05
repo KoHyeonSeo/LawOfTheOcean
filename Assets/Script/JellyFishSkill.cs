@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 [CreateAssetMenu(menuName = "EnemySkill/JellySkill")]
 public class JellyFishSkill : Skill
 {
@@ -10,9 +9,9 @@ public class JellyFishSkill : Skill
     public override void UseSkill()
     {
         GameObject bullet = Instantiate(skillFactory);
-        //bullet¿¡°Ô User°¡ ´©±¸ÀÎÁö ¾Ë·ÁÁÜ
+        //bulletï¿½ï¿½ï¿½ï¿½ Userï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½
         bullet.GetComponent<JellyFishBullet>().User = this.User;
-        //bullet¿¡°Ô Power°¡ ¾î´ÀÁ¤µµÀÎÁö ¾Ë·ÁÁÜ
+        //bulletï¿½ï¿½ï¿½ï¿½ Powerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½
         bullet.GetComponent<JellyFishBullet>().BulletDamage = this.Power;
         bullet.transform.position = User.transform.position;
     }
