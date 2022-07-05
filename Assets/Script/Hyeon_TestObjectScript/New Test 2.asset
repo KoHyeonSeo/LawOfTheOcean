@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 038c1fbad4d18c54c93da44c92e69552, type: 3}
-  m_Name: New Test
+  m_Name: New Test 2
   m_EditorClassIdentifier: 
   power: 0
   cooltime: 10
-  bullet: {fileID: 5318748100792829028, guid: 26b4a4a5c456eb14c8e00712ad3117b0, type: 3}
+  bullet: {fileID: 5318748100792829028, guid: d198cfe58385b384ea371b1d0b98daf6, type: 3}
