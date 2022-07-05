@@ -16,7 +16,7 @@ public class EnemySkill : MonoBehaviour
     }
 
     [Header("스킬")]
-    [SerializeField] private List<SkillSystem> skills;
+    public List<SkillSystem> skills;
     //각 스킬의 확률범위 중 끝부분을 넣는 리스트
     private List<float> perList = new List<float>();
     //CallSkill 코루틴이 실행되기 위한 부울 플래그
