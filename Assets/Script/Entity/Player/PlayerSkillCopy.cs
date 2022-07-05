@@ -31,6 +31,9 @@ public class PlayerSkillCopy : MonoBehaviour
             else
             {
                 GameManager.instance.SetDecreaseSkill = curIndex;
+                //User정보 업데이트
+                GameManager.instance.SkillList[curIndex].skill.User = gameObject;
+                //카피한 스킬 사용
                 GameManager.instance.SkillList[curIndex].skill.UseSkill();
             }
             //스킬은 enemy를 죽였을 때 확률적으로 얻기

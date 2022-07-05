@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038c1fbad4d18c54c93da44c92e69552, type: 3}
   m_Name: New Test 2
   m_EditorClassIdentifier: 
-  power: 0
+  power: 10
   cooltime: 10
   bullet: {fileID: 5318748100792829028, guid: d198cfe58385b384ea371b1d0b98daf6, type: 3}
