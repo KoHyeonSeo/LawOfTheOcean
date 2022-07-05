@@ -60,7 +60,7 @@ public class Bullet : MonoBehaviour
             }
         }
         //맞은 오브젝트가 player, platform,Deadzone라면,
-        else
+        else if (colliderTag != "Player")
         {
             //나만 죽기
             Destroy(gameObject);
