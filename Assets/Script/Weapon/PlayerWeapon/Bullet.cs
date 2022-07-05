@@ -20,17 +20,8 @@ public class Bullet : MonoBehaviour
     }
     private void Start()
     {
-        //적을 맞췄으면 적 쪽으로 bullet이 향하게 하고 싶다.
-        if (playerShooter.IsEnemyHit)
-        {
-            dir = playerShooter.EnemyPosition - transform.position;
-            playerShooter.IsEnemyHit = false;
-        }
-        else
-        {
-            //아니면 그냥 가던길 가자.
-            dir = playerShooter.BulletMaxDirection;
-        }
+        // 그냥 가던길 가자.
+        dir = playerShooter.BulletMaxDirection;
         transform.rotation = Quaternion.LookRotation(dir).normalized;
     }
     void Update()

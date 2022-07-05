@@ -8,17 +8,14 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletMaxDistance = 1100;
 
-    private RaycastHit hit;
     private PlayerInput playerInput;
     public Vector3 EnemyPosition { get; private set; }
     public Vector3 BulletMaxDirection { get; private set; }
-    public bool IsEnemyHit { get; set; }
     //스킬을 사용했는가
     public bool IsStealUse { get; set; }
     private void Start()
     {
         IsStealUse = false;
-        IsEnemyHit = false;
         //playerInput이 필요하다.
         playerInput = GetComponent<PlayerInput>();
     }
@@ -27,40 +24,19 @@ public class PlayerShooter : MonoBehaviour
         Vector3 dir = new Vector3(transform.position.x + playerInput.MousePosition.x, playerInput.MousePosition.y, this.transform.position.z + bulletMaxDistance);
         Debug.DrawRay(transform.position, dir.normalized * bulletMaxDistance, Color.red);
         //어딘가에 닿았다면(deadzone 제외)
-        if (Physics.Raycast(transform.position, dir.normalized, out hit, bulletMaxDistance) && hit.collider.tag != "DeadZone")
+        if (GameManager.instance.StealSkillButton)
         {
-            //마우스 왼클릭이 입력된다면
-            if (playerInput.IsShootingButton)
-            {
-                //Debug.Log("playerInput.MousePosition = " + playerInput.MousePosition);
-                //Enemy 위치로 발사한다.
-                if (hit.collider.tag == "Enemy")
-                {
-                    IsEnemyHit = true;
-                    //Debug.Log("Enemy 맞음");
-                    EnemyPosition = hit.transform.position;
-                    Instantiate(bullet);
-                }
-            }
+            //SteaSkillButton 초기화
+            GameManager.instance.StealSkillButton = false;
+            IsStealUse = true;
         }
-        //deadzone또는 어느곳에도 닿지 않았을 경우
-        else
+        //마우스 왼클릭이 입력된다면
+        if (playerInput.IsShootingButton)
         {
-            if (GameManager.instance.StealSkillButton)
-            {
-                //마우스 왼클릭이 입력된다면
-                if (playerInput.IsShootingButton)
-                {
-                    //SteaSkillButton 초기화
-                    GameManager.instance.StealSkillButton = false;
-                    IsStealUse = true;
-
-                    BulletMaxDirection = dir;
-                    //총알을 생성한다.
-                    bullet.transform.position = transform.position;
-                    Instantiate(bullet);
-                }
-            }
-        }  
+            //총알을 생성한다.
+            bullet.transform.position = transform.position;
+            Instantiate(bullet);
+        }
+        BulletMaxDirection = dir;
     }
 }
