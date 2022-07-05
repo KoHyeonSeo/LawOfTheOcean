@@ -102,4 +102,9 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+
+    //스킬 Steal 하기위한 입력
+    //Left Shift 누르면 true 반환 
+    public bool StealSkillButton { get; set; }
 }

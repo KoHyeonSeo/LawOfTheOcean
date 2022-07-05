@@ -23,6 +23,25 @@ public class EnemyHealth : EntityHealth
     protected override void Die()
     {
         base.Die();
+        if (GameManager.instance.StealSkillButton)
+        {
+            if (gameObject.GetComponent<EnemySkill>().skills.Count == 1)
+            {
+                int i = 0;
+                foreach (var skill in GameManager.instance.SkillList)
+                {
+                    //Debug.Log($"Steal: {skill.skill == gameObject.GetComponent<EnemySkill>().skills[0].skill}");
+                    if (skill.skill == gameObject.GetComponent<EnemySkill>().skills[0].skill)
+                    {
+                        //Debug.Log($"Steal: {skill.skill}");
+                        var sk = GameManager.instance.SkillList[i];
+                        sk.skillCnt++;
+                        GameManager.instance.SkillList[i] = sk;
+                    }
+                    i++;
+                }
+            }
+        }
         Destroy(gameObject);
     }
 
