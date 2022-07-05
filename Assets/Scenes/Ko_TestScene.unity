@@ -1177,10 +1177,10 @@ MonoBehaviour:
   skillMaxCnt: 10
   currentSkillCnt: 0
   skills:
-  - skill: {fileID: 11400000, guid: afcef35b8dbbd034ea9904e8b31b988b, type: 2}
+  - skill: {fileID: 11400000, guid: 4f842029a102ebb40bcd643b3df0d468, type: 2}
     skillCnt: 4
-  - skill: {fileID: 11400000, guid: d48c837d77fe0034082e819a71fee656, type: 2}
-    skillCnt: 5
+  - skill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
+    skillCnt: 4
 --- !u!4 &1696379456
 Transform:
   m_ObjectHideFlags: 0
@@ -1216,7 +1216,7 @@ GameObject:
   - component: {fileID: 1998810745}
   - component: {fileID: 1998810750}
   - component: {fileID: 1998810751}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1311,7 +1311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998810744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.63, z: 2.52}
+  m_LocalPosition: {x: 0, y: 4.05, z: 2.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1453,6 +1453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 198578202779993001, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 198578203343569452, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1500,6 +1504,10 @@ PrefabInstance:
     - target: {fileID: 198578203343569463, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 198578203343569463, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
