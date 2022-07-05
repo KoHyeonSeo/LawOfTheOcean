@@ -83,7 +83,8 @@ public class JellyFish : MonoBehaviour
         // 2. 일정시간이 되면
         if (currentTime > createTime)
         {
-            GetComponent<JellyFishFire>().JellyFishAttack();
+            
+            //GetComponent<JellyFishSkill>().UseSkill();
             currentTime = 0;
         }
             // 4. 타겟과의 거리가

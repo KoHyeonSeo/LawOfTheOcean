@@ -11,12 +11,9 @@ public class JellyFishSkill : Skill
     {
         GameObject bullet = Instantiate(skillFactory);
         //bullet에게 User가 누구인지 알려줌
-        bullet.GetComponent<TestBullet>().User = this.User;
+        bullet.GetComponent<JellyFishBullet>().User = this.User;
         //bullet에게 Power가 어느정도인지 알려줌
-        bullet.GetComponent<TestBullet>().BulletDamage = this.Power;
+        bullet.GetComponent<JellyFishBullet>().BulletDamage = this.Power;
         bullet.transform.position = User.transform.position;
     }
-
-    // Start is called before the first frame update
-
 }
