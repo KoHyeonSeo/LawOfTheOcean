@@ -60,7 +60,8 @@
 ### Object
 - item.cs <b>- 고현서</b>
 ### Skill Structure
-![image](https://user-images.githubusercontent.com/76097749/177246474-25e112e2-c637-4ee1-9b24-0e2cc59e877a.png)
+![image](https://user-images.githubusercontent.com/76097749/177246976-2dbe747a-5673-4db8-b7d8-31cc574927ef.png)
+
 
 ---
 ## <b>강사님 피드백</b>
