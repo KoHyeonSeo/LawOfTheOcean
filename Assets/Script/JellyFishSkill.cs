@@ -1,27 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName ="EnemySkill/JellyFishSkill")]
+[CreateAssetMenu(menuName = "EnemySkill/JellySkill")]
 public class JellyFishSkill : Skill
 {
-    public float speed = 5;
-    public Transform target;
-    public Transform jelly;
-    Vector3 dir;
+    [SerializeField] private GameObject skillFactory;
 
     public override void UseSkill()
     {
-        GameObject player = GameObject.Find("Player");
-        target = player.transform;
-        dir = target.position - jelly.position;
-        dir.Normalize();
-        Quaternion rot = Quaternion.LookRotation(dir.normalized);
-        jelly.rotation = rot;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        jelly.position += dir * speed * Time.deltaTime;
+        GameObject bullet = Instantiate(skillFactory);
+        //bullet���� User�� �������� �˷���
+        bullet.GetComponent<JellyFishBullet>().User = this.User;
+        //bullet���� Power�� ���������� �˷���
+        bullet.GetComponent<JellyFishBullet>().BulletDamage = this.Power;
+        bullet.transform.position = User.transform.position;
     }
 }

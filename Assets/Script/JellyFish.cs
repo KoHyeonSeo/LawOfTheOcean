@@ -5,17 +5,17 @@ using UnityEngine;
 public class JellyFish : MonoBehaviour
 {
     /// <summary>
-    /// ÇØÆÄ¸®
-    /// ÇÃ·¹ÀÌ¾î°¡ ÇØÆÄ¸®ÀÇ °¨Áö¹üÀ§¿¡ µé¾î¿À¸é
-    /// ÇÃ·¹ÀÌ¾î¿¡°Ô ÀÏÁ¤ ´Ù°¡¿ÂµÚ
-    /// ÇÃ·¹ÀÌ¾î¸¦ ÂÑ¾Æ¿À¸ç ¿ø°Å¸® °ø°İÀ»ÇÑ´Ù.
-    /// °ø°İÇÒ¶§ ÇÃ·¹ÀÌ¾îÀÇ hp¸¦ ´Ş°ÔÇÏ°í
-    /// °æÁ÷È¿°ú¸¦ ÁØ´Ù.
-    /// ÇÃ·¹ÀÌ¾î°¡ ¹üÀ§¸¦ ¹ş¾î³ª¸é
-    /// ´Ù½Ã Á¦ÀÚ¸®·Î µ¹¾Æ°£´Ù.
+    /// í•´íŒŒë¦¬
+    /// í”Œë ˆì´ì–´ê°€ í•´íŒŒë¦¬ì˜ ê°ì§€ë²”ìœ„ì— ë“¤ì–´ì˜¤ë©´
+    /// í”Œë ˆì´ì–´ì—ê²Œ ì¼ì • ë‹¤ê°€ì˜¨ë’¤
+    /// í”Œë ˆì´ì–´ë¥¼ ì«“ì•„ì˜¤ë©° ì›ê±°ë¦¬ ê³µê²©ì„í•œë‹¤.
+    /// ê³µê²©í• ë•Œ í”Œë ˆì´ì–´ì˜ hpë¥¼ ë‹¬ê²Œí•˜ê³ 
+    /// ê²½ì§íš¨ê³¼ë¥¼ ì¤€ë‹¤.
+    /// í”Œë ˆì´ì–´ê°€ ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ë©´
+    /// ë‹¤ì‹œ ì œìë¦¬ë¡œ ëŒì•„ê°„ë‹¤.
     /// </summary>
 
-    // FSMÀ¸·Î »óÅÂ¸¦ Á¦¾îÇÏ°í½Í´Ù.
+    // FSMìœ¼ë¡œ ìƒíƒœë¥¼ ì œì–´í•˜ê³ ì‹¶ë‹¤.
     public enum State
     {
         Idle,
@@ -62,46 +62,52 @@ public class JellyFish : MonoBehaviour
       
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
-        // ¸¸¾à ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®°¡ °¨Áö°Å¸®º¸´Ù ÀÛÀ¸¸é
+        // ë§Œì•½ í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ê°€ ê°ì§€ê±°ë¦¬ë³´ë‹¤ ì‘ìœ¼ë©´
         if (detect > distance)
         {
             state = State.Move;
         }
-        // Move»óÅÂ·Î ÀüÀÌÇÑ´Ù.
+        // Moveìƒíƒœë¡œ ì „ì´í•œë‹¤.
     }
     public float speed = 3;
     public float attackDistance = 5;
 
    
 
-    
-    // public GameObject bulletFactory;
-    
-    
+    float currentTime;
+    [SerializeField] private float createTime = 2;   
     private void UpdateAttack()
     {
-        GetComponent<JellyFishFire>().JellyFishAttack();
-            // 4. Å¸°Ù°úÀÇ °Å¸®°¡
-            float distance = Vector3.Distance(target.transform.position, transform.position);
-            // 5. ¸¸¾à °ø°İ¹üÀ§¸¦ ¹ş¾î³ª¸é
+        float distance = Vector3.Distance(target.transform.position, transform.position);
+        // 1. ì‹œê°„ì´ íë¥´ë‹¤ê°€  
+        currentTime += Time.deltaTime;
+        // 2. ì¼ì •ì‹œê°„ì´ ë˜ë©´
+        if (currentTime > createTime)
+        {
+            
+            //GetComponent<JellyFishSkill>().UseSkill();
+            currentTime = 0;
+        }
+            // 4. íƒ€ê²Ÿê³¼ì˜ ê±°ë¦¬ê°€
+            // 5. ë§Œì•½ ê³µê²©ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ë©´
             if (distance > attackDistance)
             {
-            // 6. Move»óÅÂ·Î ÀüÀÌÇÑ´Ù.
+            // 6. Moveìƒíƒœë¡œ ì „ì´í•œë‹¤.
             state = State.Move;
             }
     }
     private void UpdateMove()
     {   
-        // 1. ÇÃ·¹ÀÌ¾î°Ô ÇâÇÏ´Â ¹æÇâÀ¸·Î ÀÏÁ¤°Å¸® ´Ù°¡¿À°í
+        // 1. í”Œë ˆì´ì–´ê²Œ í–¥í•˜ëŠ” ë°©í–¥ìœ¼ë¡œ ì¼ì •ê±°ë¦¬ ë‹¤ê°€ì˜¤ê³ 
         Vector3 dir = target.transform.position - transform.position;
         dir.Normalize();
-        // 2. ÇÃ·¹ÀÌ¾î¿¡°Ô ´êÀ»¶§ ¹İº¹ÇÑ´Ù.
+        // 2. í”Œë ˆì´ì–´ì—ê²Œ ë‹¿ì„ë•Œ ë°˜ë³µí•œë‹¤.
         transform.position += dir * speed * Time.deltaTime;
         
         float distance = Vector3.Distance(target.transform.position, transform.position);
         if (attackDistance > distance)
         {
-            // Attack »óÅÂ·Î ¹Ù²ï´Ù.
+            // Attack ìƒíƒœë¡œ ë°”ë€ë‹¤.
             state = State.Attack;
         }
         if (detect < distance)
