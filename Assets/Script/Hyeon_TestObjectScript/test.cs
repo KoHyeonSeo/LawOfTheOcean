@@ -5,12 +5,10 @@ using UnityEngine;
 public class test : Skill
 {
     [SerializeField] private GameObject bullet;
-    [SerializeField] private Transform user;
     public override void UseSkill()
     {
-
         GameObject bulletPre = Instantiate(bullet);
-        bulletPre.transform.position = user.position;
+        bulletPre.transform.position = User.transform.position;
     }
 
 }

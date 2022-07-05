@@ -70,7 +70,8 @@ public class EnemySkill : MonoBehaviour
             mid = (left + right) / 2;
             yield return null;
         }
-
+        //User정보 등록
+        skills[mid].skill.User = gameObject;
         //그 해당되는 스킬을 사용하고 싶다.
         skills[mid].skill.UseSkill();
         //그 해당되는 스킬의 쿨타임만큼 기다린다.
