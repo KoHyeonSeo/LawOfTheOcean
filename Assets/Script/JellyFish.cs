@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class JellyFish : MonoBehaviour
 {
-    // 해파리
-    // 플레이어가 해파리의 감지범위에 들어오면
-    // 플레이어에게 일정 다가온뒤
-
-    // 플레이어를 쫓아오며 원거리 공격을한다.
-    // 공격할때 플레이어의 hp를 달게하고
-    // 경직효과를 준다
-    // 플레이어가 범위를 벗어나면
-    // 다시 제자리로 돌아간다.
+    /// <summary>
+    /// 해파리
+    /// 플레이어가 해파리의 감지범위에 들어오면
+    /// 플레이어에게 일정 다가온뒤
+    /// 플레이어를 쫓아오며 원거리 공격을한다.
+    /// 공격할때 플레이어의 hp를 달게하고
+    /// 경직효과를 준다.
+    /// 플레이어가 범위를 벗어나면
+    /// 다시 제자리로 돌아간다.
+    /// </summary>
 
     // FSM으로 상태를 제어하고싶다.
     public enum State
@@ -73,33 +74,21 @@ public class JellyFish : MonoBehaviour
 
    
 
-    float currentTime;
-    [SerializeField] private float createTime = 2;
-    public GameObject bulletFactory;
+    
+    // public GameObject bulletFactory;
+    
+    
     private void UpdateAttack()
     {
-        // 1. 시간이 흐르다가  
-        currentTime += Time.deltaTime;
-        // 2. 일정시간이 되면
-        if (currentTime > createTime)
-        {
-            // 2. 공격을 한다.
-            // 총알공장에서 총알을 생성해
-            GameObject bullet = Instantiate(bulletFactory);
-            // 내 위치에 가져다 놓는다.
-            bullet.transform.position = transform.position;
-           
-            // 3. 공격을 한뒤에는 시간을 초기화한다.
-            currentTime = 0;
+        GetComponent<JellyFishFire>().JellyFishAttack();
             // 4. 타겟과의 거리가
             float distance = Vector3.Distance(target.transform.position, transform.position);
             // 5. 만약 공격범위를 벗어나면
             if (distance > attackDistance)
             {
-                // 6. Move상태로 전이한다.
-                state = State.Move;
+            // 6. Move상태로 전이한다.
+            state = State.Move;
             }
-        }
     }
     private void UpdateMove()
     {   
