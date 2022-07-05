@@ -2,26 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JellyFishSkill : MonoBehaviour
+[CreateAssetMenu(menuName = "EnemySkill/JellySkill")]
+public class JellyFishSkill : Skill
 {
-    public float speed = 5;
-    public Transform target;
-    Vector3 dir;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject skillFactory;
+
+    public override void UseSkill()
     {
-        GameObject player = GameObject.Find("Player");
-        target = player.transform;
-        dir = target.position - transform.position;
-        dir.Normalize();
-        Quaternion rot = Quaternion.LookRotation(dir.normalized);
-        transform.rotation = rot;
-        
+        GameObject bullet = Instantiate(skillFactory);
+        //bullet에게 User가 누구인지 알려줌
+        bullet.GetComponent<TestBullet>().User = this.User;
+        //bullet에게 Power가 어느정도인지 알려줌
+        bullet.GetComponent<TestBullet>().BulletDamage = this.Power;
+        bullet.transform.position = User.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position += dir * speed * Time.deltaTime;
-    }
+    // Start is called before the first frame update
+
 }

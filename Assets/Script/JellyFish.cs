@@ -74,32 +74,25 @@ public class JellyFish : MonoBehaviour
    
 
     float currentTime;
-    [SerializeField] private float createTime = 2;
-    public GameObject bulletFactory;
+    [SerializeField] private float createTime = 2;   
     private void UpdateAttack()
     {
+        float distance = Vector3.Distance(target.transform.position, transform.position);
         // 1. 시간이 흐르다가  
         currentTime += Time.deltaTime;
         // 2. 일정시간이 되면
         if (currentTime > createTime)
         {
-            // 2. 공격을 한다.
-            // 총알공장에서 총알을 생성해
-            GameObject bullet = Instantiate(bulletFactory);
-            // 내 위치에 가져다 놓는다.
-            bullet.transform.position = transform.position;
-           
-            // 3. 공격을 한뒤에는 시간을 초기화한다.
+            GetComponent<JellyFishFire>().JellyFishAttack();
             currentTime = 0;
+        }
             // 4. 타겟과의 거리가
-            float distance = Vector3.Distance(target.transform.position, transform.position);
             // 5. 만약 공격범위를 벗어나면
             if (distance > attackDistance)
             {
                 // 6. Move상태로 전이한다.
                 state = State.Move;
             }
-        }
     }
     private void UpdateMove()
     {   
