@@ -22,7 +22,7 @@ public class PlayerShooter : MonoBehaviour
     private void Update()
     {
         Vector3 dir = new Vector3(transform.position.x + playerInput.MousePosition.x, playerInput.MousePosition.y, this.transform.position.z + bulletMaxDistance);
-        Debug.DrawRay(transform.position, dir.normalized * bulletMaxDistance, Color.red);
+        //Debug.DrawRay(transform.position, dir.normalized * bulletMaxDistance, Color.red);
         //¾îµò°¡¿¡ ´ê¾Ò´Ù¸é(deadzone Á¦¿Ü)
         if (GameManager.instance.StealSkillButton)
         {
