@@ -533,6 +533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crab
       objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 14cb46a4487b65342b68b15b4664d7fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400026, guid: 14cb46a4487b65342b68b15b4664d7fe, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -589,6 +593,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
       propertyPath: m_Name
       value: jellyfish
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
       propertyPath: m_RootOrder
@@ -654,7 +662,6 @@ GameObject:
   - component: {fileID: 1527239523}
   - component: {fileID: 1527239522}
   - component: {fileID: 1527239521}
-  - component: {fileID: 1527239526}
   m_Layer: 0
   m_Name: JellyFish
   m_TagString: Untagged
@@ -674,6 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd9ff3cc00fc53448fb047942928db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jellyFish: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
   state: 0
   detect: 15
   speed: 3
@@ -699,7 +707,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527239520}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -758,20 +766,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1527239526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527239520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c59957f4d7cb1e4ba0ba8197075efbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 2
-  bulletFactory: {fileID: 2652037204454179192, guid: 6e023922e9aff6746ad0ba2fa2304177, type: 3}
 --- !u!1 &1650394246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1214,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115489835}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1279,79 +1273,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &860053051404245550
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836279198, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638531862836534536, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-      propertyPath: m_Name
-      value: JellyFishSkill
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
---- !u!1 &5021394199122478886 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5638531862836534536, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
-  m_PrefabInstance: {fileID: 860053051404245550}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5021394199122478887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021394199122478886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e46ef98cbda41e4c836b758902230ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  target: {fileID: 0}
