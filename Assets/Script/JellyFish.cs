@@ -101,7 +101,7 @@ public class JellyFish : MonoBehaviour
             // 6. Move상태로 전이한다.
             state = State.Move;
         }
-        Debug.Log($"gmaeObject = {gameObject}");
+        //Debug.Log($"gmaeObject = {gameObject}");
     }
     float moveCreateTime = 1.5f;
     bool move = true;
@@ -138,8 +138,8 @@ public class JellyFish : MonoBehaviour
             }
 
         }
-        print(move);
-        print(speed);
+        //print(move);
+        //print(speed);
 
 
 
