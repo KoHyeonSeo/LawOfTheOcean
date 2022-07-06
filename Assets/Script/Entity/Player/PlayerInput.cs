@@ -51,7 +51,7 @@ public class PlayerInput : MonoBehaviour
         YMouseOut = Input.GetAxis(YMouseName);
         MousePosition = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
         EscButton = Input.GetButtonDown(CancelName);
-        if (GameManager.instance.IsStopAttack)
+        if (!GameManager.instance.IsStopAttack)
         {
             IsShootingButton = Input.GetButtonDown(ShootButton);
             SwapButton = Input.GetButtonDown(SwapName);
