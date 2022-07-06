@@ -37,9 +37,11 @@ public class JellyFishBullet : MonoBehaviour
         if (other.gameObject != user && other.gameObject.layer == 7)
         {
             //Player라면 데미지 깎음
+            //발사를 일정시간동안 못함
             if (other.gameObject.CompareTag("Player"))
             {
                 other.gameObject.GetComponent<PlayerHealth>().Damage(damage);
+                
             }
             //Enemy라면 데미지 깎음
             else
