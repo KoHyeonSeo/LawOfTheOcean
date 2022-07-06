@@ -62,6 +62,9 @@
 ### Skill Structure
 ![image](https://user-images.githubusercontent.com/76097749/177246976-2dbe747a-5673-4db8-b7d8-31cc574927ef.png)
 
+## 긴급 프로토 타입 정보 전달 UI
+1. Player 체력 UI & 적 체력 UI - Jung
+2. 스킬 카피 했는 여부 + 스킬 swap 그거를 위한 스킬 정보 띄워주기 - Ko
 
 ---
 ## <b>강사님 피드백</b>
