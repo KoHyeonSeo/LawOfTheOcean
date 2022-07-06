@@ -5,7 +5,7 @@ using UnityEngine;
 public class JellyFishSkill : Skill
 {
     [SerializeField] private GameObject skillFactory;
-
+    
     public override void UseSkill()
     {
         GameObject bullet = Instantiate(skillFactory);       

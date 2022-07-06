@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JellyFish : MonoBehaviour
 {
+    [SerializeField] private Skill jellyFish;
     /// <summary>
     /// 해파리
     /// 플레이어가 해파리의 감지범위에 들어오면
@@ -53,13 +54,14 @@ public class JellyFish : MonoBehaviour
         }
     }
     public float detect = 15;
-    
+
     private void UpdateIdle()
     {
         Vector3 dir = Vector3.forward;
         dir.Normalize();
+
         transform.position += dir * speed * Time.deltaTime;
-      
+
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
         // 만약 플레이어와의 거리가 감지거리보다 작으면
@@ -69,13 +71,14 @@ public class JellyFish : MonoBehaviour
         }
         // Move상태로 전이한다.
     }
+
     public float speed = 3;
     public float attackDistance = 5;
 
-   
+
 
     float currentTime;
-    [SerializeField] private float createTime = 2;   
+    [SerializeField] private float createTime = 2;
     private void UpdateAttack()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
@@ -84,26 +87,61 @@ public class JellyFish : MonoBehaviour
         // 2. 일정시간이 되면
         if (currentTime > createTime)
         {
-            
+
+            jellyFish.User = gameObject;
+            jellyFish.UseSkill();
+
             //GetComponent<JellyFishSkill>().UseSkill();
             currentTime = 0;
         }
-            // 4. 타겟과의 거리가
-            // 5. 만약 공격범위를 벗어나면
-            if (distance > attackDistance)
-            {
+        // 4. 타겟과의 거리가
+        // 5. 만약 공격범위를 벗어나면
+        if (distance > attackDistance)
+        {
             // 6. Move상태로 전이한다.
             state = State.Move;
-            }
+        }
+        Debug.Log($"gmaeObject = {gameObject}");
     }
+    float moveCreateTime = 2;
+    bool move = true;
+    float sm;
     private void UpdateMove()
-    {   
-        // 1. 플레이어게 향하는 방향으로 일정거리 다가오고
+    {
+        // 1. 플레이어게 향하는 방향으로
         Vector3 dir = target.transform.position - transform.position;
         dir.Normalize();
-        // 2. 플레이어에게 닿을때 반복한다.
-        transform.position += dir * speed * Time.deltaTime;
-        
+        sm += speed * Time.deltaTime;
+        // 2. 만약 move 가 true 이면
+        if (move == true)
+        {
+            transform.position += dir * speed * Time.deltaTime;
+            speed -= Time.deltaTime *2;
+            // sm이가 2가 될때 까지 움직인다.
+            if ( sm > 2)
+            {
+            move = false;
+              
+            }
+            
+        }
+        if (move == false)
+        {
+            speed = 3;
+            sm = 0;
+            currentTime += Time.deltaTime;
+            if (currentTime > moveCreateTime)
+            {
+                currentTime = 0;
+                move = true;
+            }
+
+        }
+        print(move);
+        print(speed);
+
+
+
         float distance = Vector3.Distance(target.transform.position, transform.position);
         if (attackDistance > distance)
         {
@@ -115,5 +153,5 @@ public class JellyFish : MonoBehaviour
             state = State.Idle;
         }
     }
-   
+
 }

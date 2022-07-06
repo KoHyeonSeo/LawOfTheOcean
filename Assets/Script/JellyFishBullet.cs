@@ -19,7 +19,7 @@ public class JellyFishBullet : MonoBehaviour
     {
         GameObject player = GameObject.Find("Player");
         target = player.transform;
-        dir = target.position - transform.position;
+        dir = target.position - user.transform.position;
         dir.Normalize();
         Quaternion rot = Quaternion.LookRotation(dir.normalized);
         transform.rotation = rot;

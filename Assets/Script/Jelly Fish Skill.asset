@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6bd79663f2fefa4bb8f0bd8b53310ad, type: 3}
-  m_Name: New Jelly Fish Skill
+  m_Name: Jelly Fish Skill
   m_EditorClassIdentifier: 
   power: 0
   cooltime: 0
-  speed: 5
-  target: {fileID: 0}
+  skillFactory: {fileID: 215677990469855724, guid: 9076a6741a8e75e40997739d5795b68e, type: 3}
