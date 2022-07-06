@@ -103,9 +103,10 @@ public class JellyFish : MonoBehaviour
         }
         Debug.Log($"gmaeObject = {gameObject}");
     }
-    float moveCreateTime = 2;
+    float moveCreateTime = 1.5f;
     bool move = true;
     float sm;
+    float jellySpeed = 2.2f;
     private void UpdateMove()
     {
         // 1. 플레이어게 향하는 방향으로
@@ -116,7 +117,7 @@ public class JellyFish : MonoBehaviour
         if (move == true)
         {
             transform.position += dir * speed * Time.deltaTime;
-            speed -= Time.deltaTime *2;
+            speed -= Time.deltaTime *jellySpeed;
             // sm이가 2가 될때 까지 움직인다.
             if ( sm > 2)
             {
