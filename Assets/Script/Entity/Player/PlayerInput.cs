@@ -42,18 +42,21 @@ public class PlayerInput : MonoBehaviour
     {
         XAxisDir = Input.GetAxis(XAxis);
         ZAxisDir = Input.GetAxis(ZAxis);
-        IsShootingButton = Input.GetButtonDown(ShootButton);
         YAxisDir = Input.GetButtonDown(YAxis);
         XMouseOut = Input.GetAxis(XMouseName);
         YMouseOut = Input.GetAxis(YMouseName);
         MousePosition = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
-        SwapButton = Input.GetButtonDown(SwapName);
         EscButton = Input.GetButtonDown(CancelName);
-        if (IsShootingButton)
+        if (GameManager.instance.IsStopAttack)
         {
-            StealSkillButton = false;
+            IsShootingButton = Input.GetButtonDown(ShootButton);
+            SwapButton = Input.GetButtonDown(SwapName);
+            if (IsShootingButton)
+            {
+                StealSkillButton = false;
+            }
+            if (!StealSkillButton)
+                StealSkillButton = Input.GetButtonDown(StealName);
         }
-        if(!StealSkillButton)
-            StealSkillButton = Input.GetButtonDown(StealName);
     }
 }
