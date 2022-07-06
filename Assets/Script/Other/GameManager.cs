@@ -109,4 +109,6 @@ public class GameManager : MonoBehaviour
     //스킬을 사용했는가
     public bool IsStealUse { get; set; }
 
+    public bool IsStopAttack { get; set; }
+
 }

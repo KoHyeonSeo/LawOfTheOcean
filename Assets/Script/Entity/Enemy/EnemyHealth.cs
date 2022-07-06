@@ -6,11 +6,13 @@ using System;
 public class EnemyHealth : EntityHealth
 {
     [SerializeField] private float enemyHealth = 100;
+    private StolenSkill stolenSkill;
     private void Awake()
     {
         this.DeadCheck = false;
         this.Health = enemyHealth;
         this.MaxHealth = enemyHealth;
+        stolenSkill = GetComponent<StolenSkill>();
     }
     public override void Damage(float power)
     {
@@ -49,7 +51,6 @@ public class EnemyHealth : EntityHealth
                     }
                     //Debug.Log("4");
                 }
-
                 #region Obsolete
                 //int i = 0;
                 //foreach (var skill in GameManager.instance.SkillList)
@@ -65,12 +66,15 @@ public class EnemyHealth : EntityHealth
                 //    Debug.Log("4");
                 //}
                 #endregion
-
-                //Debug.Log("3");
             }
-            //Debug.Log("2");
         }
-        //Debug.Log("1");
+        else
+        {
+            EnemyDestroy();
+        }
+    }
+    public void EnemyDestroy()
+    {
         Destroy(gameObject);
     }
 
