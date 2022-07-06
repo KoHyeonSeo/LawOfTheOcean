@@ -31,6 +31,9 @@ public class PlayerInput : MonoBehaviour
     //tab을 누르면 true 반환 
     public bool SwapButton { get; private set; }
 
+    //스킬 Steal 하기위한 입력
+    //Left Shift 누르면 true 반환 
+    public bool StealSkillButton { get; set; }
 
     void Update()
     {
@@ -44,9 +47,9 @@ public class PlayerInput : MonoBehaviour
         SwapButton = Input.GetButtonDown(SwapName);
         if (IsShootingButton)
         {
-            GameManager.instance.StealSkillButton = false;
+            StealSkillButton = false;
         }
-        if(!GameManager.instance.StealSkillButton)
-            GameManager.instance.StealSkillButton = Input.GetButtonDown(StealName);
+        if(!StealSkillButton)
+            StealSkillButton = Input.GetButtonDown(StealName);
     }
 }

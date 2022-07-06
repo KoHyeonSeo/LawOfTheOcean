@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        GameManager.instance.IsStealUse = false;
+        
         int cnt = 0;
         foreach(var skill in skills)
         {
@@ -55,11 +57,12 @@ public class GameManager : MonoBehaviour
         }
     }
     /// <summary>
-    /// 스킬과 각 스킬의 갯수 정보를 담아낼 skillList 읽기 전용 
+    /// 스킬과 각 스킬의 갯수 정보를 담아낼 skillList 읽기 쓰기 프로퍼티 
     /// </summary>
     public List<SkillInfo> SkillList
     {
         get { return skills; }
+        set { skills = value; }
         
     }
 
@@ -103,8 +106,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //스킬을 사용했는가
+    public bool IsStealUse { get; set; }
 
-    //스킬 Steal 하기위한 입력
-    //Left Shift 누르면 true 반환 
-    public bool StealSkillButton { get; set; }
 }

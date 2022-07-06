@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerSkillCopy : MonoBehaviour
 {
     [SerializeField] private int curIndex = 0;
+    private PlayerShooter player;
+    private void Awake()
+    {
+        player = GetComponent<PlayerShooter>();
+    }
 
     private void Update()
     {
@@ -38,6 +43,7 @@ public class PlayerSkillCopy : MonoBehaviour
             }
             //스킬은 enemy를 죽였을 때 확률적으로 얻기
         }
+        
     }
 
 
