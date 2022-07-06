@@ -9,9 +9,9 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
     }
-    public static UIManager getUIManager()
+    public Stack<GameObject> UIObject;
+    private void Update()
     {
-        return instance;
+        
     }
-
 }
