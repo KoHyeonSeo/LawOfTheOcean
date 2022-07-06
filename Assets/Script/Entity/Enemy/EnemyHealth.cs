@@ -21,7 +21,7 @@ public class EnemyHealth : EntityHealth
         }
         else if(GameManager.instance.IsStealUse && !DeadCheck)
         {
-            Debug.Log("╬хавю╫ StealUse = false");
+            //Debug.Log("╬хавю╫ StealUse = false");
             GameManager.instance.IsStealUse = false;
         }
     }

@@ -12,6 +12,7 @@ public class PlayerInput : MonoBehaviour
     public const string YMouseName = "Mouse Y";
     public const string SwapName = "Swap";
     public const string StealName = "Steal Skill";
+    public const string CancelName = "Cancel";
 
     //좌: -1,정지:0,  우: 1
     public float XAxisDir { get; private set; }
@@ -35,6 +36,8 @@ public class PlayerInput : MonoBehaviour
     //Left Shift 누르면 true 반환 
     public bool StealSkillButton { get; set; }
 
+    //Esc키를 누르면 true 반환
+    public bool EscButton { get; private set; }
     void Update()
     {
         XAxisDir = Input.GetAxis(XAxis);
@@ -45,6 +48,7 @@ public class PlayerInput : MonoBehaviour
         YMouseOut = Input.GetAxis(YMouseName);
         MousePosition = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
         SwapButton = Input.GetButtonDown(SwapName);
+        EscButton = Input.GetButtonDown(CancelName);
         if (IsShootingButton)
         {
             StealSkillButton = false;
