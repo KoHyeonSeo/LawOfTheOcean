@@ -38,6 +38,10 @@ public class PlayerInput : MonoBehaviour
 
     //Esc키를 누르면 true 반환
     public bool EscButton { get; private set; }
+    private void Start()
+    {
+        GameManager.instance.IsStopAttack = false;
+    }
     void Update()
     {
         XAxisDir = Input.GetAxis(XAxis);
