@@ -2017,10 +2017,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_CurrentSwapSkillNum
       objectReference: {fileID: 0}
-    - target: {fileID: 7724461279271635422, guid: c948933ff95dd36449d5803d7e63283f, type: 3}
-      propertyPath: m_text
-      value: "Copied Skill: \nCount: "
-      objectReference: {fileID: 0}
     - target: {fileID: 7724461279271635423, guid: c948933ff95dd36449d5803d7e63283f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
