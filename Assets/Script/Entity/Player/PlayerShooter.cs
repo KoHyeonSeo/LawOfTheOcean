@@ -4,11 +4,7 @@ using UnityEngine;
 //필요 속성: 입력값, 총알
 public class PlayerShooter : MonoBehaviour
 {
-    public struct HitEnemyInfo
-    {
-
-    }
-
+    
     [Header("총알 관련 설정")]
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletMaxDistance = 1100;
@@ -29,10 +25,15 @@ public class PlayerShooter : MonoBehaviour
         {
             if (hit.collider.tag == "Enemy")
             {
-
+                UIManager.instance.CurrentEnemy = hit.collider.gameObject;
             }
         }
         //어딘가에 닿았다면(deadzone 제외)
+        else
+        {
+            UIManager.instance.CurrentEnemy = null;
+        }
+
         if (playerInput.StealSkillButton)
         {
             //SteaSkillButton 초기화
@@ -46,6 +47,10 @@ public class PlayerShooter : MonoBehaviour
             //총알을 생성한다.
             bullet.transform.position = transform.position;
             Instantiate(bullet);
+            if(hit.collider.tag != "Enemy")
+            {
+                GameManager.instance.IsStealUse = false;
+            }
         }
         BulletMaxDirection = dir;
     }

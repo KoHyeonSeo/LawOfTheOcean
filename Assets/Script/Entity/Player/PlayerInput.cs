@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     public const string SwapName = "Swap";
     public const string StealName = "Steal Skill";
     public const string CancelName = "Cancel";
+    public const string CopiedSkillUseName = "Use Skill";
 
     //좌: -1,정지:0,  우: 1
     public float XAxisDir { get; private set; }
@@ -38,6 +39,9 @@ public class PlayerInput : MonoBehaviour
 
     //Esc키를 누르면 true 반환
     public bool EscButton { get; private set; }
+
+    //left ctrl 누르면 true 반환
+    public bool CopiedSkillUseButton { get; private set; }
     private void Start()
     {
         GameManager.instance.IsStopAttack = false;
@@ -53,6 +57,7 @@ public class PlayerInput : MonoBehaviour
         EscButton = Input.GetButtonDown(CancelName);
         if (!GameManager.instance.IsStopAttack)
         {
+            CopiedSkillUseButton = Input.GetButtonDown(CopiedSkillUseName);
             IsShootingButton = Input.GetButtonDown(ShootButton);
             SwapButton = Input.GetButtonDown(SwapName);
             if (IsShootingButton)
