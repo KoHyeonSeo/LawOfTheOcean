@@ -34,15 +34,16 @@ public class JellyFishBullet : MonoBehaviour
         if (stop == true)
         {
             currentTime += Time.deltaTime;
-                print("끝");
             if (currentTime > stopTime)
             {
+                print("끝");
                 currentTime = 0;
                 GameManager.instance.IsStopAttack = false;
+                Destroy(gameObject);
             }
         }
 
-        print(stop);
+        print(currentTime);
         transform.position += dir * speed * Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
@@ -52,7 +53,7 @@ public class JellyFishBullet : MonoBehaviour
         if (other.gameObject != user && other.gameObject.layer == 7)
         {
 
-          ;
+          
             //Player라면 데미지 깎음
             //발사를 일정시간동안 못함
             if (other.gameObject.CompareTag("Player"))
@@ -71,7 +72,7 @@ public class JellyFishBullet : MonoBehaviour
                 other.gameObject.GetComponent<EnemyHealth>().Damage(damage);
             }
             //총알 삭제
-            //Destroy(gameObject);
+           
         }
     }
 
