@@ -37,7 +37,7 @@ public abstract class EntityHealth : MonoBehaviour
     public bool DeadCheck { get; protected set; }
     public virtual void Damage(float power)
     {
-        currentHealth -= power;
+        Health -= power;
         if (currentHealth <= 0f && !DeadCheck)
         {
             Die();
