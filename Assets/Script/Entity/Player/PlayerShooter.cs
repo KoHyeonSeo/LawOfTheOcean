@@ -47,7 +47,7 @@ public class PlayerShooter : MonoBehaviour
             //총알을 생성한다.
             bullet.transform.position = transform.position;
             Instantiate(bullet);
-            if(hit.collider.tag != "Enemy")
+            if(hit.collider != null && hit.collider.tag != "Enemy")
             {
                 GameManager.instance.IsStealUse = false;
             }
