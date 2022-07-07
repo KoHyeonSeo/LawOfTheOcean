@@ -19,7 +19,6 @@ public class UISkillCopy : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(GameManager.instance.IsStealUse);
         if (GameManager.instance.IsStealUse)
         {
             swapUseObject.SetActive(true);
