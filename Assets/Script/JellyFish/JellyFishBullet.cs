@@ -36,14 +36,14 @@ public class JellyFishBullet : MonoBehaviour
             currentTime += Time.deltaTime;
             if (currentTime > stopTime)
             {
-                print("끝");
+                //print("끝");
                 currentTime = 0;
                 GameManager.instance.IsStopAttack = false;
                 Destroy(gameObject);
             }
         }
 
-        print(currentTime);
+        //print(currentTime);
         transform.position += dir * speed * Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
@@ -58,7 +58,7 @@ public class JellyFishBullet : MonoBehaviour
             //발사를 일정시간동안 못함
             if (other.gameObject.CompareTag("Player"))
             {
-                print("시작");
+                //print("시작");
                 stop = true;
                 other.gameObject.GetComponent<PlayerHealth>().Damage(damage);
 
