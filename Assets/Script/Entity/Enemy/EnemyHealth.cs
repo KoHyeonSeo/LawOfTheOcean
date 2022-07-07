@@ -16,7 +16,7 @@ public class EnemyHealth : EntityHealth
     }
     public override void Damage(float power)
     {
-        currentHealth -= power;
+        Health -= power;
         if (currentHealth <= 0f && !DeadCheck)
         {
             Die();

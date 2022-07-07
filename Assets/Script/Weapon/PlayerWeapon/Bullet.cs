@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
     {
         string colliderTag = other.gameObject.tag;
         //맞은 오브젝트가 player, platform,Deadzone이 아니라면,
-        if (colliderTag != "Player" && colliderTag != "DeadZone" && colliderTag != "Platform")
+        if (colliderTag != "Player" && colliderTag != "DeadZone" && colliderTag != "Platform" && colliderTag != "DontDestroyObject")
         {
             //맞은 오브젝트가 enemy라면
             if (colliderTag == "Enemy")
