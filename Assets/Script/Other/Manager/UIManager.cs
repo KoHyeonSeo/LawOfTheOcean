@@ -22,4 +22,5 @@ public class UIManager : MonoBehaviour
     }
 
     public GameObject CurrentEnemy { get { return enemy; } set { enemy = value; } }
+    public bool IsOrbMoving { get; set; }
 }

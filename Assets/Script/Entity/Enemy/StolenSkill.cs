@@ -13,6 +13,7 @@ public class StolenSkill : MonoBehaviour
         {
             if (GameManager.instance.IsStealUse)
             {
+                UIManager.instance.IsOrbMoving = true;
                 UsedOrb = Instantiate(skill);
                 UsedOrb.transform.position = transform.position;
                 first = false;
