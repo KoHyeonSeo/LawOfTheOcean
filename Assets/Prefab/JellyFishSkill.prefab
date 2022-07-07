@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {fileID: 0}
-  stopTime: 1.5
+  stopTime: 1
 --- !u!65 &-8012146305655082045
 BoxCollider:
   m_ObjectHideFlags: 0
