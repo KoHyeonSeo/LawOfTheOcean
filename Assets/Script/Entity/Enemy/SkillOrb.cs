@@ -19,6 +19,7 @@ public class SkillOrb : MonoBehaviour
     {
         dir = player.position + player.forward - transform.position ;
         transform.position += speed * dir * Time.deltaTime;
+
     }
     private void OnTriggerEnter(Collider other)
     {
