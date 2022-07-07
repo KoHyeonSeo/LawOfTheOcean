@@ -6,14 +6,13 @@ public class PlayerMove : MonoBehaviour
 {
     private PlayerInput playerInput;
     
-    float speed = 5;
+    float speed = 2;
     
 
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-
     }
 
     
