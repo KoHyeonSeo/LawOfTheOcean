@@ -1,36 +1,49 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//ÇÊ¿ä ¼Ó¼º: ÀÔ·Â°ª, ÃÑ¾Ë
+//í•„ìš” ì†ì„±: ì…ë ¥ê°’, ì´ì•Œ
 public class PlayerShooter : MonoBehaviour
 {
-    [Header("ÃÑ¾Ë °ü·Ã ¼³Á¤")]
+    public struct HitEnemyInfo
+    {
+
+    }
+
+    [Header("ì´ì•Œ ê´€ë ¨ ì„¤ì •")]
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletMaxDistance = 1100;
-
+    private RaycastHit hit;
     private PlayerInput playerInput;
     public Vector3 EnemyPosition { get; private set; }
     public Vector3 BulletMaxDirection { get; private set; }
     private void Start()
     {
-        //playerInputÀÌ ÇÊ¿äÇÏ´Ù.
+        //playerInputì´ í•„ìš”í•˜ë‹¤.
         playerInput = GetComponent<PlayerInput>();
     }
     private void Update()
     {
         Vector3 dir = new Vector3(transform.position.x + playerInput.MousePosition.x, playerInput.MousePosition.y, this.transform.position.z + bulletMaxDistance);
         Debug.DrawRay(transform.position, dir.normalized * bulletMaxDistance, Color.red);
-        //¾îµò°¡¿¡ ´ê¾Ò´Ù¸é(deadzone Á¦¿Ü)
+        if (Physics.Raycast(transform.position, dir.normalized, out hit, bulletMaxDistance) && hit.collider.tag != "DeadZone")
+        {
+            if (hit.collider.tag == "Enemy")
+            {
+
+            }
+        }
+        //ì–´ë”˜ê°€ì— ë‹¿ì•˜ë‹¤ë©´(deadzone ì œì™¸)
         if (playerInput.StealSkillButton)
         {
-            //SteaSkillButton ÃÊ±âÈ­
+            //SteaSkillButton ì´ˆê¸°í™”
             playerInput.StealSkillButton = false;
             GameManager.instance.IsStealUse = true;
         }
-        //¸¶¿ì½º ¿ŞÅ¬¸¯ÀÌ ÀÔ·ÂµÈ´Ù¸é
+        //ë§ˆìš°ìŠ¤ ì™¼í´ë¦­ì´ ì…ë ¥ëœë‹¤ë©´
         if (playerInput.IsShootingButton)
         {
-            //ÃÑ¾ËÀ» »ı¼ºÇÑ´Ù.
+            Debug.Log("ë°œì‚¬");
+            //ì´ì•Œì„ ìƒì„±í•œë‹¤.
             bullet.transform.position = transform.position;
             Instantiate(bullet);
         }
