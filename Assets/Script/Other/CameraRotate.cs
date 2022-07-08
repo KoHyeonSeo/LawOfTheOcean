@@ -7,7 +7,7 @@ public class CameraRotate : MonoBehaviour
     private PlayerInput playerInput;
     float rx;
     float ry;
-    public Transform body;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class CameraRotate : MonoBehaviour
         rx = Mathf.Clamp(rx, -80, 80);
         // 2.회전하고싶다.
         transform.eulerAngles = new Vector3(-rx, ry, 0);
-        body.transform.eulerAngles = new Vector3(-rx, ry, 0);
+        
 
     }
 }
