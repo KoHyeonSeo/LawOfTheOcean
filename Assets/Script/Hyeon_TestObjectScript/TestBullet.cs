@@ -9,6 +9,7 @@ public class TestBullet : MonoBehaviour
     //스킬을 사용하는 User가 누구인지 알 수 있는 프로퍼티
     public GameObject User { get; set; }
     //데미지 즉, Power가 어느 정도인지 알 수 있는 프로퍼티
+
     public float BulletDamage { get { return damage; } set { damage = value; } }
     void Update()
     {

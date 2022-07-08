@@ -10,7 +10,6 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private float bulletMaxDistance = 950;
     private RaycastHit hit;
     private PlayerInput playerInput;
-    public Vector3 EnemyPosition { get; private set; }
     public Vector3 BulletMaxDirection { get; private set; }
     private void Start()
     {
