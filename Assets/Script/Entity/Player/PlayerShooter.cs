@@ -7,7 +7,7 @@ public class PlayerShooter : MonoBehaviour
     
     [Header("총알 관련 설정")]
     [SerializeField] private GameObject bullet;
-    [SerializeField] private float bulletMaxDistance = 1100;
+    [SerializeField] private float bulletMaxDistance = 950;
     private RaycastHit hit;
     private PlayerInput playerInput;
     public Vector3 EnemyPosition { get; private set; }
