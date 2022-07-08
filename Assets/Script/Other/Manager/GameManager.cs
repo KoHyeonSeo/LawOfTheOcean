@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        GameManager.instance.IsStealUse = false;
-        
+        IsStealUse = false;
+        IsSkillMaxCountError = false;
         int cnt = 0;
         foreach(var skill in skills)
         {
@@ -82,6 +82,11 @@ public class GameManager : MonoBehaviour
                 skill.skillCnt++;
                 skills[value] = skill;
                 currentSkillCnt++;
+                IsSkillMaxCountError = false;
+            }
+            else
+            {
+                IsSkillMaxCountError = true;
             }
         }
     }
@@ -111,5 +116,6 @@ public class GameManager : MonoBehaviour
 
     public bool IsStopAttack { get; set; }
     public int StealCopyCurIndex { get; set; }
+    public bool IsSkillMaxCountError { get; set; }
 
 }
