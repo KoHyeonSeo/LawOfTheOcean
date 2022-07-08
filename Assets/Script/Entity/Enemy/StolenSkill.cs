@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StolenSkill : MonoBehaviour
 {
-    [SerializeField] private GameObject skill;
+    [SerializeField] private GameObject orb;
     private GameObject UsedOrb;
     private bool first = true;
     private void Update()
@@ -13,6 +13,7 @@ public class StolenSkill : MonoBehaviour
         {
             if (GameManager.instance.IsStealUse)
             {
+
                 if (!GameManager.instance.IsSkillMaxCountError)
                 {
                     UIManager.instance.IsOrbMoving = true;
@@ -26,6 +27,7 @@ public class StolenSkill : MonoBehaviour
                     GameManager.instance.IsStealUse = false;
 
                 }
+
             }
         }
         if (!first && !GameManager.instance.IsSkillMaxCountError)
