@@ -74,9 +74,7 @@ public class JellyFish : MonoBehaviour
 
     public float speed = 3;
     public float attackDistance = 5;
-
-
-
+    public bool stopSkill = false;
     float currentTime;
     [SerializeField] private float createTime = 2;
     private void UpdateAttack()
@@ -87,11 +85,12 @@ public class JellyFish : MonoBehaviour
         // 2. 일정시간이 되면
         if (currentTime > createTime)
         {
-
             jellyFish.User = gameObject;
+            if (stopSkill == false) // true일때만 스킬 사용가능
+            {
             jellyFish.UseSkill();
+            }
 
-            //GetComponent<JellyFishSkill>().UseSkill();
             currentTime = 0;
         }
         // 4. 타겟과의 거리가
@@ -101,9 +100,8 @@ public class JellyFish : MonoBehaviour
             // 6. Move상태로 전이한다.
             state = State.Move;
         }
-        //Debug.Log($"gmaeObject = {gameObject}");
     }
-    float moveCreateTime = 1.5f;
+    float moveCreateTime = 1f;
     bool move = true;
     float sm;
     float jellySpeed = 2.2f;
@@ -117,14 +115,13 @@ public class JellyFish : MonoBehaviour
         if (move == true)
         {
             transform.position += dir * speed * Time.deltaTime;
-            speed -= Time.deltaTime *jellySpeed;
+            speed -= Time.deltaTime * jellySpeed;
             // sm이가 2가 될때 까지 움직인다.
-            if ( sm > 2)
+            if (sm > 2)
             {
-            move = false;
-              
+                move = false;
+
             }
-            
         }
         if (move == false)
         {
@@ -136,13 +133,7 @@ public class JellyFish : MonoBehaviour
                 currentTime = 0;
                 move = true;
             }
-
         }
-        //print(move);
-        //print(speed);
-
-
-
         float distance = Vector3.Distance(target.transform.position, transform.position);
         if (attackDistance > distance)
         {
