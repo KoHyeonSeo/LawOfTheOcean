@@ -17,7 +17,7 @@ public class StolenSkill : MonoBehaviour
                 if (!GameManager.instance.IsSkillMaxCountError)
                 {
                     UIManager.instance.IsOrbMoving = true;
-                    UsedOrb = Instantiate(skill);
+                    UsedOrb = Instantiate(orb);
                     UsedOrb.transform.position = transform.position;
                     first = false;
                 }
