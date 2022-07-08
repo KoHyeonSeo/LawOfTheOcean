@@ -13,17 +13,30 @@ public class StolenSkill : MonoBehaviour
         {
             if (GameManager.instance.IsStealUse)
             {
-                UsedOrb = Instantiate(orb);
-                UsedOrb.transform.position = transform.position;
-                first = false;
+
+                if (!GameManager.instance.IsSkillMaxCountError)
+                {
+                    UIManager.instance.IsOrbMoving = true;
+                    UsedOrb = Instantiate(skill);
+                    UsedOrb.transform.position = transform.position;
+                    first = false;
+                }
+                else
+                {
+                    GetComponent<EnemyHealth>().EnemyDestroy();
+                    GameManager.instance.IsStealUse = false;
+
+                }
+
             }
         }
-        if (!first)
+        if (!first && !GameManager.instance.IsSkillMaxCountError)
         {
             if (UsedOrb.GetComponent<SkillOrb>().IsTouch)
             {
                 Destroy(UsedOrb);
                 GetComponent<EnemyHealth>().EnemyDestroy();
+                GameManager.instance.IsStealUse = false;
             }
         }
     }
