@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 215677990470121198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LightningEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 215677990469855725}
   - component: {fileID: -8012146305655082045}
   - component: {fileID: 437260370124837764}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JellyFishSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,8 +211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  skillMaxDistance: 950
   target: {fileID: 0}
-  stopTime: 1
+  stopTime: 3
 --- !u!65 &-8012146305655082045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 215677990470100750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LightningStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -85,9 +85,10 @@ public class JellyFish : MonoBehaviour
         if (currentTime > createTime)
         {
             jellyFish.User = gameObject;
-            if (stopSkill == false) // true일때만 스킬 사용가능
+            if (stopSkill == false) // false일때만 스킬 사용가능
             {
             jellyFish.UseSkill();
+                print("발사");
             }
             currentTime = 0;
         }

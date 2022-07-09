@@ -12,17 +12,25 @@ public class JellyFishBullet : MonoBehaviour
     public GameObject User { get { return user; } set { user = value; } }
     //데미지 즉, Power가 어느 정도인지 알 수 있는 프로퍼티
     public float BulletDamage { get { return damage; } set { damage = value; } }
+    [SerializeField] private float skillMaxDistance = 950;
     public Transform target;
+    private PlayerInput playerInput;
     Vector3 dir;
+    Vector3 cdir;
     // Start is called before the first frame update
     void Start()
-    {        
-        
+    {
         GameObject player = GameObject.Find("Player");
+        playerInput = player.GetComponent<PlayerInput>();
+        
+        
         target = player.transform;
         if (User == player)
         {
-            dir = transform.forward;
+            Vector3 mousepos = playerInput.MousePosition;
+            mousepos.z = skillMaxDistance;
+            cdir = Camera.main.ScreenToWorldPoint(mousepos);
+            dir = cdir - transform.position;
             dir.Normalize();
         }
         else
@@ -35,28 +43,31 @@ public class JellyFishBullet : MonoBehaviour
             transform.rotation = rot;
         }
     }  
-    bool stop = false;
+    bool playerStop = false;
+    bool enemyStop = false;
     JellyFish jellyFish;
-    float currentTime;
-    [SerializeField] private float stopTime = 1;
+    float playerCurrentTime;
+    [SerializeField] private float stopTime = 3;
     // Update is called once per frame
     void Update()
     {        
-        if (stop == true)
+        if (playerStop == true)
         {
-            currentTime += Time.deltaTime;
-            if (currentTime > stopTime)
+            playerCurrentTime += Time.deltaTime;
+            if (playerCurrentTime > stopTime)
             {
-                currentTime = 0;
                 GameManager.instance.IsStopAttack = false;
                 jellyFish.stopSkill = false;
+               
+                playerCurrentTime = 0;
+                playerStop = false;
             }
         }
         transform.position += dir * speed * Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
     {
-        jellyFish = GameObject.Find("JellyFish").GetComponent<JellyFish>();
+        jellyFish = user.GetComponent<JellyFish>();
         
         //부딪힌 것이 스킬 사용자가 아니고 생명체(Entity)라면
         if (other.gameObject != user && other.gameObject.layer == 7)
@@ -65,14 +76,17 @@ public class JellyFishBullet : MonoBehaviour
             //발사를 일정시간동안 못함
             if (other.gameObject.CompareTag("Player"))
             {
-                stop = true;
+                playerStop = true;
                 other.gameObject.GetComponent<PlayerHealth>().Damage(damage);
                 GameManager.instance.IsStopAttack = true;
             }
             //Enemy라면 데미지 깎음
             else
             {
+                print("맞음");
+                enemyStop = true;
                 jellyFish.stopSkill = true;
+                
                 other.gameObject.GetComponent<EnemyHealth>().Damage(damage);
                
             }
