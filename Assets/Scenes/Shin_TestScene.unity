@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198578203343569453, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 198578203343569463, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -727,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  enemySkill: {fileID: 0}
   enemyHealth: 100
 --- !u!114 &702516443
 MonoBehaviour:
@@ -1373,10 +1378,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillMaxCnt: 10
-  currentSkillCnt: 10
+  currentSkillCnt: 0
   skills:
   - skill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
-    skillCnt: 10
+    skillCnt: 0
 --- !u!4 &1103637567
 Transform:
   m_ObjectHideFlags: 0
@@ -1530,6 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  enemySkill: {fileID: 0}
   enemyHealth: 100
 --- !u!114 &1417015588
 MonoBehaviour:
@@ -1777,6 +1783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  enemySkill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
   enemyHealth: 100
 --- !u!114 &1527239529
 MonoBehaviour:
@@ -2504,6 +2511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  enemySkill: {fileID: 0}
   enemyHealth: 100
 --- !u!114 &2040884612
 MonoBehaviour:
@@ -2666,6 +2674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  enemySkill: {fileID: 0}
   enemyHealth: 100
 --- !u!114 &2080735140
 MonoBehaviour:

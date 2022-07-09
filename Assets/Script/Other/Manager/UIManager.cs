@@ -13,12 +13,12 @@ public class UIManager : MonoBehaviour
     private GameObject enemy;
     private void Update()
     {
-        if (enemy)
-            Debug.Log($"Enemy 이름:{enemy.GetComponent<NameTag>().Name} \nEnemy Health: {enemy.GetComponent<EnemyHealth>().Health}");
-        else
-        {
-            Debug.Log("enemy 없음");
-        }
+        //if (enemy)
+        //    Debug.Log($"Enemy 이름:{enemy.GetComponent<NameTag>().Name} \nEnemy Health: {enemy.GetComponent<EnemyHealth>().Health}");
+        //else
+        //{
+        //    Debug.Log("enemy 없음");
+        //}
     }
 
     public GameObject CurrentEnemy { get { return enemy; } set { enemy = value; } }

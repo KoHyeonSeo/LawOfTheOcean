@@ -24,6 +24,7 @@ public class PlayerMove : MonoBehaviour
         // 물의 저항값이 증가한다.
         float x = playerInput.XAxisDir;
         float z = playerInput.ZAxisDir;
+        
         Vector3 dir = new Vector3(x, 0, z);
         Vector3 cdir = Camera.main.transform.TransformDirection(dir).normalized;
         GetComponent<Rigidbody>().AddForce(cdir * speed);
