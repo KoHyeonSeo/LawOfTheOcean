@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     public const string StealName = "Steal Skill";
     public const string CancelName = "Cancel";
     public const string CopiedSkillUseName = "Use Skill";
+    public const string ExplainName = "Explain";
 
     //좌: -1,정지:0,  우: 1
     public float XAxisDir { get; private set; }
@@ -42,6 +43,8 @@ public class PlayerInput : MonoBehaviour
 
     //left ctrl 누르면 true 반환
     public bool CopiedSkillUseButton { get; private set; }
+    //left alt 누르면 true 반환
+    public bool ExplainButton { get; private set; }
     private void Start()
     {
         GameManager.instance.IsStopAttack = false;
@@ -55,6 +58,7 @@ public class PlayerInput : MonoBehaviour
         YMouseOut = Input.GetAxis(YMouseName);
         MousePosition = Input.mousePosition;
         EscButton = Input.GetButtonDown(CancelName);
+        ExplainButton = Input.GetButton(ExplainName);
         if (!GameManager.instance.IsStopAttack)
         {
             CopiedSkillUseButton = Input.GetButtonDown(CopiedSkillUseName);
