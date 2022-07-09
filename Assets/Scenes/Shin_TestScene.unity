@@ -1378,10 +1378,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillMaxCnt: 10
-  currentSkillCnt: 0
+  currentSkillCnt: 5
   skills:
   - skill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
-    skillCnt: 0
+    skillCnt: 5
 --- !u!4 &1103637567
 Transform:
   m_ObjectHideFlags: 0
@@ -2511,7 +2511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  enemySkill: {fileID: 0}
+  enemySkill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
   enemyHealth: 100
 --- !u!114 &2040884612
 MonoBehaviour:

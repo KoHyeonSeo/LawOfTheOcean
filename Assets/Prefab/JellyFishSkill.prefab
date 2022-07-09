@@ -213,7 +213,7 @@ MonoBehaviour:
   speed: 5
   skillMaxDistance: 950
   target: {fileID: 0}
-  stopTime: 3
+  stopTime: 10
 --- !u!65 &-8012146305655082045
 BoxCollider:
   m_ObjectHideFlags: 0
