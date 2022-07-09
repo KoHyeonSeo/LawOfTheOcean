@@ -22,7 +22,9 @@ public class PlayerShooter : MonoBehaviour
         mousepos.z = bulletMaxDistance;
         Vector3 v = Camera.main.ScreenToWorldPoint(mousepos);
         Vector3 dir = v - transform.position;
-        
+
+        BulletMaxDirection = dir;
+
         Debug.DrawRay(transform.position, dir, Color.red);
         if (Physics.Raycast(transform.position, dir.normalized, out hit, bulletMaxDistance) && hit.collider.tag != "DeadZone")
         {
@@ -55,6 +57,5 @@ public class PlayerShooter : MonoBehaviour
                 GameManager.instance.IsStealUse = false;
             }
         }
-        BulletMaxDirection = dir;
     }
 }
