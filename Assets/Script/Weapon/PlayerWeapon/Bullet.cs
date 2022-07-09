@@ -21,8 +21,8 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         // 그냥 가던길 가자.
-        dir = playerShooter.BulletMaxDirection;
-        transform.rotation = Quaternion.LookRotation(dir).normalized;
+        dir = playerShooter.BulletMaxDirection.normalized;
+        transform.rotation = Quaternion.LookRotation(dir);
     }
     void Update()
     {

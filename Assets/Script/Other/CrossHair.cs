@@ -15,6 +15,6 @@ public class CrossHair : MonoBehaviour
     }
     private void Update()
     {
-        image.transform.position = new Vector3(player.MousePosition.x + canvas.rect.width / 2, player.MousePosition.y + canvas.rect.height / 2, 0);
+        image.transform.position = new Vector3(player.MousePosition.x, player.MousePosition.y, 0);
     }
 }

@@ -18,11 +18,11 @@ public class PlayerShooter : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 mousepos = Input.mousePosition;
+        Vector3 mousepos = playerInput.MousePosition;
         mousepos.z = bulletMaxDistance;
         Vector3 v = Camera.main.ScreenToWorldPoint(mousepos);
         Vector3 dir = v - transform.position;
-        //Vector3 dir = new Vector3(transform.position.x + playerInput.MousePosition.x, playerInput.MousePosition.y, this.transform.position.z + bulletMaxDistance);
+        
         Debug.DrawRay(transform.position, dir, Color.red);
         if (Physics.Raycast(transform.position, dir.normalized, out hit, bulletMaxDistance) && hit.collider.tag != "DeadZone")
         {
