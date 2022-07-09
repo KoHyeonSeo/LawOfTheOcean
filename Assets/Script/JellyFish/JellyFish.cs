@@ -54,7 +54,6 @@ public class JellyFish : MonoBehaviour
         }
     }
     public float detect = 15;
-
     private void UpdateIdle()
     {
         Vector3 dir = Vector3.forward;
@@ -90,7 +89,6 @@ public class JellyFish : MonoBehaviour
             {
             jellyFish.UseSkill();
             }
-
             currentTime = 0;
         }
         // 4. 타겟과의 거리가
@@ -120,7 +118,6 @@ public class JellyFish : MonoBehaviour
             if (sm > 2)
             {
                 move = false;
-
             }
         }
         if (move == false)
@@ -145,5 +142,4 @@ public class JellyFish : MonoBehaviour
             state = State.Idle;
         }
     }
-
 }

@@ -16,25 +16,32 @@ public class JellyFishBullet : MonoBehaviour
     Vector3 dir;
     // Start is called before the first frame update
     void Start()
-    {
+    {        
+        
         GameObject player = GameObject.Find("Player");
         target = player.transform;
-        dir = target.position - user.transform.position;
-        dir.Normalize();
-        Quaternion rot = Quaternion.LookRotation(dir.normalized);
-        transform.rotation = rot;
+        if (User == player)
+        {
+            dir = transform.forward;
+            dir.Normalize();
+        }
+        else
+        {
 
-    }
-    
-    
+
+            dir = target.position - user.transform.position;
+            dir.Normalize();
+            Quaternion rot = Quaternion.LookRotation(dir.normalized);
+            transform.rotation = rot;
+        }
+    }  
     bool stop = false;
-    
+    JellyFish jellyFish;
     float currentTime;
     [SerializeField] private float stopTime = 1;
     // Update is called once per frame
     void Update()
-    {
-        
+    {        
         if (stop == true)
         {
             currentTime += Time.deltaTime;
@@ -42,14 +49,14 @@ public class JellyFishBullet : MonoBehaviour
             {
                 currentTime = 0;
                 GameManager.instance.IsStopAttack = false;
-                Destroy(gameObject);
+                jellyFish.stopSkill = false;
             }
         }
         transform.position += dir * speed * Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
     {
-        JellyFish jellyFish = GameObject.Find("JellyFish").GetComponent<JellyFish>();
+        jellyFish = GameObject.Find("JellyFish").GetComponent<JellyFish>();
         
         //부딪힌 것이 스킬 사용자가 아니고 생명체(Entity)라면
         if (other.gameObject != user && other.gameObject.layer == 7)
@@ -69,8 +76,7 @@ public class JellyFishBullet : MonoBehaviour
                 other.gameObject.GetComponent<EnemyHealth>().Damage(damage);
                
             }
-            //총알 삭제
-           
+            //총알 삭제         
         }
     }
 
