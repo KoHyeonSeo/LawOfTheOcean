@@ -5,6 +5,7 @@ using System;
 
 public class EnemyHealth : EntityHealth
 {
+    [SerializeField] private Skill enemySkill;
     [SerializeField] private float enemyHealth = 100;
     private StolenSkill stolenSkill;
     private void Awake()
@@ -36,12 +37,12 @@ public class EnemyHealth : EntityHealth
         base.Die();
         if (GameManager.instance.IsStealUse)
         {
-            if (gameObject.GetComponent<EnemySkill>().skills.Count == 1)
+            if (gameObject.name != "Boss")
             {
-                for(int j = 0; j < GameManager.instance.SkillList.Count; j++)
+                for (int j = 0; j < GameManager.instance.SkillList.Count; j++)
                 {
                     var skill = GameManager.instance.SkillList[j];
-                    if (skill.skill == gameObject.GetComponent<EnemySkill>().skills[0].skill)
+                    if (skill.skill == enemySkill)
                     {
                         GameManager.instance.SetIncreaseSkill = j;
                     }

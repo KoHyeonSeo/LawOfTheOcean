@@ -53,7 +53,7 @@ public class PlayerInput : MonoBehaviour
         YAxisDir = Input.GetButtonDown(YAxis);
         XMouseOut = Input.GetAxis(XMouseName);
         YMouseOut = Input.GetAxis(YMouseName);
-        MousePosition = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        MousePosition = Input.mousePosition;
         EscButton = Input.GetButtonDown(CancelName);
         if (!GameManager.instance.IsStopAttack)
         {
