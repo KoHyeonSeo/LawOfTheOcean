@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 2266344780495129413}
   - component: {fileID: 2266344780495129412}
   m_Layer: 0
-  m_Name: CrossHair_UI
+  m_Name: UI_CrossHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

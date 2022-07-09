@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 7455101522062879912}
   - component: {fileID: 7455101522062879919}
   m_Layer: 0
-  m_Name: CopySkill_UI
+  m_Name: UI_CopySkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
