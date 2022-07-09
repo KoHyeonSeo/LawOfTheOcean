@@ -32,6 +32,8 @@ public class JellyFishBullet : MonoBehaviour
             cdir = Camera.main.ScreenToWorldPoint(mousepos);
             dir = cdir - transform.position;
             dir.Normalize();
+            Quaternion prot = Quaternion.LookRotation(dir.normalized);
+            transform.rotation = prot;
         }
         else
         {
@@ -47,6 +49,7 @@ public class JellyFishBullet : MonoBehaviour
     bool enemyStop = false;
     JellyFish jellyFish;
     float playerCurrentTime;
+    float enemyCurrentTime;
     [SerializeField] private float stopTime = 3;
     // Update is called once per frame
     void Update()
@@ -57,21 +60,30 @@ public class JellyFishBullet : MonoBehaviour
             if (playerCurrentTime > stopTime)
             {
                 GameManager.instance.IsStopAttack = false;
-                jellyFish.stopSkill = false;
+                
                
                 playerCurrentTime = 0;
                 playerStop = false;
+            }
+        }
+        if (enemyStop == true)
+        {
+            enemyCurrentTime += Time.deltaTime;
+            if (enemyCurrentTime > stopTime)
+            {
+                jellyFish.stopSkill = false;
+                enemyCurrentTime = 0;
             }
         }
         transform.position += dir * speed * Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
     {
-        jellyFish = user.GetComponent<JellyFish>();
         
         //부딪힌 것이 스킬 사용자가 아니고 생명체(Entity)라면
         if (other.gameObject != user && other.gameObject.layer == 7)
         {
+        jellyFish = user.GetComponent<JellyFish>();
             //Player라면 데미지 깎음
             //발사를 일정시간동안 못함
             if (other.gameObject.CompareTag("Player"))
@@ -83,6 +95,7 @@ public class JellyFishBullet : MonoBehaviour
             //Enemy라면 데미지 깎음
             else
             {
+                jellyFish = other.GetComponent<JellyFish>();
                 print("맞음");
                 enemyStop = true;
                 jellyFish.stopSkill = true;
