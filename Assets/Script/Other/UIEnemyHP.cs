@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIEnemyHP : MonoBehaviour
 {
     [SerializeField] GameObject sliderHP;
+    [SerializeField] GameObject textSilence;
     float hp;
     public float maxHP;
     GameObject enemy;
@@ -16,6 +18,7 @@ public class UIEnemyHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        textSilence.SetActive(false);
         enemy = UIManager.instance.CurrentEnemy;
         if (enemy == null || enemy.name != gameObject.transform.parent.name)
         {
@@ -40,9 +43,26 @@ public class UIEnemyHP : MonoBehaviour
         if (enemy == null || enemy.name != gameObject.transform.parent.name)
         {
             sliderHP.SetActive(false);
+            textSilence.SetActive(false);
         }
         else
         {
+            if (enemy.GetComponent<NameTag>().Name == "JellyFish")
+            {
+                if (enemy.GetComponent<JellyFish>().stopSkill)
+                {
+                    textSilence.SetActive(true);
+                }
+                else
+                {
+                    textSilence.SetActive(false);
+                }
+            }
+            else
+            {
+                textSilence.SetActive(false);
+            }
+
             if (start)
             {
                 enemyHP = enemy.GetComponent<EnemyHealth>();
@@ -50,6 +70,7 @@ public class UIEnemyHP : MonoBehaviour
                 sliderHP.GetComponent<Slider>().maxValue = maxHP;
                 start = false;
             }
+
             enemyHP = enemy.GetComponent<EnemyHealth>();
             hp = enemyHP.Health;
             sliderHP.GetComponent<Slider>().value = hp;
