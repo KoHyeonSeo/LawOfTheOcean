@@ -64,6 +64,8 @@ public class JellyFishBullet : MonoBehaviour
                
                 playerCurrentTime = 0;
                 playerStop = false;
+                //총알 삭제
+                Destroy(gameObject);
             }
         }
         if (enemyStop == true)
@@ -73,6 +75,8 @@ public class JellyFishBullet : MonoBehaviour
             {
                 jellyFish.stopSkill = false;
                 enemyCurrentTime = 0;
+                //총알 삭제
+                Destroy(gameObject);
             }
         }
         transform.position += dir * speed * Time.deltaTime;
@@ -103,7 +107,6 @@ public class JellyFishBullet : MonoBehaviour
                 other.gameObject.GetComponent<EnemyHealth>().Damage(damage);
                
             }
-            //총알 삭제         
         }
     }
 
