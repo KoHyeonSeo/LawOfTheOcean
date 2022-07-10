@@ -9,23 +9,26 @@ public class UIEnemyHP : MonoBehaviour
     float hp;
     public float maxHP;
     GameObject enemy;
-    public float HP
-    {
-        get
-        { return HP; }
-        set
-        {
-            hp = value;
-            sliderHP.value = value;
-        }
-    }
-       
+    EnemyHealth enemyHP;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-      
-        
+        enemy = UIManager.instance.CurrentEnemy;
+        if (enemy == null)
+        {
+            print("비활성");
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            print("활성");
+            enemyHP = enemy.GetComponent<EnemyHealth>();
+            maxHP = enemyHP.EnemyHealthProp;
+            sliderHP.maxValue = maxHP;
+            gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -33,17 +36,18 @@ public class UIEnemyHP : MonoBehaviour
     {
         if (enemy == null)
         {
-            //gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         else
         {
-        enemy = UIManager.instance.CurrentEnemy;
-        EnemyHealth enemyHP = UIManager.instance.CurrentEnemy.GetComponent<EnemyHealth>();
+            enemy = UIManager.instance.CurrentEnemy;
+            enemyHP = enemy.GetComponent<EnemyHealth>();
+            hp = enemyHP.Health;
+            sliderHP.value = hp;
             gameObject.SetActive(true);
-            float hp = enemyHP.EnemyHealthProp;
-            sliderHP.maxValue = maxHP;
-            maxHP = enemyHP.EnemyHealthProp;
+            print(sliderHP.value);
         }
-        transform.position = new Vector3(0, 1, 0);
+        print(enemy);
     }
+    
 }

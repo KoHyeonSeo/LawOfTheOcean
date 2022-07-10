@@ -9,30 +9,38 @@ public class UIPlayerHP : MonoBehaviour
     float hp;
     public float maxHP;
     GameObject player;
-    public float HP
-    {
-        get 
-        { return HP; }
-        set
-        {
-            hp = value;
-            sliderHP.value = value;
-        }
-    }
+    PlayerHealth playerHP;
+    //public float HP
+    //{
+    //    get 
+    //    { return hp; }
+    //    set
+    //    {
+    //        hp = value;
+    //        sliderHP.value = value;
+    //    }
+    //}
 
-    public void AddDamage()
-    {
-        HP = HP - 1;
-    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = UIManager.instance.PlayerObject;
+        playerHP = player.GetComponent<PlayerHealth>();
+        maxHP = playerHP.PlayerHealthProp;
+        sliderHP.maxValue = maxHP;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = UIManager.instance.PlayerObject;
+        playerHP = player.GetComponent<PlayerHealth>();
+        //maxHP = playerHP.PlayerHealthProp;
+
+        hp = playerHP.Health;
+        sliderHP.value = hp;
         
     }
 }
