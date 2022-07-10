@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    private GameObject player;
     public static UIManager instance;
     private UIManager()
     {
@@ -11,6 +12,11 @@ public class UIManager : MonoBehaviour
     }
     public Stack<GameObject> UIObject;
     private GameObject enemy;
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+        PlayerObject = player;
+    }
     private void Update()
     {
         //if (enemy)
@@ -22,5 +28,6 @@ public class UIManager : MonoBehaviour
     }
 
     public GameObject CurrentEnemy { get { return enemy; } set { enemy = value; } }
+    public GameObject PlayerObject { get; set; }
     public bool IsOrbMoving { get; set; }
 }
