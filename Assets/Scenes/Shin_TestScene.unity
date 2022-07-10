@@ -310,6 +310,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131817441}
   m_CullTransparentMesh: 1
+--- !u!1 &241238218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2239726731615074361, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
+  m_PrefabInstance: {fileID: 2239726731769966392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &241238223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241238218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777d2e5fa3339cd47b7f95388b8807f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderHP: {fileID: 1752454483}
+  maxHP: 0
 --- !u!1001 &300701355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1348,6 +1367,11 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1752454483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2239726732355401187, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
+  m_PrefabInstance: {fileID: 2239726731769966392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1798067262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +1859,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2239726732355401189, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239726732355401190, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6701041350353210578, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1883,7 +1915,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: JellyFish
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2239726732355401190, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
 --- !u!114 &8461366204225048736
 MonoBehaviour:
@@ -1897,7 +1930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76b570283b43ab4d84643f08381b471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: JellyFish
+  name: Jelly Fish
 --- !u!1 &8461366204225048737
 GameObject:
   m_ObjectHideFlags: 0

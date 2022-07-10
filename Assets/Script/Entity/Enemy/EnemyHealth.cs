@@ -60,11 +60,4 @@ public class EnemyHealth : EntityHealth
         Destroy(gameObject);
     }
 
-    public float EnemyHealthProp
-    {
-        get
-        {
-            return enemyHealth;
-        }
-    }
 }

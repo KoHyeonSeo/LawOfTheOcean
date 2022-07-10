@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class UIEnemyHP : MonoBehaviour
 {
-    [SerializeField] Slider sliderHP;
+    [SerializeField] GameObject sliderHP;
     float hp;
     public float maxHP;
     GameObject enemy;
     EnemyHealth enemyHP;
+    bool start = true;
     
 
     // Start is called before the first frame update
@@ -19,33 +20,41 @@ public class UIEnemyHP : MonoBehaviour
         if (enemy == null)
         {
             print("비활성");
-            gameObject.SetActive(false);
+            sliderHP.SetActive(false);
         }
         else
         {
+            start = false;
             print("활성");
             enemyHP = enemy.GetComponent<EnemyHealth>();
-            maxHP = enemyHP.EnemyHealthProp;
-            sliderHP.maxValue = maxHP;
-            gameObject.SetActive(true);
+            maxHP = enemyHP.Health;
+            sliderHP.GetComponent<Slider>().maxValue = maxHP;
+            sliderHP.SetActive(true);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        enemy = UIManager.instance.CurrentEnemy;
         if (enemy == null)
         {
-            gameObject.SetActive(false);
+            sliderHP.SetActive(false);
         }
         else
         {
-            enemy = UIManager.instance.CurrentEnemy;
+            if (start)
+            {
+                enemyHP = enemy.GetComponent<EnemyHealth>();
+                maxHP = enemyHP.Health;
+                sliderHP.GetComponent<Slider>().maxValue = maxHP;
+                start = false;
+            }
             enemyHP = enemy.GetComponent<EnemyHealth>();
             hp = enemyHP.Health;
-            sliderHP.value = hp;
-            gameObject.SetActive(true);
-            print(sliderHP.value);
+            sliderHP.GetComponent<Slider>().value = hp;
+            sliderHP.SetActive(true);
+            print(sliderHP.GetComponent<Slider>().value);
         }
         print(enemy);
     }

@@ -27,7 +27,7 @@ public class UIPlayerHP : MonoBehaviour
     {
         player = UIManager.instance.PlayerObject;
         playerHP = player.GetComponent<PlayerHealth>();
-        maxHP = playerHP.PlayerHealthProp;
+        maxHP = playerHP.MaxHealth;
         sliderHP.maxValue = maxHP;
 
     }
