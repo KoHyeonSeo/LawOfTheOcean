@@ -11,21 +11,21 @@ public class UIEnemyHP : MonoBehaviour
     GameObject enemy;
     EnemyHealth enemyHP;
     bool start = true;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         enemy = UIManager.instance.CurrentEnemy;
-        if (enemy == null)
+        if (enemy == null || enemy.name != gameObject.transform.parent.name)
         {
-            print("비활성");
+            //print("비활성");
             sliderHP.SetActive(false);
         }
         else
         {
             start = false;
-            print("활성");
+            //print("활성");
             enemyHP = enemy.GetComponent<EnemyHealth>();
             maxHP = enemyHP.Health;
             sliderHP.GetComponent<Slider>().maxValue = maxHP;
@@ -37,7 +37,7 @@ public class UIEnemyHP : MonoBehaviour
     void Update()
     {
         enemy = UIManager.instance.CurrentEnemy;
-        if (enemy == null)
+        if (enemy == null || enemy.name != gameObject.transform.parent.name)
         {
             sliderHP.SetActive(false);
         }
@@ -56,7 +56,7 @@ public class UIEnemyHP : MonoBehaviour
             sliderHP.SetActive(true);
             print(sliderHP.GetComponent<Slider>().value);
         }
-        print(enemy);
+        //print(enemy);
     }
     
 }
