@@ -26,8 +26,4 @@ public class PlayerHealth : EntityHealth
         Destroy(gameObject);
     }
 
-    public float PlayerHealthProp
-    {
-        get { return playerHealth; }
-    }
 }
