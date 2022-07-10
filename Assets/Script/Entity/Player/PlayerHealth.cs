@@ -23,7 +23,6 @@ public class PlayerHealth : EntityHealth
     protected override void Die()
     {
         base.Die();
-        Destroy(gameObject);
     }
 
 }
