@@ -54,13 +54,35 @@ public class JellyFish : MonoBehaviour
         }
     }
     public float detect = 15;
+    bool move = true;
+    float sm;
+    float jellySpeed = 2.2f;
+    float moveCreateTime = 1f;
     private void UpdateIdle()
     {
         Vector3 dir = Vector3.forward;
         dir.Normalize();
-
-        transform.position += dir * speed * Time.deltaTime;
-
+        sm += speed * Time.deltaTime;
+        if (move == true)
+        {
+            transform.position += dir * speed * Time.deltaTime;
+            speed -= Time.deltaTime * jellySpeed;
+            if (sm > 2)
+            {
+                move = false;
+            }
+        }
+        if (move == false)
+        {
+            speed = 3;
+            sm = 0;
+            currentTime += Time.deltaTime;
+            if (currentTime > moveCreateTime)
+            {
+                currentTime = 0;
+                move = true;
+            }
+        }
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
         // 만약 플레이어와의 거리가 감지거리보다 작으면
@@ -100,10 +122,6 @@ public class JellyFish : MonoBehaviour
             state = State.Move;
         }
     }
-    float moveCreateTime = 1f;
-    bool move = true;
-    float sm;
-    float jellySpeed = 2.2f;
     private void UpdateMove()
     {
         // 1. 플레이어게 향하는 방향으로
