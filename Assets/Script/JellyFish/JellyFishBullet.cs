@@ -81,7 +81,7 @@ public class JellyFishBullet : MonoBehaviour
     {
         
         //부딪힌 것이 스킬 사용자가 아니고 생명체(Entity)라면
-        if (other.gameObject != user && other.gameObject.layer == 7)
+        if (other.gameObject.tag != user.tag && other.gameObject.layer == 7)
         {
         jellyFish = user.GetComponent<JellyFish>();
             //Player라면 데미지 깎음
