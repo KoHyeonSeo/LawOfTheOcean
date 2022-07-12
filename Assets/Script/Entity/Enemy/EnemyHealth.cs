@@ -59,7 +59,7 @@ public class EnemyHealth : EntityHealth
     }
     public void EnemyDestroy()
     {
-        Destroy(gameObject, 4);
+        Destroy(gameObject, 6);
     }
 
 }

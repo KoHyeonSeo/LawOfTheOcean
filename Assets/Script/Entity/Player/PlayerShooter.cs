@@ -48,7 +48,6 @@ public class PlayerShooter : MonoBehaviour
         //마우스 왼클릭이 입력된다면
         if (playerInput.IsShootingButton)
         {
-            Debug.Log("발사");
             //총알을 생성한다.
             bullet.transform.position = transform.position;
             Instantiate(bullet);

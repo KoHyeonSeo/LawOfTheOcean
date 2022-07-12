@@ -15,6 +15,7 @@ public class BlowFishSkill : Skill
         GameObject bullet = Instantiate(bulletFactory);
         bullet.GetComponent<ThornBullet>().BulletUser = User;
         bullet.GetComponent<ThornBullet>().BulletDamage = Power;
+        bullet.GetComponent<ThornBullet>().BulletDir = Vector3.forward;
         bullet.transform.position = User.transform.position;
     }
 }
