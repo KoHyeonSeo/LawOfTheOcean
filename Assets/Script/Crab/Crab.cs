@@ -14,6 +14,9 @@ public class Crab : MonoBehaviour
     // 다시 제자리로 돌아간다.
 
     // FSM으로 상태를 제어하고싶다.
+
+    [SerializeField] private Skill crab;
+
     public enum State
     {
         Idle,
@@ -72,10 +75,10 @@ public class Crab : MonoBehaviour
          //  Move상태로 전이한다.
     }
     float speed = 3;
-    float attackDistance = 1;
+    float attackDistance = 3;
 
     float currentTime;
-    [SerializeField] private float createTime = 1;
+    [SerializeField] private float createTime = 3;
 
     bool CheckPlayerAngle(Vector3 position)
     {
@@ -103,8 +106,9 @@ public class Crab : MonoBehaviour
             // 2. 일정시간이 되면
         if (currentTime > createTime)
         {
+            crab.User = gameObject;
             // 3. 공격을 한다.
-
+            crab.UseSkill();
             // 4. 공격을 한뒤에는 시간을 초기화한다.
             currentTime = 0;
         }
