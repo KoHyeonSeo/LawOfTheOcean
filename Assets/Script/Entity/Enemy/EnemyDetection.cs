@@ -18,7 +18,6 @@ public class EnemyDetection : MonoBehaviour
             {
                 if (cols[i].CompareTag("Player"))
                 {
-                    Debug.Log("Find");
                     Target = cols[i].gameObject;
                 }
                 else

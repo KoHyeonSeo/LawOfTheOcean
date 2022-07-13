@@ -7,11 +7,6 @@ public class BlowFishSkill : Skill
 {
     [SerializeField] private GameObject bulletFactory;
     [SerializeField] private int bulletCount = 10;
-    private Vector3 dir1;
-    private Vector3 dir2;
-    private Vector3 dir3;
-    private float deltaAngle;
-    private bool once = true;
     //To do 
     //1. 다양한 각도에서 발사하기
 

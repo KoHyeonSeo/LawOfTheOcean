@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlowFish : MonoBehaviour
+public class SwordFish : MonoBehaviour
 {
+
     [SerializeField] private AnimationClip[] animations;
     [SerializeField] private float speed = 8f;
     [SerializeField] private float turnSpeed = 5f;
-    [SerializeField] private BlowFishSkill skill;
+    [SerializeField] private SwordFishSkill skill;
     [SerializeField] private float attackRange = 8f;
 
     private Animation animation;
@@ -19,7 +20,6 @@ public class BlowFish : MonoBehaviour
     private float curTime = 0;
     private float hurtAnimTime = 1.12f;
     private float hurtCurTime = 0;
-
     enum State
     {
         MOVE,
@@ -28,11 +28,6 @@ public class BlowFish : MonoBehaviour
         HURT,
         DIE
     }
-    
-    //To do 
-    //애니메이션 넣기
-
-
     private void Start()
     {
         skill.User = gameObject;
@@ -62,7 +57,7 @@ public class BlowFish : MonoBehaviour
         {
             Hurt();
         }
-        if(curState == State.DIE)
+        if (curState == State.DIE)
         {
             Die();
         }
@@ -80,7 +75,7 @@ public class BlowFish : MonoBehaviour
         }
         else
         {
-            Debug.Log("Move 상태");
+            //Debug.Log("Move 상태");
             dir = Vector3.forward;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, turnSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDir);
@@ -97,7 +92,7 @@ public class BlowFish : MonoBehaviour
         //부풀리는 애니메이션 실행
         animation.clip = animations[2];
         animation.Play();
-        Debug.Log("Attack 상태");
+        //Debug.Log("Attack 상태");
         curTime += Time.deltaTime;
         if (curTime >= skill.CoolTime)
         {
@@ -121,7 +116,7 @@ public class BlowFish : MonoBehaviour
         }
         else
         {
-            Debug.Log("Follow 상태");
+            //Debug.Log("Follow 상태");
             dir = detection.Target.transform.position - transform.position;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, turnSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDir);
@@ -141,7 +136,7 @@ public class BlowFish : MonoBehaviour
     }
     private void Hurt()
     {
-        Debug.Log("Hurt 상태");
+        //Debug.Log("Hurt 상태");
         //다치는 애니메이션 실행
         animation.clip = animations[1];
         animation.Play();
