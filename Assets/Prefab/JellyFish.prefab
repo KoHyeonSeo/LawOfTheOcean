@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2239726731615074365}
   - component: {fileID: 2239726731615074364}
   - component: {fileID: 2239726731615074363}
+  - component: {fileID: 3335471845302318321}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -101,6 +102,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3335471845302318321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239726731615074361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777d2e5fa3339cd47b7f95388b8807f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderHP: {fileID: 2239726732355401187}
+  textSilence: {fileID: 0}
+  maxHP: 0
 --- !u!1 &2239726732057032240
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +316,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2239726732355401188}
   - component: {fileID: 2239726732355401189}
-  - component: {fileID: 2239726732355401190}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -382,20 +397,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2239726732355401190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2239726732355401187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777d2e5fa3339cd47b7f95388b8807f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderHP: {fileID: 2239726732355401189}
-  maxHP: 0
 --- !u!1 &2239726733233121389
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +565,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6701041350353210586}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -694,7 +695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
       propertyPath: m_Layer
@@ -814,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
       propertyPath: m_LocalPosition.z

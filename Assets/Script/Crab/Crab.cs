@@ -14,6 +14,9 @@ public class Crab : MonoBehaviour
     // 다시 제자리로 돌아간다.
 
     // FSM으로 상태를 제어하고싶다.
+
+    [SerializeField] private Skill crab;
+
     public enum State
     {
         Idle,
@@ -72,10 +75,11 @@ public class Crab : MonoBehaviour
          //  Move상태로 전이한다.
     }
     float speed = 3;
-    float attackDistance = 1;
+    float attackDistance = 5;
 
     float currentTime;
     [SerializeField] private float createTime = 1;
+    [SerializeField] private float attackTime = 1;
 
     bool CheckPlayerAngle(Vector3 position)
     {
@@ -103,8 +107,9 @@ public class Crab : MonoBehaviour
             // 2. 일정시간이 되면
         if (currentTime > createTime)
         {
+            crab.User = gameObject;
             // 3. 공격을 한다.
-
+            crab.UseSkill();
             // 4. 공격을 한뒤에는 시간을 초기화한다.
             currentTime = 0;
         }
@@ -112,23 +117,27 @@ public class Crab : MonoBehaviour
         // 6. 만약 공격범위를 벗어나면
         if(distance > attackDistance)
             {
+            
                 state = State.Move;
+            
+
         // 7. Move상태로 전이한다.
             }
     }
-    bool sta = true;
+    bool jump = true;
    
+ 
     IEnumerator IeMove()
     {
 
         // start coroutine하는 시점
-        if (sta) 
+        if (jump) 
         {
         // 1. 플레이어의 위치까지 올라오고싶다
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, target.transform.position.y, transform.position.z), 0.009f);
         // 2. 코루틴에서 한번만 실행하고 
             yield return new WaitForSeconds(1f);
-            sta = false;
+            jump = false;
         }
         // 3. 그 다음은 영원히 쫓아오는걸로
         Vector3 dir = target.transform.position - transform.position;
@@ -136,6 +145,7 @@ public class Crab : MonoBehaviour
         transform.position += dir * speed * Time.deltaTime;
      
         float distance = Vector3.Distance(target.transform.position, transform.position);
+        //거리가 공격거리보다 작으면
         if (attackDistance > distance)
         {
          //Attack 상태로 바뀐다.
@@ -163,7 +173,7 @@ public class Crab : MonoBehaviour
         {
             transform.position = start;
             state = State.Idle;
-            sta = true;
+            jump = true;
 
         }
         float distance = Vector3.Distance(target.transform.position, transform.position);

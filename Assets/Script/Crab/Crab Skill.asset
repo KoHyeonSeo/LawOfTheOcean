@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa595af12022187418aec9d6301727e7, type: 3}
+  m_Name: Crab Skill
+  m_EditorClassIdentifier: 
+  power: 10
+  cooltime: 0
+  skillFactory: {fileID: 7591613564772684508, guid: 0dd843d9036fafb45b12581a4c174d10, type: 3}
