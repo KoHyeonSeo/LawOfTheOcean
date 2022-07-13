@@ -7,6 +7,7 @@ public class StolenSkill : MonoBehaviour
     [SerializeField] private GameObject orb;
     private GameObject UsedOrb;
     private bool first = true;
+    private bool end = true;
     private void Update()
     {
         if (GetComponent<EnemyHealth>().DeadCheck && first)
@@ -30,13 +31,14 @@ public class StolenSkill : MonoBehaviour
 
             }
         }
-        if (!first && !GameManager.instance.IsSkillMaxCountError)
+        if (!first && !GameManager.instance.IsSkillMaxCountError && end)
         {
             if (UsedOrb.GetComponent<SkillOrb>().IsTouch)
             {
                 Destroy(UsedOrb);
                 GetComponent<EnemyHealth>().EnemyDestroy();
                 GameManager.instance.IsStealUse = false;
+                end = false;
             }
         }
     }

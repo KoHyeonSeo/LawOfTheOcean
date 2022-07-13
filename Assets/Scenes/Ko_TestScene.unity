@@ -2789,6 +2789,8 @@ MonoBehaviour:
     skillCnt: 0
   - skill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
     skillCnt: 0
+  - skill: {fileID: 11400000, guid: d333f403868ae5d4995ebc9e5bb896eb, type: 2}
+    skillCnt: 0
 --- !u!4 &1696379456
 Transform:
   m_ObjectHideFlags: 0
