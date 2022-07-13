@@ -8,6 +8,7 @@ public class EnemyHealth : EntityHealth
     [SerializeField] private Skill enemySkill;
     [SerializeField] private float enemyHealth = 100;
     private StolenSkill stolenSkill;
+    public bool isHurt = false;
     private void Awake()
     {
         this.DeadCheck = false;
@@ -17,6 +18,7 @@ public class EnemyHealth : EntityHealth
     }
     public override void Damage(float power)
     {
+        isHurt = true;
         Health -= power;
         if (currentHealth <= 0f && !DeadCheck)
         {
@@ -57,7 +59,7 @@ public class EnemyHealth : EntityHealth
     }
     public void EnemyDestroy()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 6);
     }
 
 }
