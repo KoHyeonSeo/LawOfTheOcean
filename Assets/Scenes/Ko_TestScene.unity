@@ -1252,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TetraodontidaeColor1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011230786650, guid: 0baa7a9034e7d1649a17b99053cccf98, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012516442146, guid: 0baa7a9034e7d1649a17b99053cccf98, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3351,6 +3355,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
+--- !u!1001 &739463861038862705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6668516752803091588, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_Name
+      value: SwordFish
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 364.1357
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 348
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668516752803383460, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
 --- !u!1001 &2266344778430960130
 PrefabInstance:
   m_ObjectHideFlags: 0
