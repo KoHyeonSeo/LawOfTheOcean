@@ -7,10 +7,9 @@ public class ThornBullet : MonoBehaviour
     [SerializeField] private float speed = 10;
     public GameObject BulletUser { get; set; }
     public float BulletDamage { get; set; }
-    public Vector3 BulletDir { get; set; }
     private void Update()
     {
-        transform.position += BulletDir * speed * Time.deltaTime;
+        transform.position += transform.up * speed * Time.deltaTime;
     }
     private void OnTriggerEnter(Collider other)
     {
