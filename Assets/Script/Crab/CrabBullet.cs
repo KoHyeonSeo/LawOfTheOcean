@@ -14,7 +14,7 @@ public class CrabBullet : MonoBehaviour
     public GameObject User { get { return user; } set { user = value; } }
 
     //데미지 즉, Power가 어느 정도인지 알 수 있는 프로퍼티
-    [SerializeField] private float skillMaxDistance = 950;
+    [SerializeField] private float skillMaxDistance = 50;
     public Transform target;
     private PlayerInput playerInput;
     Vector3 dir;

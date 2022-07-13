@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   heal: 10
-  skillMaxDistance: 950
+  skillMaxDistance: 50
   target: {fileID: 0}
 --- !u!54 &2731469259131730599
 Rigidbody:
