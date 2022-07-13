@@ -43,6 +43,7 @@ public class JellyFishBullet : MonoBehaviour
             dir.Normalize();
             Quaternion rot = Quaternion.LookRotation(dir.normalized);
             transform.rotation = rot;
+            print(user);
         }
     }  
     bool playerStop = false;
