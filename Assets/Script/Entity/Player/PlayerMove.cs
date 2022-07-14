@@ -7,6 +7,14 @@ public class PlayerMove : MonoBehaviour
     private PlayerInput playerInput;
     
     [SerializeField] private float speed = 2;
+    public float Speed
+    {
+        get { return speed; }
+        set
+        {
+            speed = value;
+        }
+    }
     
 
     // Start is called before the first frame update

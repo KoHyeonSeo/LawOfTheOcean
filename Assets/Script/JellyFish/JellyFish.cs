@@ -5,6 +5,8 @@ using UnityEngine;
 public class JellyFish : MonoBehaviour
 {
     [SerializeField] private Skill jellyFish;
+    [SerializeField] private float createTime = 2;
+    [SerializeField] private AnimationClip[] animations;
     /// <summary>
     /// 해파리
     /// 플레이어가 해파리의 감지범위에 들어오면
@@ -25,10 +27,17 @@ public class JellyFish : MonoBehaviour
         Return
     }
 
-    public State state;
-
     GameObject target;
-
+    public State state;
+    public float detect = 15;
+    bool move = true;
+    float sm;
+    float jellySpeed = 2.2f;
+    float moveCreateTime = 1f;
+    public float speed = 3;
+    public float attackDistance = 5;
+    public bool stopSkill = false;
+    float currentTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,11 +62,7 @@ public class JellyFish : MonoBehaviour
             UpdateAttack();
         }
     }
-    public float detect = 15;
-    bool move = true;
-    float sm;
-    float jellySpeed = 2.2f;
-    float moveCreateTime = 1f;
+    
     private void UpdateIdle()
     {
         Vector3 dir = Vector3.forward;
@@ -88,16 +93,12 @@ public class JellyFish : MonoBehaviour
         // 만약 플레이어와의 거리가 감지거리보다 작으면
         if (detect > distance)
         {
+        // Move상태로 전이한다.
             state = State.Move;
         }
-        // Move상태로 전이한다.
     }
 
-    public float speed = 3;
-    public float attackDistance = 5;
-    public bool stopSkill = false;
-    float currentTime;
-    [SerializeField] private float createTime = 2;
+   
     private void UpdateAttack()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);

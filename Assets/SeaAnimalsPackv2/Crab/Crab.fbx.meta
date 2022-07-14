@@ -1,184 +1,483 @@
 fileFormatVersion: 2
 guid: 14cb46a4487b65342b68b15b4664d7fe
-timeCreated: 1486321981
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: Body
-    100002: ClawL1
-    100004: ClawL2
-    100006: ClawL3
-    100008: ClawL3_end
-    100010: ClawL4
-    100012: ClawL4_end
-    100014: ClawR1
-    100016: ClawR2
-    100018: ClawR3
-    100020: ClawR3_end
-    100022: ClawR4
-    100024: ClawR4_end
-    100026: //RootNode
-    100028: Crab
-    100030: CrabLOD
-    100032: CrabSkeleton
-    100034: leg r 10
-    100036: leg r 10_end
-    100038: leg r 12
-    100040: leg r 14
-    100042: leg r 17
-    100044: leg r 19
-    100046: leg r 2
-    100048: leg r 3
-    100050: leg r 4
-    100052: leg r 5
-    100054: leg r 5_end
-    100056: leg r 7
-    100058: leg r 8
-    100060: leg r 9
-    100062: leg r13
-    100064: leg r15
-    100066: leg r15_end
-    100068: leg r18
-    100070: leg r20
-    100072: leg r20_end
-    100074: legL1
-    100076: legL10
-    100078: legL11
-    100080: legL11_end
-    100082: legL12
-    100084: legL13
-    100086: legL14
-    100088: legL15
-    100090: legL17
-    100092: legL17_end
-    100094: legL18
-    100096: legL19
-    100098: legL2
-    100100: legL20
-    100102: legL21
-    100104: legL22
-    100106: legL22_end
-    100108: legL3
-    100110: legL4
-    100112: legL5
-    100114: legL5_end
-    100116: legL6
-    100118: legL8
-    100120: legL9
-    100122: legR1
-    100124: legR11
-    100126: legR16
-    100128: legR6
-    400000: Body
-    400002: ClawL1
-    400004: ClawL2
-    400006: ClawL3
-    400008: ClawL3_end
-    400010: ClawL4
-    400012: ClawL4_end
-    400014: ClawR1
-    400016: ClawR2
-    400018: ClawR3
-    400020: ClawR3_end
-    400022: ClawR4
-    400024: ClawR4_end
-    400026: //RootNode
-    400028: Crab
-    400030: CrabLOD
-    400032: CrabSkeleton
-    400034: leg r 10
-    400036: leg r 10_end
-    400038: leg r 12
-    400040: leg r 14
-    400042: leg r 17
-    400044: leg r 19
-    400046: leg r 2
-    400048: leg r 3
-    400050: leg r 4
-    400052: leg r 5
-    400054: leg r 5_end
-    400056: leg r 7
-    400058: leg r 8
-    400060: leg r 9
-    400062: leg r13
-    400064: leg r15
-    400066: leg r15_end
-    400068: leg r18
-    400070: leg r20
-    400072: leg r20_end
-    400074: legL1
-    400076: legL10
-    400078: legL11
-    400080: legL11_end
-    400082: legL12
-    400084: legL13
-    400086: legL14
-    400088: legL15
-    400090: legL17
-    400092: legL17_end
-    400094: legL18
-    400096: legL19
-    400098: legL2
-    400100: legL20
-    400102: legL21
-    400104: legL22
-    400106: legL22_end
-    400108: legL3
-    400110: legL4
-    400112: legL5
-    400114: legL5_end
-    400116: legL6
-    400118: legL8
-    400120: legL9
-    400122: legR1
-    400124: legR11
-    400126: legR16
-    400128: legR6
-    4300000: CrabLOD
-    4300002: Crab
-    7400000: attack
-    7400002: death
-    7400004: hurt
-    7400006: idle
-    7400008: CrabSkeleton|pose
-    7400010: walk left
-    7400012: walk right
-    9500000: //RootNode
-    11100000: //RootNode
-    13700000: Crab
-    13700002: CrabLOD
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Body
+  - first:
+      1: 100002
+    second: ClawL1
+  - first:
+      1: 100004
+    second: ClawL2
+  - first:
+      1: 100006
+    second: ClawL3
+  - first:
+      1: 100008
+    second: ClawL3_end
+  - first:
+      1: 100010
+    second: ClawL4
+  - first:
+      1: 100012
+    second: ClawL4_end
+  - first:
+      1: 100014
+    second: ClawR1
+  - first:
+      1: 100016
+    second: ClawR2
+  - first:
+      1: 100018
+    second: ClawR3
+  - first:
+      1: 100020
+    second: ClawR3_end
+  - first:
+      1: 100022
+    second: ClawR4
+  - first:
+      1: 100024
+    second: ClawR4_end
+  - first:
+      1: 100026
+    second: //RootNode
+  - first:
+      1: 100028
+    second: Crab
+  - first:
+      1: 100030
+    second: CrabLOD
+  - first:
+      1: 100032
+    second: CrabSkeleton
+  - first:
+      1: 100034
+    second: leg r 10
+  - first:
+      1: 100036
+    second: leg r 10_end
+  - first:
+      1: 100038
+    second: leg r 12
+  - first:
+      1: 100040
+    second: leg r 14
+  - first:
+      1: 100042
+    second: leg r 17
+  - first:
+      1: 100044
+    second: leg r 19
+  - first:
+      1: 100046
+    second: leg r 2
+  - first:
+      1: 100048
+    second: leg r 3
+  - first:
+      1: 100050
+    second: leg r 4
+  - first:
+      1: 100052
+    second: leg r 5
+  - first:
+      1: 100054
+    second: leg r 5_end
+  - first:
+      1: 100056
+    second: leg r 7
+  - first:
+      1: 100058
+    second: leg r 8
+  - first:
+      1: 100060
+    second: leg r 9
+  - first:
+      1: 100062
+    second: leg r13
+  - first:
+      1: 100064
+    second: leg r15
+  - first:
+      1: 100066
+    second: leg r15_end
+  - first:
+      1: 100068
+    second: leg r18
+  - first:
+      1: 100070
+    second: leg r20
+  - first:
+      1: 100072
+    second: leg r20_end
+  - first:
+      1: 100074
+    second: legL1
+  - first:
+      1: 100076
+    second: legL10
+  - first:
+      1: 100078
+    second: legL11
+  - first:
+      1: 100080
+    second: legL11_end
+  - first:
+      1: 100082
+    second: legL12
+  - first:
+      1: 100084
+    second: legL13
+  - first:
+      1: 100086
+    second: legL14
+  - first:
+      1: 100088
+    second: legL15
+  - first:
+      1: 100090
+    second: legL17
+  - first:
+      1: 100092
+    second: legL17_end
+  - first:
+      1: 100094
+    second: legL18
+  - first:
+      1: 100096
+    second: legL19
+  - first:
+      1: 100098
+    second: legL2
+  - first:
+      1: 100100
+    second: legL20
+  - first:
+      1: 100102
+    second: legL21
+  - first:
+      1: 100104
+    second: legL22
+  - first:
+      1: 100106
+    second: legL22_end
+  - first:
+      1: 100108
+    second: legL3
+  - first:
+      1: 100110
+    second: legL4
+  - first:
+      1: 100112
+    second: legL5
+  - first:
+      1: 100114
+    second: legL5_end
+  - first:
+      1: 100116
+    second: legL6
+  - first:
+      1: 100118
+    second: legL8
+  - first:
+      1: 100120
+    second: legL9
+  - first:
+      1: 100122
+    second: legR1
+  - first:
+      1: 100124
+    second: legR11
+  - first:
+      1: 100126
+    second: legR16
+  - first:
+      1: 100128
+    second: legR6
+  - first:
+      4: 400000
+    second: Body
+  - first:
+      4: 400002
+    second: ClawL1
+  - first:
+      4: 400004
+    second: ClawL2
+  - first:
+      4: 400006
+    second: ClawL3
+  - first:
+      4: 400008
+    second: ClawL3_end
+  - first:
+      4: 400010
+    second: ClawL4
+  - first:
+      4: 400012
+    second: ClawL4_end
+  - first:
+      4: 400014
+    second: ClawR1
+  - first:
+      4: 400016
+    second: ClawR2
+  - first:
+      4: 400018
+    second: ClawR3
+  - first:
+      4: 400020
+    second: ClawR3_end
+  - first:
+      4: 400022
+    second: ClawR4
+  - first:
+      4: 400024
+    second: ClawR4_end
+  - first:
+      4: 400026
+    second: //RootNode
+  - first:
+      4: 400028
+    second: Crab
+  - first:
+      4: 400030
+    second: CrabLOD
+  - first:
+      4: 400032
+    second: CrabSkeleton
+  - first:
+      4: 400034
+    second: leg r 10
+  - first:
+      4: 400036
+    second: leg r 10_end
+  - first:
+      4: 400038
+    second: leg r 12
+  - first:
+      4: 400040
+    second: leg r 14
+  - first:
+      4: 400042
+    second: leg r 17
+  - first:
+      4: 400044
+    second: leg r 19
+  - first:
+      4: 400046
+    second: leg r 2
+  - first:
+      4: 400048
+    second: leg r 3
+  - first:
+      4: 400050
+    second: leg r 4
+  - first:
+      4: 400052
+    second: leg r 5
+  - first:
+      4: 400054
+    second: leg r 5_end
+  - first:
+      4: 400056
+    second: leg r 7
+  - first:
+      4: 400058
+    second: leg r 8
+  - first:
+      4: 400060
+    second: leg r 9
+  - first:
+      4: 400062
+    second: leg r13
+  - first:
+      4: 400064
+    second: leg r15
+  - first:
+      4: 400066
+    second: leg r15_end
+  - first:
+      4: 400068
+    second: leg r18
+  - first:
+      4: 400070
+    second: leg r20
+  - first:
+      4: 400072
+    second: leg r20_end
+  - first:
+      4: 400074
+    second: legL1
+  - first:
+      4: 400076
+    second: legL10
+  - first:
+      4: 400078
+    second: legL11
+  - first:
+      4: 400080
+    second: legL11_end
+  - first:
+      4: 400082
+    second: legL12
+  - first:
+      4: 400084
+    second: legL13
+  - first:
+      4: 400086
+    second: legL14
+  - first:
+      4: 400088
+    second: legL15
+  - first:
+      4: 400090
+    second: legL17
+  - first:
+      4: 400092
+    second: legL17_end
+  - first:
+      4: 400094
+    second: legL18
+  - first:
+      4: 400096
+    second: legL19
+  - first:
+      4: 400098
+    second: legL2
+  - first:
+      4: 400100
+    second: legL20
+  - first:
+      4: 400102
+    second: legL21
+  - first:
+      4: 400104
+    second: legL22
+  - first:
+      4: 400106
+    second: legL22_end
+  - first:
+      4: 400108
+    second: legL3
+  - first:
+      4: 400110
+    second: legL4
+  - first:
+      4: 400112
+    second: legL5
+  - first:
+      4: 400114
+    second: legL5_end
+  - first:
+      4: 400116
+    second: legL6
+  - first:
+      4: 400118
+    second: legL8
+  - first:
+      4: 400120
+    second: legL9
+  - first:
+      4: 400122
+    second: legR1
+  - first:
+      4: 400124
+    second: legR11
+  - first:
+      4: 400126
+    second: legR16
+  - first:
+      4: 400128
+    second: legR6
+  - first:
+      43: 4300000
+    second: CrabLOD
+  - first:
+      43: 4300002
+    second: Crab
+  - first:
+      74: 7400000
+    second: attack
+  - first:
+      74: 7400002
+    second: death
+  - first:
+      74: 7400004
+    second: hurt
+  - first:
+      74: 7400006
+    second: idle
+  - first:
+      74: 7400008
+    second: CrabSkeleton|pose
+  - first:
+      74: 7400010
+    second: walk left
+  - first:
+      74: 7400012
+    second: walk right
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Crab
+  - first:
+      137: 13700002
+    second: CrabLOD
+  - first:
+      74: 5245245415758019036
+    second: CrabSkeleton|idle
+  - first:
+      74: -1043347489339624349
+    second: attack
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: attack
       takeName: CrabSkeleton|attack
+      internalID: 0
       firstFrame: 0
       lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
-      loop: 0
+      loop: 1
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
@@ -330,6 +629,7 @@ ModelImporter:
     - serializedVersion: 16
       name: death
       takeName: CrabSkeleton|death
+      internalID: 0
       firstFrame: 0
       lastFrame: 44
       wrapMode: 0
@@ -488,6 +788,7 @@ ModelImporter:
     - serializedVersion: 16
       name: hurt
       takeName: CrabSkeleton|hurt
+      internalID: 0
       firstFrame: 0
       lastFrame: 19
       wrapMode: 0
@@ -646,6 +947,7 @@ ModelImporter:
     - serializedVersion: 16
       name: idle
       takeName: CrabSkeleton|idle
+      internalID: 0
       firstFrame: 0
       lastFrame: 100
       wrapMode: 2
@@ -804,6 +1106,7 @@ ModelImporter:
     - serializedVersion: 16
       name: walk left
       takeName: CrabSkeleton|walk let
+      internalID: 0
       firstFrame: 0
       lastFrame: 39
       wrapMode: 2
@@ -962,6 +1265,7 @@ ModelImporter:
     - serializedVersion: 16
       name: walk right
       takeName: CrabSkeleton|walk right
+      internalID: 0
       firstFrame: 0
       lastFrame: 39
       wrapMode: 2
@@ -1123,25 +1427,47 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 180
     normalImportMode: 1
     tangentImportMode: 1
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -1151,11 +1477,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 1
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
