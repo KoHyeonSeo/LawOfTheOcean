@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b975239882dfa409defb2c4e6520dc, type: 3}
   m_Name: SwordFishSkill
   m_EditorClassIdentifier: 
-  power: 10
-  cooltime: 2
+  power: 20
+  cooltime: 5
+  useSkillFactory: {fileID: 4916723246801938556, guid: 17d28e9af3881ad40bb905831e85bc99, type: 3}
