@@ -24,7 +24,7 @@ public class SwordFish : MonoBehaviour
     private State curState;
     private State preState;
     private float curTime = 0;
-    private float hurtAnimTime = 1.12f;
+    private float hurtAnimTime = 1.15f;
     private float hurtCurTime = 0;
     private bool isAttacking = false;
     private bool isOnce = false;
@@ -185,7 +185,7 @@ public class SwordFish : MonoBehaviour
         //다치는 애니메이션 실행
         animation.clip = animations[1];
         animation.Play();
-        curState = preState;
+        
         hurtCurTime += Time.deltaTime;
         if (hurtCurTime >= hurtAnimTime)
         {
@@ -201,6 +201,7 @@ public class SwordFish : MonoBehaviour
         animation.Play();
         //죽은 애니메이션 실행
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
