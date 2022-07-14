@@ -19,6 +19,8 @@ public class Crab : MonoBehaviour
     [SerializeField] private float createTime = 1;
     [SerializeField] private float attackTime = 1;
     private new Animation animation;
+    private EnemyHealth health;
+    private State hurtState;
     GameObject target;
     Vector3 start;
     Vector3 dir;
@@ -28,7 +30,9 @@ public class Crab : MonoBehaviour
         Idle,
         Move,
         Attack,
-        Return
+        Return,
+        Hurt,
+        Die
     }
 
     public State state;
@@ -39,12 +43,16 @@ public class Crab : MonoBehaviour
     float currentTime;
     float turnSpeed = 5f;
     bool jump = true;
+    //private float hurtAnimTime = 1.12f;
+    //private float hurtCurTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        hurtState = State.Move;
         state = State.Idle;
         target = GameObject.Find("Player");
+        health = GetComponent<EnemyHealth>();
         animation = GetComponent<Animation>();
         animation.Play();
     }
@@ -56,18 +64,30 @@ public class Crab : MonoBehaviour
         {
             UpdateIdle();
         }
-        else if (state == State.Move)
+        if (state == State.Move)
         {
 
             StartCoroutine("IeMove");
         }
-        else if (state == State.Attack)
+        if (state == State.Attack)
         {
             UpdateAttack();
         }
-        else if (state == State.Return)
+        if (state == State.Return)
         {
             UpdateReturn();
+        }
+        if (state == State.Hurt)
+        {
+            Hurt();
+        }
+        if (state == State.Die)
+        {
+            Die();
+        }
+        if (health.DeadCheck)
+        {
+            state = State.Die;
         }
     }
 
@@ -85,6 +105,11 @@ public class Crab : MonoBehaviour
         {
             //  Move상태로 전이한다.
             state = State.Move;
+        }
+        if (health.isHurt)
+        {
+            state = State.Hurt;
+            hurtState = State.Move;
         }
     }
     bool CheckPlayerAngle(Vector3 position)
@@ -106,6 +131,8 @@ public class Crab : MonoBehaviour
     }
     private void UpdateAttack()
     {
+        animation.clip = animations[2];
+        animation.Play();
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
         // 1. 시간이 흐르다가  
@@ -142,6 +169,8 @@ public class Crab : MonoBehaviour
             yield return new WaitForSeconds(1f);
             jump = false;
         }
+        animation.clip = animations[1];
+        animation.Play();
         // 3. 그 다음은 영원히 쫓아오는걸로
         dir = target.transform.position - transform.position;
         Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, turnSpeed * Time.deltaTime, 0.0f);
@@ -164,7 +193,8 @@ public class Crab : MonoBehaviour
     private void UpdateReturn()
     {
         // 만일, 나의 현재위치가 start 위치에서 10센티미터 이상이라면..
-
+        animation.clip = animations[1];
+        animation.Play();
         Vector3 back = start - transform.position;
         if (back.magnitude > 0.1f)
         {
@@ -187,5 +217,17 @@ public class Crab : MonoBehaviour
             // Move상태로 전이한다.
             state = State.Move;
         }
+    }
+    private void Hurt()
+    {
+        animation.clip = animations[1];
+        animation.Play();
+        state = hurtState;
+    
+    }
+    private void Die()
+    {
+        animation.clip = animations[4];
+        animation.Play();
     }
 }

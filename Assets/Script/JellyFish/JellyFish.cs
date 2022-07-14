@@ -24,10 +24,13 @@ public class JellyFish : MonoBehaviour
         Idle,
         Move,
         Attack,
-        Return
+        Return,
+        Die
     }
 
     GameObject target;
+    private EnemyHealth health;
+    private new Animation animation;
     public State state;
     public float detect = 15;
     bool move = true;
@@ -38,12 +41,16 @@ public class JellyFish : MonoBehaviour
     public float attackDistance = 5;
     public bool stopSkill = false;
     float currentTime;
+    float turnSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
         state = State.Idle;
 
         target = GameObject.Find("Player");
+        animation = GetComponent<Animation>();
+        health = GetComponent<EnemyHealth>();
+        animation.Play();
     }
 
     // Update is called once per frame
@@ -53,18 +60,28 @@ public class JellyFish : MonoBehaviour
         {
             UpdateIdle();
         }
-        else if (state == State.Move)
+        if (state == State.Move)
         {
             UpdateMove();
         }
-        else if (state == State.Attack)
+        if (state == State.Attack)
         {
             UpdateAttack();
+        }
+        if (state == State.Die)
+        {
+            UpdateDie();
+        }
+        if (health.DeadCheck)
+        {
+            state = State.Die;
         }
     }
     
     private void UpdateIdle()
     {
+        //animation.clip = animations[0];
+        //animation.Play();
         Vector3 dir = Vector3.forward;
         dir.Normalize();
         sm += speed * Time.deltaTime;
@@ -101,6 +118,8 @@ public class JellyFish : MonoBehaviour
    
     private void UpdateAttack()
     {
+        animation.clip = animations[1];
+        animation.Play();
         float distance = Vector3.Distance(target.transform.position, transform.position);
         // 1. 시간이 흐르다가  
         currentTime += Time.deltaTime;
@@ -111,7 +130,7 @@ public class JellyFish : MonoBehaviour
             if (stopSkill == false) // false일때만 스킬 사용가능
             {
             jellyFish.UseSkill();
-                print("발사");
+       
             }
             currentTime = 0;
         }
@@ -125,9 +144,13 @@ public class JellyFish : MonoBehaviour
     }
     private void UpdateMove()
     {
+        animation.clip = animations[1];
+        animation.Play();
         // 1. 플레이어게 향하는 방향으로
         Vector3 dir = target.transform.position - transform.position;
         dir.Normalize();
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, turnSpeed * Time.deltaTime, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDir);
         sm += speed * Time.deltaTime;
         // 2. 만약 move 가 true 이면
         if (move == true)
@@ -161,5 +184,11 @@ public class JellyFish : MonoBehaviour
         {
             state = State.Idle;
         }
+    }
+
+    private void UpdateDie()
+    {
+        animation.clip = animations[2];
+        animation.Play();
     }
 }
