@@ -145,7 +145,6 @@ public class BlowFish : MonoBehaviour
         //다치는 애니메이션 실행
         animation.clip = animations[1];
         animation.Play();
-        curState = preState;
         hurtCurTime += Time.deltaTime;
         if (hurtCurTime >= hurtAnimTime)
         {
