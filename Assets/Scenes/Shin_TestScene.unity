@@ -486,7 +486,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &596926142 stripped
 Transform:
@@ -593,7 +593,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880204764
 GameObject:
@@ -689,7 +689,7 @@ RectTransform:
   m_Children:
   - {fileID: 1700477777}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -892,7 +892,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1103637565
 GameObject:
@@ -943,7 +943,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1290543930
 PrefabInstance:
@@ -1132,7 +1132,7 @@ Transform:
   m_Children:
   - {fileID: 122422988}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1650394253
 MonoBehaviour:
@@ -1310,6 +1310,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1378638394517086185, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: m_Animations.Array.data[2]
+      value: 
+      objectReference: {fileID: 7400000, guid: 14cb46a4487b65342b68b15b4664d7fe, type: 3}
     - target: {fileID: 6206294738815200520, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
       propertyPath: attackTime
       value: 1
@@ -1318,6 +1322,26 @@ PrefabInstance:
       propertyPath: createTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6206294738815200520, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: animations.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206294738815200520, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400006, guid: 14cb46a4487b65342b68b15b4664d7fe, type: 3}
+    - target: {fileID: 6206294738815200520, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400004, guid: 14cb46a4487b65342b68b15b4664d7fe, type: 3}
+    - target: {fileID: 6206294738815200520, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: animations.Array.data[2]
+      value: 
+      objectReference: {fileID: -1043347489339624349, guid: 14cb46a4487b65342b68b15b4664d7fe, type: 3}
+    - target: {fileID: 6206294738815200520, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: animations.Array.data[3]
+      value: 
+      objectReference: {fileID: 7400002, guid: 14cb46a4487b65342b68b15b4664d7fe, type: 3}
     - target: {fileID: 6206294738815200521, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -1332,6 +1356,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6206294738815200521, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206294738815200522, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6206294738815200527, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
@@ -1381,6 +1409,14 @@ PrefabInstance:
     - target: {fileID: 6206294738815200532, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206294739808137734, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206294739808169510, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.26
       objectReference: {fileID: 0}
     - target: {fileID: 8844886271469306672, guid: 6f2fa3e0a7e66ab4490435d4ba6b17e2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1471,7 +1507,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929847004
 GameObject:
@@ -1565,7 +1601,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &2008232262
 PrefabInstance:
@@ -1749,7 +1785,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3215122759066310992
 PrefabInstance:
@@ -2078,6 +2114,7 @@ MonoBehaviour:
   currentHealth: 100
   enemySkill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
   enemyHealth: 100
+  isHurt: 0
 --- !u!1 &4894280307908912098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,12 +2214,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jellyFish: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
+  createTime: 2
   state: 0
   detect: 15
   speed: 3
   attackDistance: 5
   stopSkill: 0
-  createTime: 2
 --- !u!65 &4894280307908912103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2211,7 +2248,7 @@ Transform:
   - {fileID: 625040321}
   - {fileID: 381982466}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8461366204225048736
 MonoBehaviour:
@@ -2265,6 +2302,7 @@ MonoBehaviour:
   currentHealth: 100
   enemySkill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
   enemyHealth: 100
+  isHurt: 0
 --- !u!114 &8461366204225048739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2304,12 +2342,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jellyFish: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
+  createTime: 2
   state: 0
   detect: 15
   speed: 3
   attackDistance: 5
   stopSkill: 0
-  createTime: 2
 --- !u!33 &8461366204225048742
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2374,7 +2412,7 @@ Transform:
   m_Children:
   - {fileID: 1497655284}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8461366204450416330
 PrefabInstance:
