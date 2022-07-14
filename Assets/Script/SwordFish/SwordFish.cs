@@ -10,16 +10,25 @@ public class SwordFish : MonoBehaviour
     [SerializeField] private float turnSpeed = 5f;
     [SerializeField] private SwordFishSkill skill;
     [SerializeField] private float attackRange = 8f;
+    private float damage = 20;
+    
+    private bool isWait = false;
+    private float attackCurTime = 0;
+    private float waitTime = 1f;
 
     private Animation animation;
     private EnemyDetection detection;
     private EnemyHealth health;
+    private Rigidbody rigid;
     private Vector3 dir;
     private State curState;
     private State preState;
     private float curTime = 0;
     private float hurtAnimTime = 1.12f;
     private float hurtCurTime = 0;
+    private bool isAttacking = false;
+    private bool isOnce = false;
+    public float SpeedChange { get { return speed; } set { speed = value; } }
     enum State
     {
         MOVE,
@@ -30,14 +39,17 @@ public class SwordFish : MonoBehaviour
     }
     private void Start()
     {
+        SpeedChange = speed;
         skill.User = gameObject;
         curState = State.MOVE;
         preState = State.MOVE;
         detection = GetComponent<EnemyDetection>();
         health = GetComponent<EnemyHealth>();
         animation = GetComponent<Animation>();
+        rigid = GetComponent<Rigidbody>();
         dir = Vector3.forward;
         animation.Play();
+        skill.Power = damage;
     }
     private void Update()
     {
@@ -89,15 +101,48 @@ public class SwordFish : MonoBehaviour
     }
     private void Attack()
     {
-        //부풀리는 애니메이션 실행
+
         animation.clip = animations[2];
         animation.Play();
         //Debug.Log("Attack 상태");
-        curTime += Time.deltaTime;
-        if (curTime >= skill.CoolTime)
+        if (!detection.Target)
         {
-            skill.UseSkill();
-            curTime = 0;
+            curState = State.MOVE;
+        }
+        else
+        {
+            if (!isWait)
+            {
+                isAttacking = true;
+                curTime += Time.deltaTime;
+                if (curTime >= skill.CoolTime)
+                {
+                    skill.UseSkill();
+                    curTime = 0;
+                    isAttacking = false;
+                }
+                dir = detection.Target.transform.position - transform.position - new Vector3(0, 2f, 0);
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, dir.normalized, turnSpeed * Time.deltaTime, 0.0f);
+                transform.rotation = Quaternion.LookRotation(newDir.normalized);
+                float dist = Vector3.Distance(detection.Target.transform.position, transform.position);
+                if (dist >= 8f)
+                {
+                    transform.position += dir.normalized * speed * Time.deltaTime;
+                }
+                else if (dist > attackRange)
+                {
+                    curState = State.FOLLOW;
+                }
+            }
+            else if( isWait && !isAttacking)
+            {
+                attackCurTime += Time.deltaTime;
+                if (attackCurTime >= waitTime)
+                {
+                    isWait = false;
+                    attackCurTime = 0;
+                }
+            }
         }
         if (health.isHurt)
         {
@@ -117,9 +162,9 @@ public class SwordFish : MonoBehaviour
         else
         {
             //Debug.Log("Follow 상태");
-            dir = detection.Target.transform.position - transform.position;
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, turnSpeed * Time.deltaTime, 0.0f);
-            transform.rotation = Quaternion.LookRotation(newDir);
+            dir = detection.Target.transform.position - transform.position - new Vector3(0, 2f, 0);
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, dir.normalized, turnSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDir.normalized);
             transform.position += dir.normalized * speed * Time.deltaTime;
 
             float dist = Vector3.Distance(detection.Target.transform.position, transform.position);
@@ -155,5 +200,17 @@ public class SwordFish : MonoBehaviour
         animation.clip = animations[3];
         animation.Play();
         //죽은 애니메이션 실행
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerHealth>().Damage(damage);
+            if (!isAttacking)
+            {
+                isWait = true;
+            }
+        }
+        
     }
 }
