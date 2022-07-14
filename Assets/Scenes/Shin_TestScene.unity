@@ -1580,10 +1580,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4bbc0b57e77a44480212329e77705f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10000
+  maxHealth: 5000
   currentHealth: 100
   enemySkill: {fileID: 0}
-  enemyHealth: 10000
+  enemyHealth: 5000
   isHurt: 0
 --- !u!136 &1266932168426711232
 CapsuleCollider:
