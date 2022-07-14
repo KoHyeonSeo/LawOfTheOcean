@@ -75,7 +75,7 @@ public class UIEnemyHP : MonoBehaviour
             hp = enemyHP.Health;
             sliderHP.GetComponent<Slider>().value = hp;
             sliderHP.SetActive(true);
-            print(sliderHP.GetComponent<Slider>().value);
+            //print(sliderHP.GetComponent<Slider>().value);
         }
         //print(enemy);
     }
