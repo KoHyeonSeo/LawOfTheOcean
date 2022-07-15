@@ -20,8 +20,10 @@ public class Crab : MonoBehaviour
     [SerializeField] private float attackTime = 1;
     private new Animation animation;
     private EnemyHealth health;
+    private EnemyHealth bossHealth;
     private State hurtState;
     GameObject target;
+    GameObject boss;
     Vector3 start;
     Vector3 dir;
 
@@ -32,10 +34,12 @@ public class Crab : MonoBehaviour
         Attack,
         Return,
         Hurt,
-        Die
+        Die,
+       
     }
 
     public State state;
+    public bool hide = true;
     float firstDetect = 20;
     float detect = 10;
     float speed = 3;
@@ -54,7 +58,10 @@ public class Crab : MonoBehaviour
         target = GameObject.Find("Player");
         health = GetComponent<EnemyHealth>();
         animation = GetComponent<Animation>();
+        boss = GameObject.Find("Boss");
+        bossHealth = boss.GetComponent<EnemyHealth>();
         animation.Play();
+        
     }
 
     // Update is called once per frame
@@ -66,7 +73,6 @@ public class Crab : MonoBehaviour
         }
         if (state == State.Move)
         {
-
             StartCoroutine("IeMove");
         }
         if (state == State.Attack)
@@ -230,4 +236,6 @@ public class Crab : MonoBehaviour
         animation.clip = animations[4];
         animation.Play();
     }
+
+  
 }
