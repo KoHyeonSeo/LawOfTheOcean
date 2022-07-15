@@ -9,6 +9,7 @@ public class SwordFishSkill : Skill
 
     public override void UseSkill()
     {
+        //Debug.Log("UseSkill");
         GameObject useSkill = Instantiate(useSkillFactory);
         useSkill.GetComponent<SwordFishUseSkill>().UseSkill = true;
         useSkill.GetComponent<SwordFishUseSkill>().SkillUser = User;
