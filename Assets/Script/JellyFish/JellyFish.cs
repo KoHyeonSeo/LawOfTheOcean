@@ -33,7 +33,7 @@ public class JellyFish : MonoBehaviour
     private new Animation animation;
     public State state;
     public float detect = 15;
-    bool move = true;
+    bool move;
     float sm;
     float jellySpeed = 2.2f;
     float moveCreateTime = 1f;
@@ -51,6 +51,7 @@ public class JellyFish : MonoBehaviour
         animation = GetComponent<Animation>();
         health = GetComponent<EnemyHealth>();
         animation.Play();
+        move = true;
     }
 
     // Update is called once per frame
@@ -80,6 +81,7 @@ public class JellyFish : MonoBehaviour
     
     private void UpdateIdle()
     {
+        print(move);
         //animation.clip = animations[0];
         //animation.Play();
         Vector3 dir = Vector3.forward;
