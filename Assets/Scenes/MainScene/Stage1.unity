@@ -730,49 +730,174 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
---- !u!1 &2077252153
-GameObject:
+--- !u!1001 &373706500222107296
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2077252155}
-  - component: {fileID: 2077252154}
-  m_Layer: 0
-  m_Name: JellyFishGOD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2077252154
-MonoBehaviour:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4580282911159488863, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_Name
+      value: SwordFishGOD
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 155.49521
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.3962202
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 178.99702
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109304956563048329, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66f5ac14d200682439051070e0cbbab1, type: 3}
+--- !u!1001 &5093330174986489370
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077252153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0722212ee2b73842816e0546b4ecebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jellyFishFactory: {fileID: 7839200043053899604, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
-  createTime: 3
---- !u!4 &2077252155
-Transform:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 155.49521
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.3962202
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 178.99702
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286899443803909529, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_Name
+      value: BlowFishGOD
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+--- !u!1001 &7748994769130329690
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077252153}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 146.5, y: 13.9, z: 82}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 146.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603169, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748994769049603171, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
+      propertyPath: m_Name
+      value: JellyFishGOD
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
