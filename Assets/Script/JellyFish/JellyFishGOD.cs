@@ -10,6 +10,7 @@ public class JellyFishGOD : MonoBehaviour
     float currentTime;
     int maxCount = 10;
     int count;
+    int i;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,8 @@ public class JellyFishGOD : MonoBehaviour
             {
                 GameObject jellyFish = Instantiate(jellyFishFactory);
                 jellyFish.transform.position = transform.position + new Vector3(Random.value * 5, Random.value * 5, Random.value * 5);
+                jellyFish.name = jellyFishFactory.name + i;
+                i++;
                 currentTime = 0;
 
             }
