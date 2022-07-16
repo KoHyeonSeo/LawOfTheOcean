@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &545327015 stripped
@@ -442,6 +446,10 @@ PrefabInstance:
     - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
       propertyPath: m_Name
       value: DeadZone (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
@@ -750,6 +758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &1523424041 stripped
@@ -824,6 +836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &1584529742 stripped
@@ -894,6 +910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &1750123445 stripped
@@ -963,6 +983,10 @@ PrefabInstance:
     - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
       propertyPath: m_Name
       value: DeadZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
