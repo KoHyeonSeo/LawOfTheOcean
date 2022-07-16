@@ -408,9 +408,9 @@ GameObject:
   - component: {fileID: 518751979594622966}
   - component: {fileID: 518751978698350538}
   - component: {fileID: 518751978698350539}
-  - component: {fileID: 518751978698350536}
   - component: {fileID: 518751978698350537}
   - component: {fileID: 518751978698350542}
+  - component: {fileID: 532309798552690815}
   m_Layer: 7
   m_Name: Crab
   m_TagString: Enemy
@@ -484,19 +484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orb: {fileID: 1919913695092184, guid: 1e00a4340f4ae8a4b8253da4ffaa7c82, type: 3}
---- !u!114 &518751978698350536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518751979605622316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76b570283b43ab4d84643f08381b471, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Crab
 --- !u!114 &518751978698350537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +523,20 @@ MonoBehaviour:
   createTime: 1
   attackTime: 1
   state: 0
+  hide: 1
+--- !u!114 &532309798552690815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518751979605622316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76b570283b43ab4d84643f08381b471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Crab
 --- !u!1 &518751979605622318
 GameObject:
   m_ObjectHideFlags: 0

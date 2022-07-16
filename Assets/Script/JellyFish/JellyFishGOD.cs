@@ -8,6 +8,9 @@ public class JellyFishGOD : MonoBehaviour
     
     [SerializeField] float createTime = 3;
     float currentTime;
+    int maxCount = 10;
+    int count;
+    int i;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +20,18 @@ public class JellyFishGOD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
-        if (currentTime > createTime)
+        if (count <= maxCount)
         {
-            GameObject jellyFish = Instantiate(jellyFishFactory);
-            jellyFish.transform.position = transform.position;
-            currentTime = 0;
-           
+            currentTime += Time.deltaTime;
+            if (currentTime > createTime)
+            {
+                GameObject jellyFish = Instantiate(jellyFishFactory);
+                jellyFish.transform.position = transform.position + new Vector3(Random.value * 5, Random.value * 5, Random.value * 5);
+                jellyFish.name = jellyFishFactory.name + i;
+                i++;
+                currentTime = 0;
+
+            }
         }
     }
 }

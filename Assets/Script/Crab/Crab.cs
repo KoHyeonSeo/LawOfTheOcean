@@ -20,8 +20,10 @@ public class Crab : MonoBehaviour
     [SerializeField] private float attackTime = 1;
     private new Animation animation;
     private EnemyHealth health;
+    
     private State hurtState;
     GameObject target;
+    
     Vector3 start;
     Vector3 dir;
 
@@ -32,10 +34,12 @@ public class Crab : MonoBehaviour
         Attack,
         Return,
         Hurt,
-        Die
+        Die,
+       
     }
 
     public State state;
+    public bool hide = true;
     float firstDetect = 20;
     float detect = 10;
     float speed = 3;
@@ -43,8 +47,8 @@ public class Crab : MonoBehaviour
     float currentTime;
     float turnSpeed = 5f;
     bool jump = true;
-    //private float hurtAnimTime = 1.12f;
-    //private float hurtCurTime = 0;
+    private float hurtAnimTime = 1.12f;
+   private float hurtCurTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +58,9 @@ public class Crab : MonoBehaviour
         target = GameObject.Find("Player");
         health = GetComponent<EnemyHealth>();
         animation = GetComponent<Animation>();
+          
         animation.Play();
+        
     }
 
     // Update is called once per frame
@@ -66,7 +72,6 @@ public class Crab : MonoBehaviour
         }
         if (state == State.Move)
         {
-
             StartCoroutine("IeMove");
         }
         if (state == State.Attack)
@@ -157,6 +162,11 @@ public class Crab : MonoBehaviour
             // 7. Move상태로 전이한다.
             state = State.Move;
         }
+        if (health.isHurt)
+        {
+            state = State.Hurt;
+            hurtState = State.Attack;
+        }
     }
     IEnumerator IeMove()
     {
@@ -189,6 +199,11 @@ public class Crab : MonoBehaviour
         {
             state = State.Return;
         }
+        if (health.isHurt)
+        {
+            state = State.Hurt;
+            hurtState = State.Move;
+        }
     }
     private void UpdateReturn()
     {
@@ -217,17 +232,30 @@ public class Crab : MonoBehaviour
             // Move상태로 전이한다.
             state = State.Move;
         }
+        if (health.isHurt)
+        {
+            state = State.Hurt;
+            hurtState = State.Move;
+        }
     }
     private void Hurt()
     {
-        animation.clip = animations[1];
+        animation.clip = animations[3];
         animation.Play();
-        state = hurtState;
-    
+        
+        hurtCurTime += Time.deltaTime;
+        if (hurtCurTime >= hurtAnimTime)
+        {
+            state = hurtState;
+            health.isHurt = false;
+            hurtCurTime = 0;
+        }
     }
     private void Die()
     {
         animation.clip = animations[4];
         animation.Play();
     }
+
+  
 }
