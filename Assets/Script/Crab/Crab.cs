@@ -199,6 +199,11 @@ public class Crab : MonoBehaviour
         {
             state = State.Return;
         }
+        if (health.isHurt)
+        {
+            state = State.Hurt;
+            hurtState = State.Move;
+        }
     }
     private void UpdateReturn()
     {
@@ -227,12 +232,17 @@ public class Crab : MonoBehaviour
             // Move상태로 전이한다.
             state = State.Move;
         }
+        if (health.isHurt)
+        {
+            state = State.Hurt;
+            hurtState = State.Move;
+        }
     }
     private void Hurt()
     {
-        animation.clip = animations[1];
+        animation.clip = animations[3];
         animation.Play();
-        state = hurtState;
+        
         hurtCurTime += Time.deltaTime;
         if (hurtCurTime >= hurtAnimTime)
         {
