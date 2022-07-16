@@ -14,6 +14,9 @@ public class ThornBullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //부딪힌 것이 스킬 사용자가 아니고 생명체(Entity)라면
+        Debug.Log($"other.gameObject = {other.gameObject}");
+        Debug.Log($"BulletUser = {BulletUser}");
+
         if (other.gameObject != BulletUser && other.gameObject.layer == 7)
         {
             //Player라면 데미지 깎음
