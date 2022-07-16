@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class DeadZone : MonoBehaviour
 {
+    private float hurtTime = 1.5f;
+    private float curTime = 0;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "DeadZone"&& collision.gameObject.tag != "Player")
         {
             Destroy(collision.gameObject);
         }
-        else if(collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().Damage(5);
-        }
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag != "DeadZone" && collision.gameObject.tag != "Player")
+        if (!collision.gameObject.CompareTag("DeadZone") && !collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.tag == "Player")
+        else if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerHealth>().Damage(5);
+            curTime += Time.deltaTime;
+            if (curTime >= hurtTime)
+            {
+                curTime = 0;   
+                collision.gameObject.GetComponent<PlayerHealth>().Damage(5);
+            }
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            curTime = 0;
         }
     }
 }

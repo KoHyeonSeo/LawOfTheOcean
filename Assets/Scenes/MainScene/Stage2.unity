@@ -186,7 +186,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8696208846205180035, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &179797788 stripped
 Transform:
@@ -260,7 +265,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8696208846205180035, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &210572546 stripped
 Transform:
@@ -334,7 +344,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8696208846205180035, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &251748363 stripped
 Transform:
@@ -497,7 +512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216534, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 69.4
+      value: 105.4
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216534, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -633,7 +648,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8696208846205180035, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &1130933331 stripped
 Transform:
@@ -707,7 +727,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8696208846205180035, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &1188593003 stripped
 Transform:
@@ -875,7 +900,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8696208846205180153, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8696208846205180035, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00e9bc52e2194c847a14c114472d0dcf, type: 3}
 --- !u!4 &1466136769 stripped
 Transform:
