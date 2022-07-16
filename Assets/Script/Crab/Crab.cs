@@ -20,10 +20,10 @@ public class Crab : MonoBehaviour
     [SerializeField] private float attackTime = 1;
     private new Animation animation;
     private EnemyHealth health;
-    private EnemyHealth bossHealth;
+    
     private State hurtState;
     GameObject target;
-    GameObject boss;
+    
     Vector3 start;
     Vector3 dir;
 
@@ -47,8 +47,8 @@ public class Crab : MonoBehaviour
     float currentTime;
     float turnSpeed = 5f;
     bool jump = true;
-    //private float hurtAnimTime = 1.12f;
-    //private float hurtCurTime = 0;
+    private float hurtAnimTime = 1.12f;
+   private float hurtCurTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -58,8 +58,7 @@ public class Crab : MonoBehaviour
         target = GameObject.Find("Player");
         health = GetComponent<EnemyHealth>();
         animation = GetComponent<Animation>();
-        boss = GameObject.Find("Boss");
-        bossHealth = boss.GetComponent<EnemyHealth>();
+          
         animation.Play();
         
     }
@@ -163,6 +162,11 @@ public class Crab : MonoBehaviour
             // 7. Move상태로 전이한다.
             state = State.Move;
         }
+        if (health.isHurt)
+        {
+            state = State.Hurt;
+            hurtState = State.Attack;
+        }
     }
     IEnumerator IeMove()
     {
@@ -229,7 +233,13 @@ public class Crab : MonoBehaviour
         animation.clip = animations[1];
         animation.Play();
         state = hurtState;
-    
+        hurtCurTime += Time.deltaTime;
+        if (hurtCurTime >= hurtAnimTime)
+        {
+            state = hurtState;
+            health.isHurt = false;
+            hurtCurTime = 0;
+        }
     }
     private void Die()
     {

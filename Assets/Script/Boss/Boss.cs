@@ -30,7 +30,24 @@ public class Boss : MonoBehaviour
     {
         if (first == true)
         {
+            animation.clip = animations[3];
+            animation.Play();
             transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
+        }
+        if (bossHealth.Health == bossHealth.MaxHealth * 0.75)
+        {
+            animation.clip = animations[0];
+            animation.Play();
+        }
+        if (bossHealth.Health == bossHealth.MaxHealth * 0.5)
+        {
+            animation.clip = animations[0];
+            animation.Play();
+        }
+        if (bossHealth.Health == bossHealth.MaxHealth * 0.25)
+        {
+            animation.clip = animations[0];
+            animation.Play();
         }
         if (bossHealth.DeadCheck)
         {
