@@ -47,11 +47,11 @@ MonoBehaviour:
   skillMaxCnt: 10
   currentSkillCnt: 0
   skills:
-  - skill: {fileID: 11400000, guid: 4f842029a102ebb40bcd643b3df0d468, type: 2}
-    skillCnt: 0
-  - skill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
-    skillCnt: 0
   - skill: {fileID: 11400000, guid: d333f403868ae5d4995ebc9e5bb896eb, type: 2}
     skillCnt: 0
   - skill: {fileID: 11400000, guid: db1e2b96a1dfeb84798bc7b9f8e9b01e, type: 2}
+    skillCnt: 0
+  - skill: {fileID: 11400000, guid: f5bd43027dadfff4cb513183ed0eb66f, type: 2}
+    skillCnt: 0
+  - skill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
     skillCnt: 0

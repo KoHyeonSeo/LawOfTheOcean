@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 518751978698350537}
   - component: {fileID: 518751978698350542}
   - component: {fileID: 532309798552690815}
+  - component: {fileID: 8042824641491787563}
   m_Layer: 7
   m_Name: Crab
   m_TagString: Enemy
@@ -522,6 +523,9 @@ MonoBehaviour:
   crab: {fileID: 11400000, guid: f5bd43027dadfff4cb513183ed0eb66f, type: 2}
   createTime: 1
   attackTime: 1
+  detect: 20
+  attackDistance: 5
+  firstDetect: 20
   state: 0
   hide: 1
 --- !u!114 &532309798552690815
@@ -537,6 +541,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Crab
+--- !u!114 &8042824641491787563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518751979605622316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57cd8f736f396843a2cff0ffa4a43a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &518751979605622318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,7 +2580,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2918,6 +2934,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5717090723926813588, guid: e0b3b2a6573221e48a97e25060480598, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5717090723926813589, guid: e0b3b2a6573221e48a97e25060480598, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2984,11 +3004,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717090723926813589, guid: e0b3b2a6573221e48a97e25060480598, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.87
+      value: -3.52
       objectReference: {fileID: 0}
     - target: {fileID: 5717090723926813589, guid: e0b3b2a6573221e48a97e25060480598, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.38
+      value: 4.74
       objectReference: {fileID: 0}
     - target: {fileID: 5717090723926813589, guid: e0b3b2a6573221e48a97e25060480598, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

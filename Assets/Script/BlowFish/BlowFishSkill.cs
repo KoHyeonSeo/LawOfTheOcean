@@ -12,7 +12,6 @@ public class BlowFishSkill : Skill
 
     public override void UseSkill()
     {
-
         int deltaAngle = 360 / bulletCount;
         Vector3 dir = Vector3.up;
         for (int i = 1; i <= bulletCount; i++)
@@ -24,6 +23,8 @@ public class BlowFishSkill : Skill
             //2. 발사할 방향을 정하고 싶다.
             //bullet.transform.eulerAngles = new Vector3(0, 0, deltaAngle * i);
             dir = Quaternion.Euler(0, 0, deltaAngle) * dir;
+            bullet.GetComponent<ThornBullet>().BulletUser = User;
+            bullet.GetComponent<ThornBullet>().BulletDamage = Power;
             bullet.transform.up = dir;
             //3. 총알 하나 발사하고 싶다.
             bullet.transform.position = User.transform.position;

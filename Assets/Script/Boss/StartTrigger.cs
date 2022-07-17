@@ -10,9 +10,9 @@ public class StartTrigger : MonoBehaviour
         boss = GameObject.Find("Boss");
      
     }
-
-        // Start is called before the first frame update
-        private void OnTriggerEnter(Collider other)
+    
+    // Start is called before the first frame update
+    private void OnTriggerEnter(Collider other)
     {
         
         if (other.gameObject.name.Contains("Player"))

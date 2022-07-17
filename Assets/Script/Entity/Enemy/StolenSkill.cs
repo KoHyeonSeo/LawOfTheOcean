@@ -10,9 +10,9 @@ public class StolenSkill : MonoBehaviour
     private bool end = true;
     private void Update()
     {
-        if (GetComponent<EnemyHealth>().DeadCheck && first)
+        if (first)
         {
-            if (GameManager.instance.IsStealUse)
+            if (GameManager.instance.IsStealUse&& GetComponent<EnemyHealth>().DeadCheck)
             {
 
                 if (!GameManager.instance.IsSkillMaxCountError)

@@ -23,6 +23,7 @@ public class SwordFish : MonoBehaviour
     private float hurtCurTime = 0;
     private float attackAnimTime = 1.1f;
     private bool isAttacking = false;
+    EnemyStopSkill enemyStopSkill;
     public float SpeedChange { get { return speed; } set { speed = value; } }
     enum State
     {
@@ -44,6 +45,7 @@ public class SwordFish : MonoBehaviour
         dir = Vector3.forward;
         animation.Play();
         skill.Power = damage;
+        enemyStopSkill = GetComponent<EnemyStopSkill>();
     }
     private void Update()
     {
@@ -103,9 +105,10 @@ public class SwordFish : MonoBehaviour
         animation.Play();
         //Debug.Log($"Attack: {isAttacking}");
         curTime += Time.deltaTime;
-        if (!isAttacking)
+        if (!isAttacking && !enemyStopSkill.StopSkill)
         {
             isAttacking = true;
+            skill.User = gameObject;
             skill.UseSkill();
         }
         if (curTime >= attackAnimTime)
@@ -139,7 +142,7 @@ public class SwordFish : MonoBehaviour
             transform.position += dir.normalized * speed * Time.deltaTime;
 
             float dist = Vector3.Distance(detection.Target.transform.position, transform.position);
-            if (dist <= attackRange)
+            if (dist <= attackRange )
             {
                 curState = State.ATTACK;
             }

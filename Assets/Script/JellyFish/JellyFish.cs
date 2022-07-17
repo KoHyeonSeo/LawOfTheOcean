@@ -40,14 +40,14 @@ public class JellyFish : MonoBehaviour
     public float speed = 3;
     public float firstspeed = 10;
     public float attackDistance = 5;
-    public bool stopSkill = false;
+    EnemyStopSkill enemyStopSkill;
     float currentTime;
     float turnSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
         state = State.Idle;
-
+        enemyStopSkill = GetComponent<EnemyStopSkill>();
         target = GameObject.Find("Player");
         animation = GetComponent<Animation>();
         health = GetComponent<EnemyHealth>();
@@ -82,7 +82,7 @@ public class JellyFish : MonoBehaviour
     
     private void UpdateIdle()
     {
-        print(move);
+        //print(move);
         //animation.clip = animations[0];
         //animation.Play();
         Vector3 dir = Vector3.forward;
@@ -130,9 +130,9 @@ public class JellyFish : MonoBehaviour
         if (currentTime > createTime)
         {
             jellyFish.User = gameObject;
-            if (stopSkill == false) // false일때만 스킬 사용가능
+            if (enemyStopSkill.StopSkill == false) // false일때만 스킬 사용가능
             {
-            jellyFish.UseSkill();
+                jellyFish.UseSkill();
        
             }
             currentTime = 0;

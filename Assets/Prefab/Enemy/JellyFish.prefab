@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 7839200043060725396}
   - component: {fileID: 7839200043060725399}
   - component: {fileID: 7839200043060725395}
+  - component: {fileID: -8907838222831889053}
   m_Layer: 7
   m_Name: JellyFish
   m_TagString: Enemy
@@ -955,9 +956,10 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
   state: 0
   detect: 20
+  sm: 0
   speed: 10
+  firstspeed: 10
   attackDistance: 15
-  stopSkill: 0
 --- !u!114 &7839200043060725397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,6 +1016,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 1.35, z: 0}
+--- !u!114 &-8907838222831889053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839200043053899604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57cd8f736f396843a2cff0ffa4a43a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7839200043053899606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,9 +1340,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3215122759372721749, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7190355951322580440, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190355951322580440, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190355951322580441, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190355951322580442, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
+      propertyPath: m_text
+      value: "\uCE68\uBB35"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}

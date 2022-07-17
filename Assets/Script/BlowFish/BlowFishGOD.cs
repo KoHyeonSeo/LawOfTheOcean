@@ -26,7 +26,6 @@ public class BlowFishGOD : MonoBehaviour
             if (currentTime > createTime)
             {
                 GameObject blowFish = Instantiate(blowFishFactory);
-                blowFish.SetActive(true);
                 blowFish.transform.position = transform.position + new Vector3(Random.value * 5, Random.value * 5, Random.value * 5);
                 blowFish.name = blowFishFactory.name + i;
                 i++;

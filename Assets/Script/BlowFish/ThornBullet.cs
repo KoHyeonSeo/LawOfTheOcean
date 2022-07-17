@@ -14,23 +14,25 @@ public class ThornBullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //부딪힌 것이 스킬 사용자가 아니고 생명체(Entity)라면
-        Debug.Log($"other.gameObject = {other.gameObject}");
-        Debug.Log($"BulletUser = {BulletUser}");
-
-        if (other.gameObject != BulletUser && other.gameObject.layer == 7)
+        //Debug.Log($"other.gameObject = {other.gameObject}");
+        //Debug.Log($"BulletUser = {BulletUser}");
+        if (other.gameObject)
         {
-            //Player라면 데미지 깎음
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.tag != BulletUser.tag && other.gameObject.layer == 7)
             {
-                other.gameObject.GetComponent<PlayerHealth>().Damage(BulletDamage);
+                //Player라면 데미지 깎음
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    other.gameObject.GetComponent<PlayerHealth>().Damage(BulletDamage);
+                }
+                //Enemy라면 데미지 깎음
+                else
+                {
+                    other.gameObject.GetComponent<EnemyHealth>().Damage(BulletDamage);
+                }
+                //총알 삭제
+                Destroy(gameObject);
             }
-            //Enemy라면 데미지 깎음
-            else
-            {
-                other.gameObject.GetComponent<EnemyHealth>().Damage(BulletDamage);
-            }
-            //총알 삭제
-            Destroy(gameObject);
         }
 
     }

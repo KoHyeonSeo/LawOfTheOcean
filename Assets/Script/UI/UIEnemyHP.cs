@@ -18,6 +18,7 @@ public class UIEnemyHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        textSilence = transform.GetChild(1).gameObject;
         textSilence.SetActive(false);
         enemy = UIManager.instance.CurrentEnemy;
         if (enemy == null || enemy.name != gameObject.transform.parent.name)
@@ -47,16 +48,10 @@ public class UIEnemyHP : MonoBehaviour
         }
         else
         {
-            if (enemy.GetComponent<NameTag>().Name == "JellyFish")
+            //Debug.Log($"{gameObject} : {enemy.GetComponent<EnemyStopSkill>().StopSkill}");
+            if (enemy.GetComponent<EnemyStopSkill>().StopSkill)
             {
-                if (enemy.GetComponent<JellyFish>().stopSkill)
-                {
-                    textSilence.SetActive(true);
-                }
-                else
-                {
-                    textSilence.SetActive(false);
-                }
+                textSilence.SetActive(true);
             }
             else
             {
