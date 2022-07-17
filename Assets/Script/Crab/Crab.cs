@@ -147,8 +147,7 @@ public class Crab : MonoBehaviour
         if (currentTime > createTime && !enemyStopSkill.StopSkill)
         {
             // 공격 애니메이션 시작
-            animation.clip = animations[2];
-            animation.Play();
+           
             crab.User = gameObject;
             // 3. 공격을 한다.
             crab.UseSkill();
