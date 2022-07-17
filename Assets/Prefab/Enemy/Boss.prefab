@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 8050712697944007731}
   - component: {fileID: 8050712697944007729}
   - component: {fileID: 8050712697944007759}
+  - component: {fileID: 5167826303609264413}
   m_Layer: 7
   m_Name: Boss
   m_TagString: Enemy
@@ -343,7 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114ae6b8d9c85f74ba934982475cb66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jellyFactory: {fileID: 0}
   first: 0
   animations:
   - {fileID: 7400000, guid: d44a4f84a6e755f42a9e9586856af5aa, type: 3}
@@ -381,6 +381,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Boss
+--- !u!114 &5167826303609264413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050712697943783440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57cd8f736f396843a2cff0ffa4a43a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8050712697943783442
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,6 +839,18 @@ PrefabInstance:
     - target: {fileID: 3215122759372721746, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215122759372721749, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190355951322580440, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190355951322580441, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89a30e9b617b9ac409e0b10e156b02d0, type: 3}

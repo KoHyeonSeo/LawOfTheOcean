@@ -23,7 +23,8 @@ public class Crab : MonoBehaviour
     [SerializeField] float firstDetect = 20;
     private new Animation animation;
     private EnemyHealth health;
-    
+    private EnemyStopSkill enemyStopSkill;
+
     private State hurtState;
     GameObject target;
     
@@ -58,7 +59,7 @@ public class Crab : MonoBehaviour
         target = GameObject.Find("Player");
         health = GetComponent<EnemyHealth>();
         animation = GetComponent<Animation>();
-          
+        enemyStopSkill = GetComponent<EnemyStopSkill>();
         animation.Play();
         
     }
@@ -143,7 +144,7 @@ public class Crab : MonoBehaviour
         // 1. 시간이 흐르다가  
         currentTime += Time.deltaTime;
         // 2. 일정시간이 되면
-        if (currentTime > createTime)
+        if (currentTime > createTime && !enemyStopSkill.StopSkill)
         {
             // 공격 애니메이션 시작
             animation.clip = animations[2];

@@ -7,7 +7,7 @@ public class BlowFish : MonoBehaviour
     [SerializeField] private AnimationClip[] animations;
     [SerializeField] private float speed = 8f;
     [SerializeField] private float turnSpeed = 5f;
-    [SerializeField] private BlowFishSkill skill;
+    [SerializeField] private Skill skill;
     [SerializeField] private float attackRange = 8f;
 
     private Animation animation;
@@ -19,6 +19,7 @@ public class BlowFish : MonoBehaviour
     private float curTime = 0;
     private float hurtAnimTime = 1.12f;
     private float hurtCurTime = 0;
+    private EnemyStopSkill enemyStopSkill;
 
     enum State
     {
@@ -43,6 +44,7 @@ public class BlowFish : MonoBehaviour
         animation = GetComponent<Animation>();
         dir = Vector3.forward;
         animation.Play();
+        enemyStopSkill = GetComponent<EnemyStopSkill>();
     }
     private void Update()
     {
@@ -98,11 +100,17 @@ public class BlowFish : MonoBehaviour
         animation.clip = animations[2];
         animation.Play();
         //Debug.Log("Attack 상태");
+        //Debug.Log($"{enemyStopSkill.StopSkill}");
         curTime += Time.deltaTime;
         if (curTime >= skill.CoolTime)
         {
-            skill.UseSkill();
+            if (!enemyStopSkill.StopSkill)
+            {
+                skill.User = gameObject;
+                skill.UseSkill();
+            }
             curTime = 0;
+            curState = State.FOLLOW;
         }
         if (health.isHurt)
         {
@@ -121,7 +129,7 @@ public class BlowFish : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Follow 상태");
+           // Debug.Log("Follow 상태");
             dir = detection.Target.transform.position - transform.position;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, turnSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDir);
