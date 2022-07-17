@@ -21,7 +21,7 @@ public class BossWaterSkill : Skill
             dir = Quaternion.Euler(0, 0, deltaAngle + 90) * dir;
             water.transform.up = dir;
             water.transform.position = User.transform.position + new Vector3(0,20,0);
-            water.GetComponent<Rigidbody>().AddForce(dir.normalized * 1000,ForceMode.Force);
+            water.GetComponent<Rigidbody>().AddForce(dir.normalized * 700, ForceMode.Force);
 
 
             GameObject water2 = Instantiate(waterCanonPrefab);
@@ -31,7 +31,7 @@ public class BossWaterSkill : Skill
             dir = Quaternion.Euler(0, deltaAngle + 90, 0) * dir;
             water2.transform.up = dir;
             water2.transform.position = User.transform.position + new Vector3(0, 20, 0);
-            water2.GetComponent<Rigidbody>().AddForce(dir.normalized * 1000, ForceMode.Force);
+            water2.GetComponent<Rigidbody>().AddForce(dir.normalized * 700, ForceMode.Force);
 
 
             GameObject water3 = Instantiate(waterCanonPrefab);
@@ -41,7 +41,7 @@ public class BossWaterSkill : Skill
             dir = Quaternion.Euler(deltaAngle + 90, 0, 0) * dir;
             water3.transform.up = dir;
             water3.transform.position = User.transform.position + new Vector3(0, 20, 0);
-            water3.GetComponent<Rigidbody>().AddForce(dir.normalized * 1000, ForceMode.Force);
+            water3.GetComponent<Rigidbody>().AddForce(dir.normalized * 700, ForceMode.Force);
 
         }
     }

@@ -36,6 +36,9 @@ public class Boss : MonoBehaviour
             animation.clip = animations[3];
             animation.Play();
             transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
+        }
+        if (!enemySkill.enabled && Vector3.Distance(transform.position, target.position) <= 18f)
+        {
             enemySkill.enabled = true;
         }
         if (bossHealth.Health == bossHealth.MaxHealth * 0.75)
@@ -59,7 +62,7 @@ public class Boss : MonoBehaviour
             animation.clip = animations[2];
             animation.Play();
         }
-        print(first);
+       // print(first);
     }
 
 
