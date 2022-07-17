@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : EntityHealth
 {
@@ -23,6 +24,11 @@ public class PlayerHealth : EntityHealth
     protected override void Die()
     {
         base.Die();
+       SceneManager.LoadScene("GameOverScene");
+        
+
     }
+
+
 
 }

@@ -18,6 +18,9 @@ public class Crab : MonoBehaviour
     [SerializeField] private Skill crab;
     [SerializeField] private float createTime = 1;
     [SerializeField] private float attackTime = 1;
+    [SerializeField] float detect = 20;
+    [SerializeField] float attackDistance = 5;
+    [SerializeField] float firstDetect = 20;
     private new Animation animation;
     private EnemyHealth health;
     
@@ -40,10 +43,7 @@ public class Crab : MonoBehaviour
 
     public State state;
     public bool hide = true;
-    float firstDetect = 20;
-    float detect = 10;
     float speed = 3;
-    float attackDistance = 5;
     float currentTime;
     float turnSpeed = 5f;
     bool jump = true;
@@ -125,7 +125,7 @@ public class Crab : MonoBehaviour
         float checkDegree = Vector3.Angle(transform.up, direction);
 
         // 3. 구해진 각도가 45도 이내라면 true, 45도 밖이면 false라고 반환한다.
-        if (checkDegree <= 45)
+        if (checkDegree <= 90)
         {
             return true;
         }
