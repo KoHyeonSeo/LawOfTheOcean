@@ -8,6 +8,7 @@ public class StartTrigger : MonoBehaviour
     void Start()
     {
         boss = GameObject.Find("Boss");
+     
     }
 
         // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class StartTrigger : MonoBehaviour
         
         if (other.gameObject.name.Contains("Player"))
         {
+          
             boss.GetComponent<Boss>().first = true;
         }
         if (other.gameObject.name.Contains("Boss"))
