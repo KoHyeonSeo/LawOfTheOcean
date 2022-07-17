@@ -14,11 +14,13 @@ public class EnemySummon : MonoBehaviour
     float swordCurrentTime;
     [SerializeField]   float summonTime = 2;
     EnemyHealth enemyHealth;
-    
+
+    public GameObject User { get; set; }
+    //데미지 즉, Power가 어느 정도인지 알 수 있는 프로퍼티
     void Start()
     {
         enemyHealth =GameObject.Find("Boss").GetComponent<EnemyHealth>();
-        crab = GameObject.Find("Cube");
+        crab = GameObject.Find("CrabSummon");
         crab.SetActive(false);
     }
 
