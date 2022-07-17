@@ -410,9 +410,7 @@ MonoBehaviour:
   - skill: {fileID: 11400000, guid: 3966eb6506c5c3c45ba05f40f12c1ef8, type: 2}
     percent: 0.5
   - skill: {fileID: 11400000, guid: 7facb04d9bf3de4438ae9566fd0b38fc, type: 2}
-    percent: 0.4
-  - skill: {fileID: 11400000, guid: 0c6606e0b61e4d342a693a2e7e55624b, type: 2}
-    percent: 0.1
+    percent: 0.5
 --- !u!1 &8050712697943783442
 GameObject:
   m_ObjectHideFlags: 0
