@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlowFishGOD : MonoBehaviour
 {
     public GameObject blowFishFactory;
-
+    [SerializeField] float range = 30;
     [SerializeField] float createTime = 3;
     float currentTime;
     int maxCount = 10;
@@ -26,7 +26,7 @@ public class BlowFishGOD : MonoBehaviour
             if (currentTime > createTime)
             {
                 GameObject blowFish = Instantiate(blowFishFactory);
-                blowFish.transform.position = transform.position + new Vector3(Random.value * 5, Random.value * 5, Random.value * 5);
+                blowFish.transform.position = transform.position + new Vector3(Random.value * range, Random.value * range, Random.value * range);
                 blowFish.name = blowFishFactory.name + i;
                 i++;
                 currentTime = 0;
