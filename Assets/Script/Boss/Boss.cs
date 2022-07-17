@@ -12,7 +12,7 @@ public class Boss : MonoBehaviour
     private EnemySkill enemySkill;
     Transform player;
     Vector3 dir;
-    
+    EnemyStopSkill enemyStopSkill;
     
     void Start()
     {
@@ -24,7 +24,7 @@ public class Boss : MonoBehaviour
         bossHealth = GetComponent<EnemyHealth>();
         enemySkill = GetComponent<EnemySkill>();
         enemySkill.enabled = false;
-        
+        enemyStopSkill = GetComponent<EnemyStopSkill>();
     }
 
     // Update is called once per frame
@@ -37,9 +37,13 @@ public class Boss : MonoBehaviour
             animation.Play();
             transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
         }
-        if (!enemySkill.enabled && Vector3.Distance(transform.position, target.position) <= 18f)
+        if (!enemyStopSkill.StopSkill && !enemySkill.enabled && Vector3.Distance(transform.position, target.position) <= 18f)
         {
             enemySkill.enabled = true;
+        }
+        else if (enemyStopSkill.StopSkill)
+        {
+            enemySkill.enabled = false;
         }
         if (bossHealth.Health == bossHealth.MaxHealth * 0.75)
         {

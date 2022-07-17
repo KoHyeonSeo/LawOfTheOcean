@@ -12,21 +12,23 @@ public class StolenSkill : MonoBehaviour
     {
         if (first)
         {
-            if (GameManager.instance.IsStealUse&& GetComponent<EnemyHealth>().DeadCheck)
+            if (GameManager.instance.IsStealUse)
             {
-
-                if (!GameManager.instance.IsSkillMaxCountError)
+                if (GetComponent<EnemyHealth>().DeadCheck)
                 {
-                    UIManager.instance.IsOrbMoving = true;
-                    UsedOrb = Instantiate(orb);
-                    UsedOrb.transform.position = transform.position;
-                    first = false;
-                }
-                else
-                {
-                    GetComponent<EnemyHealth>().EnemyDestroy();
-                    GameManager.instance.IsStealUse = false;
+                    if (!GameManager.instance.IsSkillMaxCountError)
+                    {
+                        UIManager.instance.IsOrbMoving = true;
+                        UsedOrb = Instantiate(orb);
+                        UsedOrb.transform.position = transform.position;
+                        first = false;
+                    }
+                    else
+                    {
+                        GetComponent<EnemyHealth>().EnemyDestroy();
+                        GameManager.instance.IsStealUse = false;
 
+                    }
                 }
 
             }
