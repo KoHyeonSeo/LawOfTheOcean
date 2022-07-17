@@ -8,7 +8,7 @@ public class EnemySummon : MonoBehaviour
     public GameObject jellyFactory;
     public GameObject blowFactory;
     public GameObject swordFactory;
-    GameObject crab;
+    public GameObject crab;
     float jellyCurrentTime;
     float blowCurrentTime;
     float swordCurrentTime;
@@ -21,7 +21,7 @@ public class EnemySummon : MonoBehaviour
     void Start()
     {
         enemyHealth =GameObject.Find("Boss").GetComponent<EnemyHealth>();
-        crab = GameObject.Find("CrabSummon");
+        
         crab.SetActive(false);
     }
 
