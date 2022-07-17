@@ -18,16 +18,15 @@ public class StartTrigger : MonoBehaviour
         
         if (other.gameObject.name.Contains("Player"))
         {
-          
+            if (boss.GetComponent<EnemyHealth>().DeadCheck == true)
+            {
+                SceneManager.LoadScene(5);
+            }
             boss.GetComponent<Boss>().first = true;
         }
         if (other.gameObject.name.Contains("Boss"))
         {
             other.gameObject.GetComponent<Boss>().first = false;
-        }
-    if (boss.GetComponent<EnemyHealth>().DeadCheck == true)
-        {
-            SceneManager.LoadScene("EndingScene");
         }
     }
 }
