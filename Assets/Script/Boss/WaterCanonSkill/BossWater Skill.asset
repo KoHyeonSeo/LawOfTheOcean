@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bb8762d64df7c4e8c4b623ec31ba56, type: 3}
   m_Name: BossWater Skill
   m_EditorClassIdentifier: 
-  power: 3
+  power: 5
   cooltime: 4
   waterCanonPrefab: {fileID: 2605076223624147064, guid: 8eb3c5765086ea740a91527a801e9b2c, type: 3}
   bulletCount: 100

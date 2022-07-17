@@ -20,6 +20,8 @@ public class BossFirePos : MonoBehaviour
         {
             curTime = 0;
             GameObject bullet = Instantiate(bulletFactory);
+            bullet.GetComponent<WaterBullet>().BulletDamage = SkillDamage;
+            bullet.GetComponent<WaterBullet>().BulletUser = SkillUser;
             bullet.transform.position = transform.position;
             bullet.GetComponent<Rigidbody>().AddForce(transform.up * 1000, ForceMode.Force);
             if (i >= bulletCount)
