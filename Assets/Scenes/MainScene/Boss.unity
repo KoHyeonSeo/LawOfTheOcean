@@ -1198,10 +1198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1616580725, guid: efd7c301ce7a38544a4196c7043fa3a0, type: 3}
-      propertyPath: skills.Array.data[1].percent
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5958972102022084133, guid: efd7c301ce7a38544a4196c7043fa3a0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
