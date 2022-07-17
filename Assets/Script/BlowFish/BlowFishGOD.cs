@@ -25,9 +25,10 @@ public class BlowFishGOD : MonoBehaviour
             currentTime += Time.deltaTime;
             if (currentTime > createTime)
             {
-                GameObject jellyFish = Instantiate(blowFishFactory);
-                jellyFish.transform.position = transform.position + new Vector3(Random.value * 5, Random.value * 5, Random.value * 5);
-                jellyFish.name = blowFishFactory.name + i;
+                GameObject blowFish = Instantiate(blowFishFactory);
+                blowFish.SetActive(true);
+                blowFish.transform.position = transform.position + new Vector3(Random.value * 5, Random.value * 5, Random.value * 5);
+                blowFish.name = blowFishFactory.name + i;
                 i++;
                 currentTime = 0;
 
