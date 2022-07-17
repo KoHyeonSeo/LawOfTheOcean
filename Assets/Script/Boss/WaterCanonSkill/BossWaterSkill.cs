@@ -30,7 +30,7 @@ public class BossWaterSkill : Skill
             water2.GetComponent<WaterBullet>().BulletDamage = Power;
             dir = Quaternion.Euler(0, deltaAngle + 90, 0) * dir;
             water2.transform.up = dir;
-            water.transform.position = User.transform.position + new Vector3(0, 20, 0);
+            water2.transform.position = User.transform.position + new Vector3(0, 20, 0);
             water2.GetComponent<Rigidbody>().AddForce(dir.normalized * 1000, ForceMode.Force);
 
 
@@ -40,7 +40,7 @@ public class BossWaterSkill : Skill
             water3.GetComponent<WaterBullet>().BulletDamage = Power;
             dir = Quaternion.Euler(deltaAngle + 90, 0, 0) * dir;
             water3.transform.up = dir;
-            water.transform.position = User.transform.position + new Vector3(0, 20, 0);
+            water3.transform.position = User.transform.position + new Vector3(0, 20, 0);
             water3.GetComponent<Rigidbody>().AddForce(dir.normalized * 1000, ForceMode.Force);
 
         }
