@@ -12,6 +12,7 @@ public class EnemySummon : MonoBehaviour
     float jellyCurrentTime;
     float blowCurrentTime;
     float swordCurrentTime;
+    int i;
     [SerializeField]   float summonTime = 2;
     EnemyHealth enemyHealth;
 
@@ -35,6 +36,8 @@ public class EnemySummon : MonoBehaviour
             { 
             GameObject jelly = Instantiate(jellyFactory);
             jelly.transform.position = transform.position;
+                jelly.name = jellyFactory.name + "a" + i;
+                i++;
                 jellyCurrentTime = 0;
             }
         }
@@ -49,6 +52,8 @@ public class EnemySummon : MonoBehaviour
             {
                 GameObject blow = Instantiate(blowFactory);
                 blow.transform.position = transform.position;
+                blow.name = blowFactory.name + "a" + i;
+                i++;
                 blowCurrentTime = 0;
             }
         }
@@ -58,8 +63,10 @@ public class EnemySummon : MonoBehaviour
             swordCurrentTime += Time.deltaTime;
             if (swordCurrentTime > summonTime)
             {
-                GameObject sword = Instantiate(blowFactory);
+                GameObject sword = Instantiate(swordFactory);
                 sword.transform.position = transform.position;
+                sword.name = swordFactory.name + "a" + i;
+                i++;
                 swordCurrentTime = 0;
             }
         }
