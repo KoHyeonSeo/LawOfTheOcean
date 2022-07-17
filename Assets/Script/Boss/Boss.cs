@@ -37,7 +37,7 @@ public class Boss : MonoBehaviour
             animation.Play();
             transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
         }
-        if (Vector3.Distance(transform.position, target.position) <= 18f)
+        if (!enemySkill.enabled && Vector3.Distance(transform.position, target.position) <= 18f)
         {
             enemySkill.enabled = true;
         }
