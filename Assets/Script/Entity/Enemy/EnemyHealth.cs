@@ -37,9 +37,9 @@ public class EnemyHealth : EntityHealth
     protected override void Die()
     {
         base.Die();
-        if (GameManager.instance.IsStealUse)
+        if (gameObject.name != "Boss")
         {
-            if (gameObject.name != "Boss")
+            if (GameManager.instance.IsStealUse)
             {
                 for (int j = 0; j < GameManager.instance.SkillList.Count; j++)
                 {
@@ -51,10 +51,10 @@ public class EnemyHealth : EntityHealth
                 }
 
             }
-        }
-        else
-        {
-            EnemyDestroy();
+            else
+            {
+                EnemyDestroy();
+            }
         }
     }
     public void EnemyDestroy()
