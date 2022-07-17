@@ -10,7 +10,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private bool endingSceneLoad = false;
     private Image fade;
     private bool startSceneLoad = false;
-    private float endingTime = 24;
+    private float endingTime = 28;
     private float curTime = 0;
 
     private void Awake()
