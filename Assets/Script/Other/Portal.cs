@@ -12,9 +12,11 @@ public class Portal : MonoBehaviour
     private bool startSceneLoad = false;
     private float endingTime = 28;
     private float curTime = 0;
+    private AudioSource audio;
 
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         fade = gameObject.transform.GetChild(0).GetChild(0).GetComponent<Image>();
     }
     private void Update()
@@ -34,7 +36,7 @@ public class Portal : MonoBehaviour
         float count = 0;
         while(count < 1.0f)
         {
-            count += 0.008f;
+            count += 0.002f;
             fade.color = new Color(0, 0, 0, count);
             yield return new WaitForSeconds(0.01f);
         }
@@ -46,6 +48,7 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !startSceneLoad)
         {
+            audio.Play();
             startSceneLoad = true;
             StartCoroutine("fadeIn");
         }
