@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
     Transform target;
     [SerializeField] private AnimationClip[] animations;
     private new Animation animation;
-
+    private EnemySkill enemySkill;
     Transform player;
     Vector3 dir;
     
@@ -22,6 +22,8 @@ public class Boss : MonoBehaviour
         animation = GetComponent<Animation>();
         first = false;
         bossHealth = GetComponent<EnemyHealth>();
+        enemySkill = GetComponent<EnemySkill>();
+        enemySkill.enabled = false;
         
     }
 
@@ -34,6 +36,7 @@ public class Boss : MonoBehaviour
             animation.clip = animations[3];
             animation.Play();
             transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
+            enemySkill.enabled = true;
         }
         if (bossHealth.Health == bossHealth.MaxHealth * 0.75)
         {
