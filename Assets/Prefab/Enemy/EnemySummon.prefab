@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 827339330835005770}
   - component: {fileID: 827339330835005765}
   - component: {fileID: 827339330835005764}
-  - component: {fileID: 827339330835005767}
   - component: {fileID: 827339330835005766}
   m_Layer: 0
   m_Name: EnemySummon
@@ -85,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &827339330835005767
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827339330835005761}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &827339330835005766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,4 +99,5 @@ MonoBehaviour:
   jellyFactory: {fileID: 7839200043053899604, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
   blowFactory: {fileID: 1000011230786650, guid: 0baa7a9034e7d1649a17b99053cccf98, type: 3}
   swordFactory: {fileID: 6668516752803091588, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+  crab: {fileID: 0}
   summonTime: 2
