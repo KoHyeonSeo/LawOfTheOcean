@@ -220,10 +220,10 @@ MonoBehaviour:
   - {fileID: 7400006, guid: b1d64a8bbdbc75f48be0840b2bb17b95, type: 3}
   - {fileID: 7400000, guid: b1d64a8bbdbc75f48be0840b2bb17b95, type: 3}
   - {fileID: 7400002, guid: b1d64a8bbdbc75f48be0840b2bb17b95, type: 3}
-  speed: 5
+  speed: 20
   turnSpeed: 5
   skill: {fileID: 11400000, guid: db1e2b96a1dfeb84798bc7b9f8e9b01e, type: 2}
-  attackRange: 7
+  attackRange: 25
 --- !u!114 &739463861038862715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a681dfb0264e7469b54b291e58d72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: 15
+  aggroRange: 35
 --- !u!114 &739463861038862713
 MonoBehaviour:
   m_ObjectHideFlags: 0
