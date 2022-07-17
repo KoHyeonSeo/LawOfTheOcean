@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f307311fae3434ab810f3f3b3eb566, type: 3}
   m_Name: SprinklerSkill
   m_EditorClassIdentifier: 
-  power: 1
+  power: 5
   cooltime: 7
   firePos: {fileID: 8894450223318465044, guid: 32900d6f58452764a8c1167bbee5d557, type: 3}
   firePos2: {fileID: 8894450223318465044, guid: f6fc252db0554bc43978a1b665029266, type: 3}
