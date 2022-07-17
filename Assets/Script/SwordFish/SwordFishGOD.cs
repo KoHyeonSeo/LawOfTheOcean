@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwordFishGOD : MonoBehaviour
 {
     public GameObject swordFishFactory;
+    [SerializeField] float range = 30;
 
     [SerializeField] float createTime = 3;
     float currentTime;
@@ -26,7 +27,7 @@ public class SwordFishGOD : MonoBehaviour
             if (currentTime > createTime)
             {
                 GameObject jellyFish = Instantiate(swordFishFactory);
-                jellyFish.transform.position = transform.position + new Vector3(Random.value * 5, Random.value * 5, Random.value * 5);
+                jellyFish.transform.position = transform.position + new Vector3(Random.value * range, Random.value * range, Random.value * range);
                 jellyFish.name = swordFishFactory.name + i;
                 i++;
                 currentTime = 0;
