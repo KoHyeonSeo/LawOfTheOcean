@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1837741653533744262}
   - component: {fileID: 2928820169020176402}
   m_Layer: 0
-  m_Name: Submarine
+  m_Name: SubMarine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

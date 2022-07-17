@@ -5,7 +5,7 @@ using UnityEngine;
 public class JellyFishBullet : MonoBehaviour
 {
     
-    [SerializeField] private float speed = 5;
+    [SerializeField] private float speed = 10;
     private GameObject user;
     private float damage;
     //스킬을 사용하는 User가 누구인지 알 수 있는 프로퍼티

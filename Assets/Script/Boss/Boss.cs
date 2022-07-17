@@ -28,6 +28,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (first == true)
         {
             animation.clip = animations[3];
@@ -36,6 +37,7 @@ public class Boss : MonoBehaviour
         }
         if (bossHealth.Health == bossHealth.MaxHealth * 0.75)
         {
+            
             animation.clip = animations[0];
             animation.Play();
         }
@@ -54,7 +56,7 @@ public class Boss : MonoBehaviour
             animation.clip = animations[2];
             animation.Play();
         }
-
+        print(first);
     }
 
 

@@ -34,10 +34,11 @@ public class JellyFish : MonoBehaviour
     public State state;
     public float detect = 15;
     bool move;
-    float sm;
+    public float sm;
     float jellySpeed = 2.2f;
     float moveCreateTime = 1f;
     public float speed = 3;
+    public float firstspeed = 10;
     public float attackDistance = 5;
     public bool stopSkill = false;
     float currentTime;
