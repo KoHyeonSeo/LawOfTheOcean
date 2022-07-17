@@ -956,7 +956,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 2f6cb2d5752b93145954ccf674ab2401, type: 3}
   state: 0
   detect: 20
-  sm: 0
+  sm: 10
   speed: 10
   firstspeed: 10
   attackDistance: 15
