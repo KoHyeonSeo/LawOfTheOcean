@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b431103f74ee8b418bdbcef2ef22310, type: 3}
+  m_Name: Enemy Summon Skill
+  m_EditorClassIdentifier: 
+  power: 0
+  cooltime: 10
+  skillFactory: {fileID: 827339330835005761, guid: 09f08da82b5a579478f9b703858597b4, type: 3}
