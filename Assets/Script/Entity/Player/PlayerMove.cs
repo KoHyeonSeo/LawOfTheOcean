@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private PlayerInput playerInput;
+    [SerializeField] private Vector3 initialRotation;
     
     [SerializeField] private float speed = 2;
     public float Speed
@@ -21,6 +22,8 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
+        Quaternion quaternion = Quaternion.identity;
+        quaternion.eulerAngles = initialRotation;
     }
 
     
