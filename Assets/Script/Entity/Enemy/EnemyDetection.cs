@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-    [SerializeField] private float aggroRange = 10f;
-
+    public float aggroRange = 30f;
+    public float delayTime = 5f;
+    private float curTime = 0;
     public GameObject Target { get; set; }
     private void Update()
     {
 
         Collider[] cols = Physics.OverlapSphere(transform.position, aggroRange);
-        
         if(cols.Length > 0)
         {
             for(int i = 0; i < cols.Length; i++)
@@ -19,10 +19,7 @@ public class EnemyDetection : MonoBehaviour
                 if (cols[i].CompareTag("Player"))
                 {
                     Target = cols[i].gameObject;
-                }
-                else
-                {
-                    Target = null;
+
                 }
             }
         }
