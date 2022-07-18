@@ -490,15 +490,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216530, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: maxHealth
-      value: 300
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216530, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: playerHealth
-      value: 300
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216530, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: currentHealth
-      value: 300
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216532, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: bulletMaxDistance
