@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7748994769049603171, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbaf43cd0e5d6ba498d41571ceec519f, type: 3}
@@ -645,6 +645,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &425093675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -852,6 +853,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 4f842029a102ebb40bcd643b3df0d468, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &517515224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1072,6 +1074,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &584610307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1150,6 +1153,67 @@ Transform:
   m_Father: {fileID: 438785469}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &602737236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 417
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 59
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 178.99702
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 908768514416243758, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286899443803909529, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_Name
+      value: BlowFishGOD (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286899443803909529, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ef36c6c29f462245ba97aac11b51aca, type: 3}
 --- !u!1 &766482697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1642,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 4f842029a102ebb40bcd643b3df0d468, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &1122745244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1737,6 +1802,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 4f842029a102ebb40bcd643b3df0d468, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &1134245308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2046,6 +2112,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 4f842029a102ebb40bcd643b3df0d468, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &1232702241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2179,6 +2246,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &1321669159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2425,6 +2493,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &1512848786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2654,6 +2723,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &1555237205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2855,6 +2925,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &1663662047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3019,6 +3090,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &1981702079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3245,6 +3317,7 @@ MonoBehaviour:
   enemySkill: {fileID: 0}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!1 &2027994995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,6 +3399,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: 965bf3422b9df1c43b85b8871166483f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!65 &2027995000
 BoxCollider:
   m_ObjectHideFlags: 0

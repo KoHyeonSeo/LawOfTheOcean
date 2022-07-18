@@ -136,6 +136,7 @@ public class BlowFish : MonoBehaviour
             transform.position += dir.normalized * speed * Time.deltaTime;
 
             float dist = Vector3.Distance(detection.Target.transform.position, transform.position);
+
             if (dist <= attackRange)
             {
                 curState = State.ATTACK;

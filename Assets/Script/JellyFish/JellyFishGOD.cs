@@ -28,7 +28,7 @@ public class JellyFishGOD : MonoBehaviour
             {
                 GameObject jellyFish = Instantiate(jellyFishFactory);
                 jellyFish.transform.position = transform.position + new Vector3(Random.value * range, Random.value * range, Random.value * range);
-                jellyFish.name = jellyFishFactory.name + i;
+                jellyFish.name = gameObject.name+jellyFishFactory.name + i;
                 i++;
                 currentTime = 0;
 
