@@ -223,7 +223,7 @@ MonoBehaviour:
   speed: 20
   turnSpeed: 5
   skill: {fileID: 11400000, guid: db1e2b96a1dfeb84798bc7b9f8e9b01e, type: 2}
-  attackRange: 25
+  attackRange: 5
 --- !u!114 &739463861038862715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +241,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: db1e2b96a1dfeb84798bc7b9f8e9b01e, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!114 &739463861038862714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a681dfb0264e7469b54b291e58d72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: 35
+  aggroRange: 20
+  delayTime: 5
 --- !u!114 &739463861038862713
 MonoBehaviour:
   m_ObjectHideFlags: 0
