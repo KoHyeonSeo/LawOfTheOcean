@@ -2758,6 +2758,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeadZone
       objectReference: {fileID: 0}
+    - target: {fileID: 971869079710495050, guid: 65d40e5551ac9ef46aa1cb82875444fd, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 971869079710495050, guid: 65d40e5551ac9ef46aa1cb82875444fd, type: 3}
+      propertyPath: m_TagString
+      value: DeadZone
+      objectReference: {fileID: 0}
     - target: {fileID: 971869079710495051, guid: 65d40e5551ac9ef46aa1cb82875444fd, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2801,6 +2809,14 @@ PrefabInstance:
     - target: {fileID: 971869079710495051, guid: 65d40e5551ac9ef46aa1cb82875444fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490382713309476283, guid: 65d40e5551ac9ef46aa1cb82875444fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 610
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490382714745795343, guid: 65d40e5551ac9ef46aa1cb82875444fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -497
       objectReference: {fileID: 0}
     - target: {fileID: 8490382715409838928, guid: 65d40e5551ac9ef46aa1cb82875444fd, type: 3}
       propertyPath: m_LocalPosition.x
