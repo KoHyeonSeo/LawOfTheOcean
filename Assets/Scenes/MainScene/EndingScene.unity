@@ -484,9 +484,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: p
       objectReference: {fileID: 0}
+    - target: {fileID: 3999565648999134789, guid: 8951c4877e3f99b4c95d637a6c8eb5a2, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3999565649053210435, guid: 8951c4877e3f99b4c95d637a6c8eb5a2, type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999565649053210437, guid: 8951c4877e3f99b4c95d637a6c8eb5a2, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999565649314284050, guid: 8951c4877e3f99b4c95d637a6c8eb5a2, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3999565649314284062, guid: 8951c4877e3f99b4c95d637a6c8eb5a2, type: 3}
       propertyPath: m_SortingOrder
