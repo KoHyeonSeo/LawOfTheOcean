@@ -25,10 +25,6 @@ public class EnemyHealth : EntityHealth
         {
             Die();
         }
-        else if(GameManager.instance.IsStealUse && !DeadCheck)
-        {
-            GameManager.instance.IsStealUse = false;
-        }
     }
     public override void Heal(float healing)
     {

@@ -41,9 +41,16 @@ public class PlayerShooter : MonoBehaviour
 
         if (playerInput.StealSkillButton)
         {
+            if (GameManager.instance.IsStealUse)
+            {
+                GameManager.instance.IsStealUse = false;
+            }
+            else
+            {
+                GameManager.instance.IsStealUse = true;
+            }
             //SteaSkillButton 초기화
             playerInput.StealSkillButton = false;
-            GameManager.instance.IsStealUse = true;
         }
         //마우스 왼클릭이 입력된다면
         if (playerInput.IsShootingButton)
@@ -51,10 +58,6 @@ public class PlayerShooter : MonoBehaviour
             //총알을 생성한다.
             bullet.transform.position = transform.position;
             Instantiate(bullet);
-            if(hit.collider != null && hit.collider.tag != "Enemy")
-            {
-                GameManager.instance.IsStealUse = false;
-            }
         }
     }
 }

@@ -64,10 +64,6 @@ public class PlayerInput : MonoBehaviour
             CopiedSkillUseButton = Input.GetButtonDown(CopiedSkillUseName);
             IsShootingButton = Input.GetButtonDown(ShootButton);
             SwapButton = Input.GetButtonDown(SwapName);
-            if (IsShootingButton)
-            {
-                StealSkillButton = false;
-            }
             if (!StealSkillButton)
                 StealSkillButton = Input.GetButtonDown(StealName);
         }

@@ -24,9 +24,9 @@ public class StolenSkill : MonoBehaviour
                 else
                 {
                     GetComponent<EnemyHealth>().EnemyDestroy();
-                    GameManager.instance.IsStealUse = false;
 
                 }
+                GameManager.instance.IsStealUse = false;
 
             }
         }
@@ -36,7 +36,6 @@ public class StolenSkill : MonoBehaviour
             {
                 Destroy(UsedOrb);
                 GetComponent<EnemyHealth>().EnemyDestroy();
-                GameManager.instance.IsStealUse = false;
                 end = false;
             }
         }
