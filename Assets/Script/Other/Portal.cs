@@ -48,6 +48,7 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !startSceneLoad)
         {
+            other.gameObject.tag = "Enemy";
             audio.Play();
             startSceneLoad = true;
             StartCoroutine("fadeIn");
