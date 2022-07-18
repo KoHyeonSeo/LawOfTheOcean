@@ -401,6 +401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2687944700487216532, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
+      propertyPath: bulletMaxDistance
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216534, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2187,10 +2191,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 105927381424740824, guid: d81a12fc2f751c640966c01f62c3f71d, type: 3}
-      propertyPath: portalIndex
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3961227723219958698, guid: d81a12fc2f751c640966c01f62c3f71d, type: 3}
       propertyPath: m_Name
       value: Portal

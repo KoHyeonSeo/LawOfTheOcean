@@ -1255,7 +1255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216532, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: bulletMaxDistance
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216534, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_RootOrder
