@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7505876803038805529}
   - component: {fileID: 7505876803038805606}
+  - component: {fileID: 4379818458555653425}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,11 +48,23 @@ MonoBehaviour:
   skillMaxCnt: 10
   currentSkillCnt: 0
   skills:
-  - skill: {fileID: 11400000, guid: d333f403868ae5d4995ebc9e5bb896eb, type: 2}
+  - skill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
     skillCnt: 0
-  - skill: {fileID: 11400000, guid: db1e2b96a1dfeb84798bc7b9f8e9b01e, type: 2}
+  - skill: {fileID: 11400000, guid: d333f403868ae5d4995ebc9e5bb896eb, type: 2}
     skillCnt: 0
   - skill: {fileID: 11400000, guid: f5bd43027dadfff4cb513183ed0eb66f, type: 2}
     skillCnt: 0
-  - skill: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
+  - skill: {fileID: 11400000, guid: db1e2b96a1dfeb84798bc7b9f8e9b01e, type: 2}
     skillCnt: 0
+--- !u!114 &4379818458555653425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505876803038805607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f58c050b538ecb46ba67b8e60d32d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
