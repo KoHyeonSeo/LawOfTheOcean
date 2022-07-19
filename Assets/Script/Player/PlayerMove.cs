@@ -8,6 +8,13 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Vector3 initialRotation;
     
     [SerializeField] private float speed = 2;
+    Rigidbody rigid;
+    float currentTime;
+    float moveTime;
+    bool first = true;
+    bool second = false;
+    bool sfirst = true;
+    bool ssecond = false;
     public float Speed
     {
         get { return speed; }
@@ -21,6 +28,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         playerInput = GetComponent<PlayerInput>();
         Quaternion quaternion = Quaternion.identity;
         quaternion.eulerAngles = initialRotation;
@@ -35,10 +43,17 @@ public class PlayerMove : MonoBehaviour
         // 물의 저항값이 증가한다.
         float x = playerInput.XAxisDir;
         float z = playerInput.ZAxisDir;
-        speed += Time.deltaTime;
+
+
+       
+           
+        print(speed);
         Vector3 dir = new Vector3(x, 0, z);
         Vector3 cdir = Camera.main.transform.TransformDirection(dir).normalized;
-        GetComponent<Rigidbody>().AddForce(cdir * speed);
+        rigid = GetComponent<Rigidbody>();
+        rigid.AddForce(cdir * speed);
+            // 입력값을 받을때 앞으로 일정구간 이동을하고 
+  
         //if ( x < 0)
         //{
         //    GetComponent<Rigidbody>().AddForce(moveForward + moveRight);
@@ -46,7 +61,7 @@ public class PlayerMove : MonoBehaviour
         ////if (x == 0 && speed >= 0)
         ////{
         ////    speed -= Time.deltaTime;
-            
+
         ////}
         //print(speed);
         //if ( x > 0)
@@ -82,10 +97,10 @@ public class PlayerMove : MonoBehaviour
         // }
 
 
-       // dir = Vector3.right * x + Vector3.forward * z;
-       //    dir.Normalize();
-       //    dir = Camera.main.transform.TransformDirection(dir);
-       //transform.position += dir * speed * Time.deltaTime;
+        // dir = Vector3.right * x + Vector3.forward * z;
+        //    dir.Normalize();
+        //    dir = Camera.main.transform.TransformDirection(dir);
+        //transform.position += dir * speed * Time.deltaTime;
     }
 
 }
