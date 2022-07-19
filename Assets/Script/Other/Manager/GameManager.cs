@@ -6,10 +6,6 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
-    private GameManager() {
-
-        instance = this;
-    }
     public static GameManager getGameManager()
     {
         return instance;
@@ -31,13 +27,19 @@ public class GameManager : MonoBehaviour
     [Header("Player가 copy한 Enemy Skill 갯수")]
     [SerializeField] private List<SkillInfo> skills;
 
+    private void Awake() {
+
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     
-    /// <summary>
-    /// skill과 카피가능 갯수를 구조체에 담아 리스트 형태로 반환하는 읽기 전용 프로퍼티
-    /// [인덱스 정보]
-    /// 0. Test1
-    /// 1. Test2
-    /// </summary>
     private void Start()
     {
         IsStealUse = false;

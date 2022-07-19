@@ -79,7 +79,6 @@ public class UISkillCopy : MonoBehaviour
         skillEffect2.transform.position = effect2.afterPosition;
         skillEffect3.transform.position = effect3.afterPosition;
         skillEffect4.transform.position = effect4.afterPosition;
-        
 
         sliderObject = gameObject.transform.GetChild(0).GetChild(1).gameObject;
         reportObject = gameObject.transform.GetChild(0).GetChild(2).gameObject;
