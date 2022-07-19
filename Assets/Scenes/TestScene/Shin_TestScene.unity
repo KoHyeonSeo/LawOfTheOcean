@@ -885,6 +885,7 @@ MonoBehaviour:
   jellyFactory: {fileID: 7839200043053899604, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
   blowFactory: {fileID: 1000011230786650, guid: 0baa7a9034e7d1649a17b99053cccf98, type: 3}
   swordFactory: {fileID: 6668516752803091588, guid: ffa30a34f00c20143bcea8f05bb6b7b5, type: 3}
+  crab: {fileID: 0}
   summonTime: 2
 --- !u!1001 &553798897
 PrefabInstance:
@@ -1260,6 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jellyFishFactory: {fileID: 6701041350353210586, guid: fe6a56f6dd5d58f4e918694f34fabaed, type: 3}
+  range: 30
   createTime: 3
 --- !u!4 &1016578148
 Transform:
@@ -2600,7 +2602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216534, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.83
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2687944700487216534, guid: 11558b7d98e7d934ab96bb5616f8237b, type: 3}
       propertyPath: m_LocalPosition.z
