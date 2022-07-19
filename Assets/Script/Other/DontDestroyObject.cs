@@ -16,5 +16,10 @@ public class DontDestroyObject : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+
+
+    }
 
 }
