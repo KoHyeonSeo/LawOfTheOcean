@@ -4177,9 +4177,17 @@ PrefabInstance:
       value: UI_PlayerSkillCopy
       objectReference: {fileID: 0}
     - target: {fileID: 7741702215712076456, guid: 17d259427cafa7140af4eeebbcf888a7, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741702215712076456, guid: 17d259427cafa7140af4eeebbcf888a7, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 895142270}
+    - target: {fileID: 7741702215712076458, guid: 17d259427cafa7140af4eeebbcf888a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 136
+      objectReference: {fileID: 0}
     - target: {fileID: 7741702216170923883, guid: 17d259427cafa7140af4eeebbcf888a7, type: 3}
       propertyPath: m_Material
       value: 

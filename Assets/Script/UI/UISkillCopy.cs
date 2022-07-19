@@ -24,13 +24,26 @@ public class UISkillCopy : MonoBehaviour
     private GameObject crabChoice;
     private GameObject blueMarlinChoice;
 
+    private GameObject skillEffect1;
+    private GameObject skillEffect2;
+    private GameObject skillEffect3;
+    private GameObject skillEffect4;
+
     private GameObject sliderObject;
     private GameObject reportObject;
     private GameObject skillUseObject;
     private float speed = 2;
     private bool next = false;
     private float curTime = 0;
-
+    struct effectPosition
+    {
+        public Vector3 initial;
+        public Vector3 afterPosition;
+    }
+    effectPosition effect1;
+    effectPosition effect2;
+    effectPosition effect3;
+    effectPosition effect4;
     private void Start()
     {
         curTime = 0;
@@ -44,12 +57,33 @@ public class UISkillCopy : MonoBehaviour
         blowChoice = blowFishTemp.transform.GetChild(2).gameObject;
         crabChoice = crabTemp.transform.GetChild(2).gameObject;
         blueMarlinChoice = blueMarlinTemp.transform.GetChild(2).gameObject;
-
         skillUseObject = gameObject.transform.GetChild(0).GetChild(0).gameObject;
+
+        skillEffect1 = skillUseObject.transform.GetChild(0).gameObject;
+        skillEffect2 = skillUseObject.transform.GetChild(1).gameObject;
+        skillEffect3 = skillUseObject.transform.GetChild(2).gameObject;
+        skillEffect4 = skillUseObject.transform.GetChild(3).gameObject;
+
+
+        effect1.initial = skillEffect1.transform.position;
+        effect2.initial = skillEffect2.transform.position;
+        effect3.initial = skillEffect3.transform.position;
+        effect4.initial = skillEffect4.transform.position;
+
+        effect1.afterPosition = skillEffect1.transform.position + new Vector3(0, 300, 0);
+        effect2.afterPosition = skillEffect2.transform.position + new Vector3(0, -300, 0);
+        effect3.afterPosition = skillEffect3.transform.position + new Vector3(-300, 0, 0);
+        effect4.afterPosition = skillEffect4.transform.position + new Vector3(300, 0, 0);
+
+        skillEffect1.transform.position = effect1.afterPosition;
+        skillEffect2.transform.position = effect2.afterPosition;
+        skillEffect3.transform.position = effect3.afterPosition;
+        skillEffect4.transform.position = effect4.afterPosition;
+        
+
         sliderObject = gameObject.transform.GetChild(0).GetChild(1).gameObject;
         reportObject = gameObject.transform.GetChild(0).GetChild(2).gameObject;
 
-        skillUseObject.SetActive(false);
         sliderObject.SetActive(false);
         reportObject.SetActive(false);
     }
@@ -63,11 +97,20 @@ public class UISkillCopy : MonoBehaviour
         }
         if (GameManager.instance.IsStealUse)
         {
-            skillUseObject.SetActive(true);
+            //skillUseObject.SetActive(true);
+            skillEffect1.transform.position = Vector2.Lerp(skillEffect1.transform.position,effect1.initial, Time.deltaTime);
+            skillEffect2.transform.position = Vector2.Lerp(skillEffect2.transform.position, effect2.initial, Time.deltaTime);
+            skillEffect3.transform.position = Vector2.Lerp(skillEffect3.transform.position, effect3.initial, Time.deltaTime);
+            skillEffect4.transform.position = Vector2.Lerp(skillEffect4.transform.position, effect4.initial, Time.deltaTime);
+          
         }
-        else
+        else 
         {
-            skillUseObject.SetActive(false);
+            skillEffect1.transform.position = Vector2.Lerp(skillEffect1.transform.position,effect1.afterPosition , Time.deltaTime);
+            skillEffect2.transform.position = Vector2.Lerp(skillEffect2.transform.position, effect2.afterPosition, Time.deltaTime);
+            skillEffect3.transform.position = Vector2.Lerp(skillEffect3.transform.position, effect3.afterPosition, Time.deltaTime);
+            skillEffect4.transform.position = Vector2.Lerp(skillEffect4.transform.position, effect4.afterPosition, Time.deltaTime);
+               
         }
         if (GameManager.instance.IsSkillMaxCountError)
         {
