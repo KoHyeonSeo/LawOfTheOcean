@@ -72,8 +72,8 @@ public class UISkillCopy : MonoBehaviour
 
         effect1.afterPosition = skillEffect1.transform.position + new Vector3(0, 300, 0);
         effect2.afterPosition = skillEffect2.transform.position + new Vector3(0, -300, 0);
-        effect3.afterPosition = skillEffect3.transform.position + new Vector3(-300, 0, 0);
-        effect4.afterPosition = skillEffect4.transform.position + new Vector3(300, 0, 0);
+        effect3.afterPosition = skillEffect3.transform.position + new Vector3(-400, 0, 0);
+        effect4.afterPosition = skillEffect4.transform.position + new Vector3(400, 0, 0);
 
         skillEffect1.transform.position = effect1.afterPosition;
         skillEffect2.transform.position = effect2.afterPosition;
