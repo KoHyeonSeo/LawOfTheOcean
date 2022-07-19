@@ -13,6 +13,10 @@ public class Boss : MonoBehaviour
     Transform player;
     Vector3 dir;
     EnemyStopSkill enemyStopSkill;
+
+    [Header("sin 움직임 멤버변수")]
+    [SerializeField] private float speed = 1;
+
     
     void Start()
     {
@@ -30,7 +34,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
         if (first == true)
         {
             animation.clip = animations[3];
@@ -68,7 +72,23 @@ public class Boss : MonoBehaviour
         }
        // print(first);
     }
+    private void Move()
+    {
+        float y = speed * Mathf.Sin(Time.time);
+        Debug.Log($"y = {y} speed = {speed}");
 
+        transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        //if (y >= speed - 0.2f)
+        //{
+        //    speed = Random.Range(0.5f, 3.1f);
+        //    transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, start.transform.position.y, transform.position.z),Time.deltaTime);
+        //}
+        //else if (y <= -speed + 0.2f)
+        //{
+        //    speed = Random.Range(0.5f, 3.1f);
+        //    transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, start.transform.position.y, transform.position.z), Time.deltaTime);
+        //}
+    }
 
 
 
