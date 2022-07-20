@@ -8,8 +8,17 @@ public class Boss : MonoBehaviour
     public bool first = false;
     Transform target;
     [SerializeField] private AnimationClip[] animations;
+    [SerializeField] private GameObject IdleBubble;
+    [SerializeField] private GameObject hurtBubble;
+    [SerializeField] private GameObject deadBubble;
     private new Animation animation;
     private EnemySkill enemySkill;
+    private float curHurtTime = 0;
+    private float hurtTime = 2.5f;
+    private float curDieTime = 0;
+    private float DieTime = 2.5f;
+    private bool isDie = false;
+    private bool isHurt = false;
     Transform player;
     Vector3 dir;
     EnemyStopSkill enemyStopSkill;
@@ -31,6 +40,8 @@ public class Boss : MonoBehaviour
         enemyStopSkill = GetComponent<EnemyStopSkill>();
         animation.clip = animations[3];
         animation.Play();
+        hurtBubble.SetActive(false);
+        deadBubble.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,26 +64,68 @@ public class Boss : MonoBehaviour
         }
         if (bossHealth.Health == bossHealth.MaxHealth * 0.75)
         {
-            
+
             animation.clip = animations[0];
             animation.Play();
+            hurtBubble.SetActive(true);
+            isHurt = true;
+            curHurtTime = 0;
+
         }
         if (bossHealth.Health == bossHealth.MaxHealth * 0.5)
         {
             animation.clip = animations[0];
             animation.Play();
+            hurtBubble.SetActive(true);
+            isHurt = true;
+            curHurtTime = 0;
         }
         if (bossHealth.Health == bossHealth.MaxHealth * 0.25)
         {
             animation.clip = animations[0];
             animation.Play();
+            hurtBubble.SetActive(true);
+            isHurt = true;
+            curHurtTime = 0;
         }
         if (bossHealth.DeadCheck)
         {
             animation.clip = animations[2];
             animation.Play();
+            IdleBubble.SetActive(false);
+            hurtBubble.SetActive(false);
+            deadBubble.SetActive(true);
+            enemySkill.enabled = false;
+            if (!isDie)
+            {
+                Dead();
+            }
+        }
+        if (isHurt)
+        {
+            Hurt();
         }
        // print(first);
+    }
+    private void Dead()
+    {
+        curDieTime += Time.deltaTime;
+        transform.position += Vector3.up * 10 * Time.deltaTime;
+        if(curDieTime >= DieTime)
+        {
+            curDieTime = 0;
+            isDie = true;
+        }
+    }
+    private void Hurt()
+    {
+        curHurtTime += Time.deltaTime;
+        if (curHurtTime >= hurtTime)
+        {
+            curHurtTime = 0;
+            isHurt = false;
+            hurtBubble.SetActive(false);
+        }
     }
     private void Move()
     {

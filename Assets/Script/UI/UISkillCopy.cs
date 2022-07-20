@@ -122,18 +122,18 @@ public class UISkillCopy : MonoBehaviour
         if (GameManager.instance.IsStealUse)
         {
             //skillUseObject.SetActive(true);
-            skillEffect1.transform.position = Vector2.Lerp(skillEffect1.transform.position,effect1.initial, Time.deltaTime);
-            skillEffect2.transform.position = Vector2.Lerp(skillEffect2.transform.position, effect2.initial, Time.deltaTime);
-            skillEffect3.transform.position = Vector2.Lerp(skillEffect3.transform.position, effect3.initial, Time.deltaTime);
-            skillEffect4.transform.position = Vector2.Lerp(skillEffect4.transform.position, effect4.initial, Time.deltaTime);
+            skillEffect1.transform.position = Vector2.Lerp(skillEffect1.transform.position,effect1.initial, 0.02f);
+            skillEffect2.transform.position = Vector2.Lerp(skillEffect2.transform.position, effect2.initial, 0.02f);
+            skillEffect3.transform.position = Vector2.Lerp(skillEffect3.transform.position, effect3.initial, 0.02f);
+            skillEffect4.transform.position = Vector2.Lerp(skillEffect4.transform.position, effect4.initial, 0.02f);
           
         }
         else 
         {
-            skillEffect1.transform.position = Vector2.Lerp(skillEffect1.transform.position,effect1.afterPosition , Time.deltaTime);
-            skillEffect2.transform.position = Vector2.Lerp(skillEffect2.transform.position, effect2.afterPosition, Time.deltaTime);
-            skillEffect3.transform.position = Vector2.Lerp(skillEffect3.transform.position, effect3.afterPosition, Time.deltaTime);
-            skillEffect4.transform.position = Vector2.Lerp(skillEffect4.transform.position, effect4.afterPosition, Time.deltaTime);
+            skillEffect1.transform.position = Vector2.Lerp(skillEffect1.transform.position,effect1.afterPosition , 0.005f);
+            skillEffect2.transform.position = Vector2.Lerp(skillEffect2.transform.position, effect2.afterPosition, 0.005f);
+            skillEffect3.transform.position = Vector2.Lerp(skillEffect3.transform.position, effect3.afterPosition, 0.005f);
+            skillEffect4.transform.position = Vector2.Lerp(skillEffect4.transform.position, effect4.afterPosition, 0.005f);
                
         }
         if (GameManager.instance.IsSkillMaxCountError)
