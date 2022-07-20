@@ -35,6 +35,13 @@ public class UISkillCopy : MonoBehaviour
     private float speed = 2;
     private bool next = false;
     private float curTime = 0;
+
+    private ScreenSize curScreen;
+    struct ScreenSize
+    {
+        public float width;
+        public float height;
+    }
     struct effectPosition
     {
         public Vector3 initial;
@@ -59,21 +66,24 @@ public class UISkillCopy : MonoBehaviour
         blueMarlinChoice = blueMarlinTemp.transform.GetChild(2).gameObject;
         skillUseObject = gameObject.transform.GetChild(0).GetChild(0).gameObject;
 
+        curScreen.width = Screen.width;
+        curScreen.height = Screen.height; 
+
+        effect1.initial = new Vector3(Screen.width / 2, Screen.height - Screen.height / 10, 0);
+        effect2.initial = new Vector3(Screen.width / 2, Screen.height / 10, 0);
+        effect3.initial = new Vector3(Screen.width / 10, Screen.height / 2, 0);
+        effect4.initial = new Vector3(Screen.width - Screen.width / 10, Screen.height / 2, 0);
+
         skillEffect1 = skillUseObject.transform.GetChild(0).gameObject;
         skillEffect2 = skillUseObject.transform.GetChild(1).gameObject;
         skillEffect3 = skillUseObject.transform.GetChild(2).gameObject;
         skillEffect4 = skillUseObject.transform.GetChild(3).gameObject;
 
+        effect1.afterPosition = skillEffect1.transform.position + new Vector3(0, Screen.height / 2, 0);
+        effect2.afterPosition = skillEffect2.transform.position + new Vector3(0, -Screen.height / 2, 0);
+        effect3.afterPosition = skillEffect3.transform.position + new Vector3(-Screen.width / 2, 0, 0);
+        effect4.afterPosition = skillEffect4.transform.position + new Vector3(Screen.width / 2, 0, 0);
 
-        effect1.initial = skillEffect1.transform.position;
-        effect2.initial = skillEffect2.transform.position;
-        effect3.initial = skillEffect3.transform.position;
-        effect4.initial = skillEffect4.transform.position;
-
-        effect1.afterPosition = skillEffect1.transform.position + new Vector3(0, 500, 0);
-        effect2.afterPosition = skillEffect2.transform.position + new Vector3(0, -500, 0);
-        effect3.afterPosition = skillEffect3.transform.position + new Vector3(-500, 0, 0);
-        effect4.afterPosition = skillEffect4.transform.position + new Vector3(500, 0, 0);
 
         skillEffect1.transform.position = effect1.afterPosition;
         skillEffect2.transform.position = effect2.afterPosition;
@@ -88,6 +98,21 @@ public class UISkillCopy : MonoBehaviour
     }
     private void Update()
     {
+        if(Screen.width != curScreen.width || Screen.height != curScreen.height)
+        {
+            curScreen.width = Screen.width;
+            curScreen.height = Screen.height;
+
+            effect1.initial = new Vector3(Screen.width / 2, Screen.height - Screen.height / 10, 0);
+            effect2.initial = new Vector3(Screen.width / 2, Screen.height / 10, 0);
+            effect3.initial = new Vector3(Screen.width / 10, Screen.height / 2, 0);
+            effect4.initial = new Vector3(Screen.width - Screen.width / 10, Screen.height / 2, 0);
+
+            effect1.afterPosition = skillEffect1.transform.position + new Vector3(0, Screen.height / 2, 0);
+            effect2.afterPosition = skillEffect2.transform.position + new Vector3(0, -Screen.height / 2, 0);
+            effect3.afterPosition = skillEffect3.transform.position + new Vector3(-Screen.width / 2, 0, 0);
+            effect4.afterPosition = skillEffect4.transform.position + new Vector3(Screen.width / 2, 0, 0);
+        }
         if (UIManager.instance.IsOrbMoving && !GameManager.instance.IsSkillMaxCountError)
         {
             sliderObject.SetActive(true);
