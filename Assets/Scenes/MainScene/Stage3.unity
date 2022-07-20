@@ -322,8 +322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cdcadc55265914681f36d576448985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.1, g: 1, b: 1, a: 1}
-  color2: {r: 0, g: 0.46, b: 1, a: 0}
+  color1: {r: 0.2445417, g: 0, b: 0.5283019, a: 1}
+  color2: {r: 0.101345226, g: 0.042452812, b: 1, a: 0}
   speed: 0.5
   size: 15
   skew: 0
@@ -419,8 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cdcadc55265914681f36d576448985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.1, g: 1, b: 1, a: 1}
-  color2: {r: 0, g: 0.46, b: 1, a: 0}
+  color1: {r: 0.2445417, g: 0, b: 0.5283019, a: 1}
+  color2: {r: 0.101345226, g: 0.042452812, b: 1, a: 0}
   speed: 0.5
   size: 15
   skew: 0
@@ -1855,8 +1855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cdcadc55265914681f36d576448985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.1, g: 1, b: 1, a: 1}
-  color2: {r: 0, g: 0.46, b: 1, a: 0}
+  color1: {r: 0.2445417, g: 0, b: 0.5283019, a: 1}
+  color2: {r: 0.101345226, g: 0.042452812, b: 1, a: 0}
   speed: 0.5
   size: 15
   skew: 0
@@ -2058,7 +2058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3961227723219958701, guid: d81a12fc2f751c640966c01f62c3f71d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 102
+      value: -5.55
       objectReference: {fileID: 0}
     - target: {fileID: 3961227723219958701, guid: d81a12fc2f751c640966c01f62c3f71d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2066,7 +2066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3961227723219958701, guid: d81a12fc2f751c640966c01f62c3f71d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9
+      value: 73.1
       objectReference: {fileID: 0}
     - target: {fileID: 3961227723219958701, guid: d81a12fc2f751c640966c01f62c3f71d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2339,8 +2339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cdcadc55265914681f36d576448985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.1, g: 1, b: 1, a: 1}
-  color2: {r: 0, g: 0.46, b: 1, a: 0}
+  color1: {r: 0.2445417, g: 0, b: 0.5283019, a: 1}
+  color2: {r: 0.101345226, g: 0.042452812, b: 1, a: 0}
   speed: 0.5
   size: 15
   skew: 0
