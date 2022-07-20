@@ -4,10 +4,13 @@ using UnityEngine;
 //copy한 스킬 사용
 public class PlayerSkillCopy : MonoBehaviour
 {
+    [SerializeField] private AudioClip useSkillClip;
     private PlayerInput player;
+    private AudioSource source;
     private void Awake()
     {
         player = GetComponent<PlayerInput>();
+        source = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -41,7 +44,10 @@ public class PlayerSkillCopy : MonoBehaviour
             }
             //스킬은 enemy를 죽였을 때 확률적으로 얻기
         }
-        
+        if (GameManager.instance.IsStealUse)
+        {
+            source.PlayOneShot(useSkillClip);
+        }
     }
 
 
