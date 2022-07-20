@@ -517,7 +517,7 @@ Material:
     - _Fade: 1
     - _Shear: 1
     - _Size: 15
-    - _Skew: 0.5
+    - _Skew: 0
     - _Speed: 0.5
     m_Colors:
     - _Color1: {r: 0.1, g: 1, b: 1, a: 1}
@@ -1779,7 +1779,7 @@ MonoBehaviour:
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
