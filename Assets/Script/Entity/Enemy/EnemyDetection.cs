@@ -28,12 +28,12 @@ public class EnemyDetection : MonoBehaviour
             Target = null;
         }
     }
-    private void OnDrawGizmos()
-    {
-        Color gizmos = Gizmos.color;
+    //private void OnDrawGizmos()
+    //{
+    //    Color gizmos = Gizmos.color;
 
-        gizmos = Color.yellow;
-        gizmos.a = 0.2f;
-        Gizmos.DrawSphere(transform.position, aggroRange);
-    }
+    //    gizmos = Color.yellow;
+    //    gizmos.a = 0.2f;
+    //    Gizmos.DrawSphere(transform.position, aggroRange);
+    //}
 }

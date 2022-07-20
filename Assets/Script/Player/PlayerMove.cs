@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour
 
        
            
-        print(speed);
+       // print(speed);
         Vector3 dir = new Vector3(x, 0, z);
         Vector3 cdir = Camera.main.transform.TransformDirection(dir).normalized;
         rigid = GetComponent<Rigidbody>();
