@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         if (debugMod)
         {
-            if (Input.GetKey(KeyCode.M))
+            if (Input.GetKey(KeyCode.G))
             {
                 if (Input.GetKey(KeyCode.Alpha0))
                 {
