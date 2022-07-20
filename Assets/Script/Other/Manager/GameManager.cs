@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance;
     public static GameManager getGameManager()
     {
         return instance;
     }
     
+    public bool debugMod = false;
+
     //copy할 수 있는 스킬의 Max 값
     [SerializeField] private int skillMaxCnt = 10;
     //현재 스킬 갯수
@@ -26,7 +28,43 @@ public class GameManager : MonoBehaviour
     //각 적의 스킬을 copy에서 사용할 시 PlayerSkillCopy에서 어떻게 사용할 수 있을까?
     [Header("Player가 copy한 Enemy Skill 갯수")]
     [SerializeField] private List<SkillInfo> skills;
-
+    private void Update()
+    {
+        if (debugMod)
+        {
+            if (Input.GetKey(KeyCode.M))
+            {
+                if (Input.GetKey(KeyCode.Alpha0))
+                {
+                    SceneManager.LoadScene(0);
+                }
+                else if (Input.GetKey(KeyCode.Alpha1))
+                {
+                    SceneManager.LoadScene(1);
+                }
+                else if (Input.GetKey(KeyCode.Alpha2))
+                {
+                    SceneManager.LoadScene(2);
+                }
+                else if (Input.GetKey(KeyCode.Alpha3))
+                {
+                    SceneManager.LoadScene(3);
+                }
+                else if (Input.GetKey(KeyCode.Alpha4))
+                {
+                    SceneManager.LoadScene(4);
+                }
+                else if (Input.GetKey(KeyCode.Alpha5))
+                {
+                    SceneManager.LoadScene(5);
+                }
+                else if (Input.GetKey(KeyCode.Alpha6))
+                {
+                    SceneManager.LoadScene(6);
+                }
+            }
+        }
+    }
     private void Awake() {
 
         if(instance == null)

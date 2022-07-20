@@ -39,7 +39,7 @@ public class SurfaceFlow : MonoBehaviour {
 			position.y = sample.value + system.startSize;
 			particles[i].position = position;
 			if (position.x < -0.5f || position.x > 0.5f || position.z < -0.5f || position.z > 0.5f) {
-				particles[i].lifetime = 0f;
+				particles[i].remainingLifetime = 0f;
 			}
 		}
 	}

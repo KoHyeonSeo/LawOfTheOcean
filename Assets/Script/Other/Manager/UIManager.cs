@@ -6,19 +6,24 @@ public class UIManager : MonoBehaviour
 {
     private GameObject player;
     public static UIManager instance;
-    private UIManager()
-    {
-        instance = this;
-    }
     public Stack<GameObject> UIObject;
     private GameObject enemy;
     private void Awake()
     {
+        if (!instance)
+        {
+            instance = this;
+        }
         player = GameObject.Find("Player");
         PlayerObject = player;
     }
     private void Update()
     {
+        if (PlayerObject==null)
+        {
+            player = GameObject.Find("Player");
+            PlayerObject = player;
+        }
         //if (enemy)
         //    Debug.Log($"Enemy ¿Ã∏ß:{enemy.GetComponent<NameTag>().Name} \nEnemy Health: {enemy.GetComponent<EnemyHealth>().Health}");
         //else
