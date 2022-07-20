@@ -578,7 +578,7 @@ MonoBehaviour:
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -851,6 +851,10 @@ PrefabInstance:
     - target: {fileID: 7505876803038805529, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505876803038805606, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
+      propertyPath: debugMod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7505876803038805607, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
       propertyPath: m_Name
@@ -1255,7 +1259,7 @@ MonoBehaviour:
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -1544,7 +1548,7 @@ MonoBehaviour:
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
