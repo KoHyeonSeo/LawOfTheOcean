@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private PlayerInput playerInput;
-    [SerializeField] private Vector3 initialRotation;
-    
+    [SerializeField] private Vector3 initialRotation;   
     [SerializeField] private float speed = 2;
+    PlayerInput playerInput;
     Rigidbody rigid;
+    public Animator anim;
     float currentTime;
     float moveTime;
     bool first = true;
@@ -43,7 +43,10 @@ public class PlayerMove : MonoBehaviour
         // 물의 저항값이 증가한다.
         float x = playerInput.XAxisDir;
         float z = playerInput.ZAxisDir;
-
+        if ( z != 0 )
+        {
+            anim.SetTrigger("Move");
+        }
 
        
            
