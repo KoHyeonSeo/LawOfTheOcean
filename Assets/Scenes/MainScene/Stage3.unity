@@ -576,7 +576,7 @@ Material:
     - _Fade: 1
     - _Shear: 1
     - _Size: 15
-    - _Skew: 0.5
+    - _Skew: 0
     - _Speed: 0.5
     m_Colors:
     - _Color1: {r: 0.1, g: 1, b: 1, a: 1}

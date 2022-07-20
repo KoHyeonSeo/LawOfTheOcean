@@ -1901,7 +1901,7 @@ Material:
     - _Fade: 1
     - _Shear: 1
     - _Size: 15
-    - _Skew: 0.5
+    - _Skew: 0
     - _Speed: 0.5
     m_Colors:
     - _Color1: {r: 0.1, g: 1, b: 1, a: 1}
@@ -4353,13 +4353,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3593513769464864841, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5516609747187980424, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5516609748047225356, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6078264576099006198, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_RootOrder
