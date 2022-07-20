@@ -441,7 +441,7 @@ MonoBehaviour:
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -1873,7 +1873,7 @@ MonoBehaviour:
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -2032,8 +2032,8 @@ Material:
     - _Skew: 0
     - _Speed: 0.5
     m_Colors:
-    - _Color1: {r: 0.1, g: 1, b: 1, a: 1}
-    - _Color2: {r: 0, g: 0.46, b: 1, a: 0}
+    - _Color1: {r: 0.16387127, g: 0, b: 0.4339623, a: 1}
+    - _Color2: {r: 0, g: 0.065164566, b: 1, a: 0}
   m_BuildTextureStacks: []
 --- !u!1001 &1693318894
 PrefabInstance:
