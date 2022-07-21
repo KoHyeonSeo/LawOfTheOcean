@@ -28,6 +28,43 @@ public class GameManager : MonoBehaviour
     //각 적의 스킬을 copy에서 사용할 시 PlayerSkillCopy에서 어떻게 사용할 수 있을까?
     [Header("Player가 copy한 Enemy Skill 갯수")]
     [SerializeField] private List<SkillInfo> skills;
+    private GameObject player;
+    
+    private void Awake() {
+
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    private void Start()
+    {
+        IsStealUse = false;
+        IsSkillMaxCountError = false;
+        int cnt = 0;
+        foreach(var skill in skills)
+        {
+            cnt += skill.skillCnt;
+        }
+        if(cnt > skillMaxCnt)
+        {
+            Debug.LogError("스킬 수가 Max보다 많습니다!!");
+        }
+        else
+        {
+            currentSkillCnt = cnt;
+        }
+        if (debugMod)
+        {
+            player = GameObject.Find("Player");
+        }
+    }
     private void Update()
     {
         if (debugMod)
@@ -62,38 +99,18 @@ public class GameManager : MonoBehaviour
                 {
                     SceneManager.LoadScene(6);
                 }
+                else if (Input.GetKey(KeyCode.KeypadPlus))
+                {
+                    player.GetComponent<PlayerHealth>().Health += 10;
+                    player.GetComponent<PlayerMove>().Speed += 10;
+                }
+                else if (Input.GetKey(KeyCode.KeypadMinus))
+                {
+                    player.GetComponent<PlayerHealth>().Health -= 10;
+                    player.GetComponent<PlayerMove>().Speed -= 10;
+                }
             }
-        }
-    }
-    private void Awake() {
-
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    
-    private void Start()
-    {
-        IsStealUse = false;
-        IsSkillMaxCountError = false;
-        int cnt = 0;
-        foreach(var skill in skills)
-        {
-            cnt += skill.skillCnt;
-        }
-        if(cnt > skillMaxCnt)
-        {
-            Debug.LogError("스킬 수가 Max보다 많습니다!!");
-        }
-        else
-        {
-            currentSkillCnt = cnt;
+            
         }
     }
     /// <summary>
