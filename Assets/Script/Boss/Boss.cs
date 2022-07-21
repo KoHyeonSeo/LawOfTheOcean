@@ -176,6 +176,8 @@ public class Boss : MonoBehaviour
             curHurtTime = 0;
             isHurt = false;
             hurtBubble.SetActive(false);
+            animation.clip = animations[3];
+            animation.Play();
         }
     }
     private void Moving_Y()
@@ -183,7 +185,7 @@ public class Boss : MonoBehaviour
 
         float y = speed * Mathf.Sin(Time.time);
 
-        transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        transform.position += new Vector3(0, y * 0.008f, 0);
         if (y <= 0.001f && y >= -0.001f)
         {
             speed = Random.Range(0.5f, 3.1f);
@@ -193,10 +195,9 @@ public class Boss : MonoBehaviour
     {
         curTime += Time.deltaTime;
         transform.position = Vector3.Lerp(transform.position, position, 0.005f);
-        transform.LookAt(position);
-        //dir = position - transform.position;
-        //Vector3 newDir = Vector3.RotateTowards(transform.forward, dir.normalized, turnSpeed * Time.deltaTime, 0.0f);
-        //transform.rotation = Quaternion.LookRotation(newDir);
+        dir = position - transform.position;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, dir.normalized, turnSpeed * Time.deltaTime, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDir);
         if (curTime >= moveTime)
         {
             float x = Random.Range(point1.position.x, point2.position.x);
