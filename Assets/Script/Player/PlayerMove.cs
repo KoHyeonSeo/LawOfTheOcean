@@ -14,11 +14,11 @@ public class PlayerMove : MonoBehaviour
     public GameObject gun;
     float currentTime;
     float fireTime = 1;
+    float cameraTime = 0.1f;
     bool fire = false;
     
-    bool second = false;
-    bool sfirst = true;
-    bool ssecond = false;
+    
+   
     public float Speed
     {
         get { return speed; }
@@ -32,7 +32,6 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         playerInput = GetComponent<PlayerInput>();
         Quaternion quaternion = Quaternion.identity;
         quaternion.eulerAngles = initialRotation;
@@ -51,8 +50,7 @@ public class PlayerMove : MonoBehaviour
         if (z > 0 && fire == false)
         {
             anim.SetBool("Move",true);
-            anim.SetBool("Idle", false);
-            
+            anim.SetBool("Idle", false);           
         }
         else if(fire == false)
         {
@@ -85,8 +83,15 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            gun.SetActive(false);
-            Camera.main.transform.position = normal.transform.position;
+            //currentTime += Time.deltaTime;
+            //if (currentTime >= cameraTime)
+            //{
+                gun.SetActive(false);
+
+                Camera.main.transform.position = normal.transform.position;
+            //    currentTime = 0;
+            //}
+            
         }
         
        
