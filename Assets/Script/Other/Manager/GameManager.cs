@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     [Header("Player°¡ copyÇÑ Enemy Skill °¹¼ö")]
     [SerializeField] private List<SkillInfo> skills;
     private GameObject player;
+    private bool isUnbeatable = false;
     
     private void Awake() {
 
@@ -99,15 +100,28 @@ public class GameManager : MonoBehaviour
                 {
                     SceneManager.LoadScene(6);
                 }
-                else if (Input.GetKey(KeyCode.KeypadPlus))
+                else if (Input.GetKeyDown(KeyCode.KeypadPlus)&&player)
                 {
-                    player.GetComponent<PlayerHealth>().Health += 10;
                     player.GetComponent<PlayerMove>().Speed += 10;
                 }
-                else if (Input.GetKey(KeyCode.KeypadMinus))
+                else if (Input.GetKeyDown(KeyCode.KeypadMinus)&&player)
                 {
-                    player.GetComponent<PlayerHealth>().Health -= 10;
-                    player.GetComponent<PlayerMove>().Speed -= 10;
+                    player.GetComponent<PlayerMove>().Speed
+                        = player.GetComponent<PlayerMove>().Speed - 10 > 0 ?
+                        player.GetComponent<PlayerMove>().Speed - 10 : player.GetComponent<PlayerMove>().Speed;
+                }
+                else if (Input.GetKeyDown(KeyCode.KeypadEnter) && player)
+                {
+                    if (!isUnbeatable)
+                    {
+                        isUnbeatable = true;
+                        player.GetComponent<PlayerHealth>().IsUnbeatable = true;
+                    }
+                    else
+                    {
+                        player.GetComponent<PlayerHealth>().IsUnbeatable = false;
+                        isUnbeatable = false;
+                    }
                 }
             }
             
