@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2687944700487216533}
   - component: {fileID: 2092228100168319807}
   m_Layer: 7
-  m_Name: Player
+  m_Name: Player(Legacy)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialRotation: {x: 0, y: 0, z: 0}
   speed: 7
+  shoot: {fileID: 0}
+  normal: {fileID: 0}
   anim: {fileID: 5866666021909216657, guid: ae4c276033c1f1244974e7eb08d6eb4b, type: 3}
+  gun: {fileID: 0}
 --- !u!114 &2687944700487216535
 MonoBehaviour:
   m_ObjectHideFlags: 0
