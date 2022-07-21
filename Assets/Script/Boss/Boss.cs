@@ -19,7 +19,11 @@ public class Boss : MonoBehaviour
     private float DieTime = 2.5f;
     private bool isDie = false;
     private bool isHurt = false;
+    private float turnTime = 2;
+    private float curTime = 0;
     Transform player;
+    private bool isMoving = false;
+    private bool isStartingMoving = false;
     Vector3 dir;
     EnemyStopSkill enemyStopSkill;
 
@@ -48,6 +52,23 @@ public class Boss : MonoBehaviour
     void Update()
     {
         Move();
+        if (isMoving)
+        {
+            Moving();
+        }
+        else if(isStartingMoving)
+        {
+            if (Vector3.Distance(transform.position, start.transform.position - Vector3.back * 20f) <= 40)
+            {
+                float ran = Random.Range(0.0f, 1.0f);
+                if (ran < 0.01f)
+                {
+                    isMoving = true;
+                    Debug.Log("½ÃÀÛ");
+                }
+            }
+            transform.position = Vector3.Lerp(transform.position, start.transform.position - Vector3.forward * 20f, Time.deltaTime);
+        }
         if (first == true)
         {
             animation.clip = animations[3];
@@ -57,6 +78,7 @@ public class Boss : MonoBehaviour
         if (!enemyStopSkill.StopSkill && !enemySkill.enabled && Vector3.Distance(transform.position, target.position) <= 18f)
         {
             enemySkill.enabled = true;
+            isStartingMoving = true;
         }
         else if (enemyStopSkill.StopSkill)
         {
@@ -138,6 +160,18 @@ public class Boss : MonoBehaviour
             speed = Random.Range(0.5f, 3.1f);
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, start.transform.position.y, transform.position.z), Time.deltaTime);
         }
+
+    }
+    private void Moving()
+    {
+        Debug.Log($"curTime = {curTime}");
+        curTime += Time.deltaTime;
+        if (curTime >= turnTime)
+        {
+            curTime = 0;
+            isMoving = false;
+        }
+        transform.position += transform.forward * 5 * Time.deltaTime;
     }
 
 

@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<SkillInfo> skills;
     private GameObject player;
     private bool isUnbeatable = false;
-    
+    private float curScene;
     private void Awake() {
 
         if(instance == null)
@@ -64,12 +64,18 @@ public class GameManager : MonoBehaviour
         if (debugMod)
         {
             player = GameObject.Find("Player");
+            curScene = SceneManager.GetActiveScene().buildIndex;
         }
     }
     private void Update()
     {
         if (debugMod)
         {
+            if (SceneManager.GetActiveScene().buildIndex != curScene)
+            {
+                player = GameObject.Find("Player");
+                curScene = SceneManager.GetActiveScene().buildIndex;
+            }
             if (Input.GetKey(KeyCode.G))
             {
                 if (Input.GetKey(KeyCode.Alpha0))
