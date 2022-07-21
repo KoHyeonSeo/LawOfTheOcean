@@ -17,6 +17,7 @@ public class DeadZone : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("DeadZone") && !collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("맞음");
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("Player"))
@@ -34,6 +35,11 @@ public class DeadZone : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             curTime = 0;
+        }
+        else if(!collision.gameObject.CompareTag("DeadZone"))
+        {
+            Debug.Log("맞음");
+            Destroy(collision.gameObject);
         }
     }
 }

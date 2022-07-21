@@ -36,7 +36,7 @@ public class Portal : MonoBehaviour
         float count = 0;
         while(count < 1.0f)
         {
-            count += 0.002f;
+            count += 0.005f;
             fade.color = new Color(0, 0, 0, count);
             yield return new WaitForSeconds(0.01f);
         }
