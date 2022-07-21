@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private PlayerInput playerInput;
-    [SerializeField] private Vector3 initialRotation;
-    
+    [SerializeField] private Vector3 initialRotation;   
     [SerializeField] private float speed = 2;
+    PlayerInput playerInput;
     Rigidbody rigid;
+    public Animator anim;
     float currentTime;
     float moveTime;
     bool first = true;
@@ -39,20 +39,30 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ÇÃ·¹ÀÌ¾î°¡ ÀÔ·Â¹Ş´Â ¹æÇâÀ¸·Î ¿òÁ÷ÀÏ¶§
-        // ¹°ÀÇ ÀúÇ×°ªÀÌ Áõ°¡ÇÑ´Ù.
+        // í”Œë ˆì´ì–´ê°€ ì…ë ¥ë°›ëŠ” ë°©í–¥ìœ¼ë¡œ ì›€ì§ì¼ë•Œ
+        // ë¬¼ì˜ ì €í•­ê°’ì´ ì¦ê°€í•œë‹¤.
         float x = playerInput.XAxisDir;
         float z = playerInput.ZAxisDir;
-
-
-       
+        if ( z > 0 )
+        {
+            anim.SetBool("Move",true);
+            anim.SetBool("Idle", false);
+        }
+        else
+        {
+            anim.SetBool("Idle",true);
+            anim.SetBool("Move", false);
+        }
+        print(z);
            
+
        // print(speed);
+
         Vector3 dir = new Vector3(x, 0, z);
         Vector3 cdir = Camera.main.transform.TransformDirection(dir).normalized;
         rigid = GetComponent<Rigidbody>();
         rigid.AddForce(cdir * speed);
-            // ÀÔ·Â°ªÀ» ¹ŞÀ»¶§ ¾ÕÀ¸·Î ÀÏÁ¤±¸°£ ÀÌµ¿À»ÇÏ°í 
+            // ì…ë ¥ê°’ì„ ë°›ì„ë•Œ ì•ìœ¼ë¡œ ì¼ì •êµ¬ê°„ ì´ë™ì„í•˜ê³  
   
         //if ( x < 0)
         //{
@@ -76,10 +86,10 @@ public class PlayerMove : MonoBehaviour
         //{
         //    GetComponent<Rigidbody>().AddRelativeForce(moveRight);
         //}
-        // ¸¸¾à ÀÔ·ÂÀÌ µÇ¸é ( x°ªÀÌ 0º¸´Ù Ä¿Áø´Ù¸é) speed°ªÀ» Áõ°¡½ÃÅ²´Ù.
-        // speed °ªÀÌ Áõ°¡µÇ¸é¼­ ¼Óµµ°¡ »¡¶óÁø´Ù.
-        // speed °¡ -¸é ¿ŞÂÊ +¸é ¿À¸¥ÂÊ
-        // ¹®Á¦ x°¡ 0ÀÌ¸é ¸ØÃá´Ù.
+        // ë§Œì•½ ì…ë ¥ì´ ë˜ë©´ ( xê°’ì´ 0ë³´ë‹¤ ì»¤ì§„ë‹¤ë©´) speedê°’ì„ ì¦ê°€ì‹œí‚¨ë‹¤.
+        // speed ê°’ì´ ì¦ê°€ë˜ë©´ì„œ ì†ë„ê°€ ë¹¨ë¼ì§„ë‹¤.
+        // speed ê°€ -ë©´ ì™¼ìª½ +ë©´ ì˜¤ë¥¸ìª½
+        // ë¬¸ì œ xê°€ 0ì´ë©´ ë©ˆì¶˜ë‹¤.
         // if (x == -1)
         // {
         //     adSpeed -= Time.deltaTime;
