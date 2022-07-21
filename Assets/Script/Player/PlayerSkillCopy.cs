@@ -7,6 +7,7 @@ public class PlayerSkillCopy : MonoBehaviour
     [SerializeField] private AudioClip useSkillClip;
     private PlayerInput player;
     private AudioSource source;
+    private bool once = false;
     private void Awake()
     {
         player = GetComponent<PlayerInput>();
@@ -44,9 +45,14 @@ public class PlayerSkillCopy : MonoBehaviour
             }
             //스킬은 enemy를 죽였을 때 확률적으로 얻기
         }
-        if (GameManager.instance.IsStealUse)
+        if (GameManager.instance.IsStealUse && !once)
         {
+            once = true;
             source.PlayOneShot(useSkillClip);
+        }
+        else if (!GameManager.instance.IsStealUse)
+        {
+            once = false;
         }
     }
 
