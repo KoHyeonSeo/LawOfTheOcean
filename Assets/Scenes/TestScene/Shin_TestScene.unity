@@ -702,6 +702,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105208098}
   m_CullTransparentMesh: 1
+--- !u!1 &109336481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109336482}
+  m_Layer: 0
+  m_Name: SwimPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &109336482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109336481}
+  m_LocalRotation: {x: -0.5994291, y: -0.00002950802, z: 0.000036941372, w: 0.8004279}
+  m_LocalPosition: {x: -0, y: 0.604, z: 0.089}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 995278282}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -73.658, y: -0.019, z: 0.019}
 --- !u!1 &134926926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,6 +2517,7 @@ Transform:
   - {fileID: 198578203054970127}
   - {fileID: 1865018082}
   - {fileID: 473457774}
+  - {fileID: 109336482}
   m_Father: {fileID: 10813580}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10177,8 +10209,10 @@ MonoBehaviour:
   speed: 1
   shoot: {fileID: 473457773}
   normal: {fileID: 1865018081}
+  swim: {fileID: 109336481}
   anim: {fileID: 10813581}
   gun: {fileID: 7026082135744628612}
+  state: 0
 --- !u!1 &198578203630081180
 GameObject:
   m_ObjectHideFlags: 0
