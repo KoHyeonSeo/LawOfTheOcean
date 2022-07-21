@@ -10,6 +10,7 @@ public class BossFirePos : MonoBehaviour
     [SerializeField] private float createTime = 0.5f;
     private float curTime = 0;
     private Vector3 dir;
+    private Bounds bounds;
     private int i = 0;
     public GameObject SkillUser { get; set; }
     public float SkillDamage { get; set; }
@@ -18,6 +19,8 @@ public class BossFirePos : MonoBehaviour
         curTime += Time.deltaTime;
         if (curTime >= createTime)
         {
+            bounds = SkillUser.GetComponent<Collider>().bounds;
+            transform.position = new Vector3(bounds.center.x, bounds.max.y, bounds.center.z);
             curTime = 0;
             GameObject bullet = Instantiate(bulletFactory);
             bullet.GetComponent<WaterBullet>().BulletDamage = SkillDamage;

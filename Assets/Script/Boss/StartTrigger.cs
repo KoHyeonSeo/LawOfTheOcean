@@ -6,27 +6,32 @@ using UnityEngine.SceneManagement;
 public class StartTrigger : MonoBehaviour
 {
     GameObject boss;
+    private bool isOnce = true;
     void Start()
     {
         boss = GameObject.Find("Boss");
      
     }
-    
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.name.Contains("Player"))
+        if (other.gameObject.name.Contains("Player") && isOnce)
         {
             if (boss.GetComponent<EnemyHealth>().DeadCheck == true)
             {
                 SceneManager.LoadScene(5);
             }
-            boss.GetComponent<Boss>().first = true;
+            else if (isOnce)
+            {
+                boss.GetComponent<Boss>().first = true;
+            }
         }
-        if (other.gameObject.name.Contains("Boss"))
+        if (other.gameObject.name.Contains("Boss") && isOnce)
         {
             other.gameObject.GetComponent<Boss>().first = false;
+            other.gameObject.GetComponent<Boss>().isStart = true;
+            isOnce = false;
         }
+
     }
 }

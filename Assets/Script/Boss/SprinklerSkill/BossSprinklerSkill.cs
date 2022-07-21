@@ -15,12 +15,12 @@ public class BossSprinklerSkill : Skill
         GameObject fire = Instantiate(firePos);
         fire.GetComponent<BossFirePos>().SkillDamage = Power;
         fire.GetComponent<BossFirePos>().SkillUser = User;
-        fire.transform.position = new Vector3(bounds.center.x, bounds.max.y + 1, bounds.center.z);
+        fire.transform.position = new Vector3(bounds.center.x, bounds.max.y, bounds.center.z);
 
         GameObject fire2 = Instantiate(firePos2);
         fire2.GetComponent<BossFirePos>().SkillDamage = Power;
         fire2.GetComponent<BossFirePos>().SkillUser = User;
-        fire2.transform.position = new Vector3(bounds.center.x, bounds.max.y + 1, bounds.center.z);
+        fire2.transform.position = new Vector3(bounds.center.x, bounds.max.y, bounds.center.z);
     }
 
 }

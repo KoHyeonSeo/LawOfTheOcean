@@ -57,7 +57,9 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("Idle",true);
             anim.SetBool("Move", false);
         }
+
         print(fire);
+
 
         if (playerInput.IsShootingButton)
         {
