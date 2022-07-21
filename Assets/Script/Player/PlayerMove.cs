@@ -7,11 +7,15 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Vector3 initialRotation;   
     [SerializeField] private float speed = 2;
     PlayerInput playerInput;
+    public GameObject shoot;
+    public GameObject normal;
     Rigidbody rigid;
     public Animator anim;
+    public GameObject gun;
     float currentTime;
-    float moveTime;
-    bool first = true;
+    float fireTime = 1;
+    bool fire = false;
+    
     bool second = false;
     bool sfirst = true;
     bool ssecond = false;
@@ -32,6 +36,7 @@ public class PlayerMove : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         Quaternion quaternion = Quaternion.identity;
         quaternion.eulerAngles = initialRotation;
+        Camera.main.transform.position = normal.transform.position;
     }
 
     
@@ -43,74 +48,55 @@ public class PlayerMove : MonoBehaviour
         // 물의 저항값이 증가한다.
         float x = playerInput.XAxisDir;
         float z = playerInput.ZAxisDir;
-        if ( z > 0 )
+        if (z > 0 && fire == false)
         {
             anim.SetBool("Move",true);
             anim.SetBool("Idle", false);
+            
         }
-        else
+        else if(fire == false)
         {
             anim.SetBool("Idle",true);
             anim.SetBool("Move", false);
         }
-        print(z);
-           
+        print(fire);
 
-       // print(speed);
+        if (playerInput.IsShootingButton)
+        {
+            fire = true;
+            anim.SetBool("Fire", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Move", false);
+            currentTime = 0;
+        }
+        
+        if (fire == true)
+        {
+            gun.SetActive(true);
+            Camera.main.transform.position = shoot.transform.position;
+            currentTime += Time.deltaTime;
+            if (currentTime >= fireTime)
+            {
+                anim.SetBool("Fire", false);
+                currentTime = 0;
+                fire = false;
+            }
+            
+        }
+        else
+        {
+            gun.SetActive(false);
+            Camera.main.transform.position = normal.transform.position;
+        }
+        
+       
 
         Vector3 dir = new Vector3(x, 0, z);
-        Vector3 cdir = Camera.main.transform.TransformDirection(dir).normalized;
+        Vector3 cdir = Camera.main.transform.TransformDirection(dir.normalized).normalized;
+        
         rigid = GetComponent<Rigidbody>();
         rigid.AddForce(cdir * speed);
-            // 입력값을 받을때 앞으로 일정구간 이동을하고 
-  
-        //if ( x < 0)
-        //{
-        //    GetComponent<Rigidbody>().AddForce(moveForward + moveRight);
-        //}
-        ////if (x == 0 && speed >= 0)
-        ////{
-        ////    speed -= Time.deltaTime;
-
-        ////}
-        //print(speed);
-        //if ( x > 0)
-        //{
-        //    GetComponent<Rigidbody>().AddForce(moveForward);
-        //}
-        //if ( z < 0)
-        //{
-        //    GetComponent<Rigidbody>().AddForce(-moveRight);
-        //}
-        //if (z > 0)
-        //{
-        //    GetComponent<Rigidbody>().AddRelativeForce(moveRight);
-        //}
-        // 만약 입력이 되면 ( x값이 0보다 커진다면) speed값을 증가시킨다.
-        // speed 값이 증가되면서 속도가 빨라진다.
-        // speed 가 -면 왼쪽 +면 오른쪽
-        // 문제 x가 0이면 멈춘다.
-        // if (x == -1)
-        // {
-        //     adSpeed -= Time.deltaTime;
-        // }
-        //if ( x == 0)
-        // {
-        //     adSpeed = Mathf.Lerp(adSpeed, 0, Time.deltaTime);
-        // }
-        // if (x == 1)
-        // {
-        //     adSpeed += Time.deltaTime;
-        // }
-        // if (x != 0)
-        // {
-        // }
-
-
-        // dir = Vector3.right * x + Vector3.forward * z;
-        //    dir.Normalize();
-        //    dir = Camera.main.transform.TransformDirection(dir);
-        //transform.position += dir * speed * Time.deltaTime;
+            
     }
 
 }
