@@ -39034,7 +39034,11 @@ MonoBehaviour:
   IdleBubble: {fileID: 8342031782898467679}
   hurtBubble: {fileID: 719269393}
   deadBubble: {fileID: 733065501}
-  speed: 3
+  point1: {fileID: 0}
+  point2: {fileID: 0}
+  turnSpeed: 5
+  position: {x: 0, y: 0, z: 0}
+  isStart: 0
 --- !u!114 &8050712697944007729
 MonoBehaviour:
   m_ObjectHideFlags: 0

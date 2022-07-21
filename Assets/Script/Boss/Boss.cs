@@ -11,6 +11,10 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject IdleBubble;
     [SerializeField] private GameObject hurtBubble;
     [SerializeField] private GameObject deadBubble;
+    [SerializeField] private Transform point1;
+    [SerializeField] private Transform point2;
+    [SerializeField] private float turnSpeed = 5f;
+    public Vector3 position;
     private new Animation animation;
     private EnemySkill enemySkill;
     private float curHurtTime = 0;
@@ -19,21 +23,24 @@ public class Boss : MonoBehaviour
     private float DieTime = 2.5f;
     private bool isDie = false;
     private bool isHurt = false;
-    private float turnTime = 2;
+    private float moveTime = 2;
     private float curTime = 0;
-    Transform player;
+    private float waitTime = 3;
+    private float waitCurTime = 0;
     private bool isMoving = false;
     private bool isStartingMoving = false;
-    Vector3 dir;
+    public bool isStart = false;
     EnemyStopSkill enemyStopSkill;
+    private Vector3 dir;
+    private bool isMoving_Y = true;
+    private GameObject player;
+
 
     [Header("sin 움직임 멤버변수")]
     [SerializeField] private float speed = 1;
-
-    
     void Start()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player");
         start = GameObject.Find("Start");
         target = start.transform;
         animation = GetComponent<Animation>();
@@ -46,28 +53,32 @@ public class Boss : MonoBehaviour
         animation.Play();
         hurtBubble.SetActive(false);
         deadBubble.SetActive(false);
+        enemySkill.enabled = false;
+
+        float x = Random.Range(point1.position.x, point2.position.x);
+        float y = Random.Range(point1.position.y, point2.position.y);
+        float z = Random.Range(point1.position.z, point2.position.z);
+        position = new Vector3(x, y, z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (isMoving_Y)
+        {
+            dir = player.transform.position - transform.position + new Vector3(0, -10, 0);
+            Vector3 newDir2 = Vector3.RotateTowards(transform.forward, dir.normalized, turnSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDir2);
+            Moving_Y();
+        }
         if (isMoving)
         {
-            Moving();
+            isMoving_Y = false;
+            MoveInArea();
         }
-        else if(isStartingMoving)
+        if (isStartingMoving && !isMoving)
         {
-            if (Vector3.Distance(transform.position, start.transform.position - Vector3.back * 20f) <= 40)
-            {
-                float ran = Random.Range(0.0f, 1.0f);
-                if (ran < 0.01f)
-                {
-                    isMoving = true;
-                    Debug.Log("시작");
-                }
-            }
-            transform.position = Vector3.Lerp(transform.position, start.transform.position - Vector3.forward * 20f, Time.deltaTime);
+            Wait();
         }
         if (first == true)
         {
@@ -75,14 +86,17 @@ public class Boss : MonoBehaviour
             animation.Play();
             transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
         }
-        if (!enemyStopSkill.StopSkill && !enemySkill.enabled && Vector3.Distance(transform.position, target.position) <= 18f)
+        if (isStart && !first)
         {
-            enemySkill.enabled = true;
             isStartingMoving = true;
-        }
-        else if (enemyStopSkill.StopSkill)
-        {
-            enemySkill.enabled = false;
+            if (!enemyStopSkill.StopSkill && !enemySkill.enabled)
+            {
+                enemySkill.enabled = true;
+            }
+            else if (enemyStopSkill.StopSkill)
+            {
+                enemySkill.enabled = false;
+            }
         }
         if (bossHealth.Health == bossHealth.MaxHealth * 0.75)
         {
@@ -129,6 +143,20 @@ public class Boss : MonoBehaviour
         }
        // print(first);
     }
+    private void Wait()
+    {
+        waitCurTime += Time.deltaTime;
+        if(waitCurTime>= waitTime)
+        {
+            float ran = Random.Range(0.0f, 1.0f);
+            //Debug.Log($"ran = {ran}");
+            if (ran < 0.3f)
+            {
+                isMoving = true;
+            }
+            waitCurTime = 0;
+        }
+    }
     private void Dead()
     {
         curDieTime += Time.deltaTime;
@@ -138,6 +166,7 @@ public class Boss : MonoBehaviour
             curDieTime = 0;
             isDie = true;
         }
+        isMoving = false;
     }
     private void Hurt()
     {
@@ -149,29 +178,35 @@ public class Boss : MonoBehaviour
             hurtBubble.SetActive(false);
         }
     }
-    private void Move()
+    private void Moving_Y()
     {
+
         float y = speed * Mathf.Sin(Time.time);
-        //Debug.Log($"y = {y} speed = {speed}");
 
         transform.position = new Vector3(transform.position.x, y, transform.position.z);
         if (y <= 0.001f && y >= -0.001f)
         {
             speed = Random.Range(0.5f, 3.1f);
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, start.transform.position.y, transform.position.z), Time.deltaTime);
         }
-
     }
-    private void Moving()
+    private void MoveInArea()
     {
-        Debug.Log($"curTime = {curTime}");
         curTime += Time.deltaTime;
-        if (curTime >= turnTime)
+        transform.position = Vector3.Lerp(transform.position, position, 0.005f);
+        transform.LookAt(position);
+        //dir = position - transform.position;
+        //Vector3 newDir = Vector3.RotateTowards(transform.forward, dir.normalized, turnSpeed * Time.deltaTime, 0.0f);
+        //transform.rotation = Quaternion.LookRotation(newDir);
+        if (curTime >= moveTime)
         {
-            curTime = 0;
+            float x = Random.Range(point1.position.x, point2.position.x);
+            float y = Random.Range(point1.position.y, point2.position.y);
+            float z = Random.Range(point1.position.z, point2.position.z);
+            position = new Vector3(x, y, z);
             isMoving = false;
+            isMoving_Y = true;
+            curTime = 0;
         }
-        transform.position += transform.forward * 5 * Time.deltaTime;
     }
 
 
