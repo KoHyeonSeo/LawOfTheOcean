@@ -53,7 +53,7 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("Idle",true);
             anim.SetBool("Move", false);
         }
-        print(z);
+        //print(z);
            
 
        // print(speed);
