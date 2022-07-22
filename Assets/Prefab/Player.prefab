@@ -3067,6 +3067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2646081926838936625, guid: 765976d4c22cbd34d8d5def3f9e05758, type: 3}
   bulletMaxDistance: 950
+  firePos: {fileID: 3590974420455879593}
 --- !u!114 &2520736314404764312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3094,7 +3095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d41a7a1ef702d459513b99d7223c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useSkillClip: {fileID: 0}
+  useSkillClip: {fileID: 8300000, guid: 52cb35f9e5563314f9c6c4ae405e12ad, type: 3}
 --- !u!114 &2322179005225390609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5088,5 +5089,10 @@ GameObject:
 --- !u!4 &2322179005070310377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7026082135863153265, guid: 9c1a7b069e881004895f53a5cc0d95b4, type: 3}
+  m_PrefabInstance: {fileID: 4736557529847474584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3590974420455879593 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8101436761844734513, guid: 9c1a7b069e881004895f53a5cc0d95b4, type: 3}
   m_PrefabInstance: {fileID: 4736557529847474584}
   m_PrefabAsset: {fileID: 0}

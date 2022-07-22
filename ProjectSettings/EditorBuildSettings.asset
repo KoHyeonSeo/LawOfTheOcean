@@ -21,7 +21,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene/Boss.unity
     guid: f0ff4c45976714a41bde1b040ff71f13
   - enabled: 1
-    path: Assets/Scenes/MainScene/EndingScene.unity
+    path: Assets/Scenes/MainScene/Ending.unity
+    guid: f1fd91a837e08294a866c4c29ea15900
+  - enabled: 1
+    path: Assets/Scenes/MainScene/EndingCredit.unity
     guid: c3a2bc7d64c141741b0d3632bdc999e0
   - enabled: 1
     path: Assets/Scenes/MainScene/GameOverScene.unity

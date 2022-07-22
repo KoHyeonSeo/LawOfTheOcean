@@ -8,6 +8,7 @@ public class PlayerShooter : MonoBehaviour
     [Header("총알 관련 설정")]
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletMaxDistance = 950;
+    [SerializeField] private Transform firePos;
     private RaycastHit hit;
     private PlayerInput playerInput;
     public Vector3 BulletMaxDirection { get; private set; }
@@ -22,12 +23,12 @@ public class PlayerShooter : MonoBehaviour
        
         mousepos.z = bulletMaxDistance;
         Vector3 v = Camera.main.ScreenToWorldPoint(mousepos);
-        Vector3 dir = v - transform.position;
+        Vector3 dir = v - firePos.position;
 
         BulletMaxDirection = dir;
 
-        Debug.DrawRay(transform.position, dir, Color.red);
-        if (Physics.Raycast(transform.position, dir.normalized, out hit, bulletMaxDistance) && hit.collider.tag != "DeadZone")
+        Debug.DrawRay(firePos.position, dir, Color.red);
+        if (Physics.Raycast(firePos.position, dir.normalized, out hit, bulletMaxDistance) && hit.collider.tag != "DeadZone")
         {
             if (hit.collider.tag == "Enemy")
             {
@@ -57,7 +58,7 @@ public class PlayerShooter : MonoBehaviour
         if (playerInput.IsShootingButton)
         {
             //총알을 생성한다.
-            bullet.transform.position = transform.position;
+            bullet.transform.position = firePos.position;
             Instantiate(bullet);
         }
     }
