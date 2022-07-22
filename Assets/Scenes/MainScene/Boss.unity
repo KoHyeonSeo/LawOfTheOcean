@@ -174,11 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cdcadc55265914681f36d576448985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.1, g: 1, b: 1, a: 1}
+  color1: {r: 0.25283793, g: 0, b: 0.49056602, a: 1}
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -1693,11 +1693,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cdcadc55265914681f36d576448985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.1, g: 1, b: 1, a: 1}
+  color1: {r: 0.25283793, g: 0, b: 0.49056602, a: 1}
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -1790,11 +1790,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cdcadc55265914681f36d576448985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.1, g: 1, b: 1, a: 1}
+  color1: {r: 0.25283793, g: 0, b: 0.49056602, a: 1}
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
@@ -3061,6 +3061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2520736314404764288, guid: 0da730f28dce5514882f64edfd3e0707, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2520736314404764316, guid: 0da730f28dce5514882f64edfd3e0707, type: 3}
       propertyPath: m_LocalPosition.x
       value: 121
@@ -4439,11 +4443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cdcadc55265914681f36d576448985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.21834476, g: 0, b: 0.4245283, a: 1}
+  color1: {r: 0.25283793, g: 0, b: 0.49056602, a: 1}
   color2: {r: 0, g: 0.46, b: 1, a: 0}
   speed: 0.5
   size: 15
-  skew: 0.5
+  skew: 0
   shear: 1
   fade: 1
   contrast: 1
