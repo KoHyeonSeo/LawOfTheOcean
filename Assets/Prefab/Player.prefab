@@ -4547,7 +4547,7 @@ GameObject:
   - component: {fileID: 8572022807543598942}
   - component: {fileID: 436373359}
   m_Layer: 7
-  m_Name: PlayerNew
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4677,6 +4677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2646081926838936625, guid: 765976d4c22cbd34d8d5def3f9e05758, type: 3}
   bulletMaxDistance: 25
+  firePos: {fileID: 8256512862703973635}
 --- !u!114 &8572022807543598937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5143,6 +5144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1a7b069e881004895f53a5cc0d95b4, type: 3}
+--- !u!4 &8256512862703973635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7430977109645879642, guid: 9c1a7b069e881004895f53a5cc0d95b4, type: 3}
+  m_PrefabInstance: {fileID: 1564197107150724185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8373472094154478088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7026082135862726225, guid: 9c1a7b069e881004895f53a5cc0d95b4, type: 3}
