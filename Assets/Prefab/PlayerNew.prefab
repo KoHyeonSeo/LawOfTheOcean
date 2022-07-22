@@ -4382,7 +4382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2646081926838936625, guid: 765976d4c22cbd34d8d5def3f9e05758, type: 3}
   bulletMaxDistance: 950
-  firePos: {fileID: 0}
+  firePos: {fileID: 6940693557792343804}
 --- !u!114 &8321680569633247181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5081,6 +5081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1a7b069e881004895f53a5cc0d95b4, type: 3}
+--- !u!4 &6940693557792343804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8101436761844734513, guid: 9c1a7b069e881004895f53a5cc0d95b4, type: 3}
+  m_PrefabInstance: {fileID: 1169908734827551949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8195972642379042492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7026082135863153265, guid: 9c1a7b069e881004895f53a5cc0d95b4, type: 3}
