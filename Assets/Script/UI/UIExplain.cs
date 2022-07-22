@@ -7,7 +7,7 @@ public class UIExplain : MonoBehaviour
 {
     [SerializeField] private GameObject explainImage;
     private PlayerInput playerInput;
-    private void Awake()
+    private void Start()
     {
         transform.GetChild(0).gameObject.SetActive(true);
         playerInput = UIManager.instance.PlayerObject.GetComponent<PlayerInput>();
