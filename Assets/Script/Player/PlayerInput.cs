@@ -45,6 +45,8 @@ public class PlayerInput : MonoBehaviour
     public bool CopiedSkillUseButton { get; private set; }
     //left alt 누르면 true 반환
     public bool ExplainButton { get; private set; }
+    //M키 누르면 true 반환
+    public bool MapButton { get; private set; }
     private void Start()
     {
         GameManager.instance.IsStopAttack = false;
@@ -59,6 +61,7 @@ public class PlayerInput : MonoBehaviour
         MousePosition = Input.mousePosition;
         EscButton = Input.GetButtonDown(CancelName);
         ExplainButton = Input.GetButton(ExplainName);
+        MapButton = Input.GetKey(KeyCode.M);
         if (!GameManager.instance.IsStopAttack)
         {
             CopiedSkillUseButton = Input.GetButtonDown(CopiedSkillUseName);

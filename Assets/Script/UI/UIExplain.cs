@@ -9,8 +9,8 @@ public class UIExplain : MonoBehaviour
     private PlayerInput playerInput;
     private void Awake()
     {
-        transform.GetChild(0).gameObject.SetActive(true);  
-        playerInput = GameObject.Find("Player").GetComponent<PlayerInput>();
+        transform.GetChild(0).gameObject.SetActive(true);
+        playerInput = UIManager.instance.PlayerObject.GetComponent<PlayerInput>();
     }
     private void Update()
     {
