@@ -146,7 +146,7 @@ public class PlayerMove : MonoBehaviour
     void UpdateSwim()
     {
         currentTime = 0;
-        Camera.main.transform.position = swim.transform.position;
+        Camera.main.transform.position = Vector3.Lerp(swim.transform.position,transform.position,Time.deltaTime);
         Camera.main.transform.rotation = swim.transform.rotation;
         gun.SetActive(false);
         anim.SetBool("Fire", false);
@@ -171,6 +171,7 @@ public class PlayerMove : MonoBehaviour
         anim.SetBool("Idle", false);
         currentTime += Time.deltaTime;
         gun.SetActive(true);
+
         if (currentTime >= fireTime && z == 0)
         {
             state = State.Idle;
@@ -179,8 +180,11 @@ public class PlayerMove : MonoBehaviour
         {
             state = State.Swim;
         }
+        if (playerInput.IsShootingButton)
+        {
+            currentTime = 0;
+        }
 
-
-    }
+        }
 
 }
