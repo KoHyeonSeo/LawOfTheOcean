@@ -21,7 +21,7 @@ public class DirectorAction : MonoBehaviour
     {
         if (pd.duration - pd.time <= 0.05f)
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(6);
         }
     }
 }
