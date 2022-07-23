@@ -166,6 +166,7 @@ public class PlayerMove : MonoBehaviour
     {
         Camera.main.transform.position = shoot.transform.position;
         Camera.main.transform.rotation = shoot.transform.rotation;
+        
         anim.SetBool("Fire", true);
         anim.SetBool("Move", false);
         anim.SetBool("Idle", false);
