@@ -173,7 +173,7 @@ public class PlayerMove : MonoBehaviour
         currentTime += Time.deltaTime;
         gun.SetActive(true);
 
-        if (currentTime >= fireTime && z == 0)
+        if (currentTime >= fireTime && z <= 0)
         {
             state = State.Idle;
         }
