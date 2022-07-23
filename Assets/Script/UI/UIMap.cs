@@ -6,7 +6,7 @@ public class UIMap : MonoBehaviour
 {
     [SerializeField] private GameObject mapImage;
     private PlayerInput playerInput;
-    private void Awake()
+    private void Start()
     {
         mapImage.SetActive(false);
         transform.GetChild(0).gameObject.SetActive(true);
