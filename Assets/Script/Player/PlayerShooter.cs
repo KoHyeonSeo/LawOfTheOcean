@@ -9,6 +9,7 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletMaxDistance = 950;
     [SerializeField] private Transform firePos;
+    
     private RaycastHit hit;
     private PlayerInput playerInput;
     public Vector3 BulletMaxDirection { get; private set; }
@@ -33,6 +34,7 @@ public class PlayerShooter : MonoBehaviour
             if (hit.collider.tag == "Enemy")
             {
                 UIManager.instance.CurrentEnemy = hit.collider.gameObject;
+               
             }
         }
         //어딘가에 닿았다면(deadzone 제외)

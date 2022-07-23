@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [Header("총알 속성")]
     [SerializeField] private float speed = 10;
     [SerializeField] private float damage = 10;
+    public GameObject hitFactory;
     private GameObject player;
     private PlayerShooter playerShooter;
     private Vector3 dir;
@@ -40,6 +41,10 @@ public class Bullet : MonoBehaviour
             {
                 //enemy에 Damage주기
                 other.gameObject.GetComponent<EnemyHealth>().Damage(damage);
+                GameObject hitEffect = Instantiate(hitFactory);
+                hitEffect.transform.position = other.gameObject.transform.position + new Vector3(Random.value, Random.value, Random.value);
+                Vector3 newDir = transform.position - other.gameObject.transform.position;
+                hitEffect.transform.rotation = Quaternion.LookRotation(newDir);
                 //자기 자신 사라지기
                 Destroy(gameObject);
             }
