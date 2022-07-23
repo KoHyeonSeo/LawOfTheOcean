@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class UISetting : MonoBehaviour
 {
-    [SerializeField] private GameObject quitButton;
     private GameObject canvas;
-    private bool isCheck = false;
     private void Start()
     {
         canvas = transform.GetChild(0).gameObject;
