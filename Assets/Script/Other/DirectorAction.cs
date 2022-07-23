@@ -19,7 +19,7 @@ public class DirectorAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pd.duration - pd.time <= 0.01f)
+        if (pd.duration - pd.time <= 0.03f)
         {
             SceneManager.LoadScene(6);
         }
