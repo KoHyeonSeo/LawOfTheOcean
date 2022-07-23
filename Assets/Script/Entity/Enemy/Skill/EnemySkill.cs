@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public class EnemySkill : MonoBehaviour
 {
-
     [Serializable]
     //스킬의 정보를 넣을 구조체 생성
     public struct SkillSystem
@@ -25,9 +24,13 @@ public class EnemySkill : MonoBehaviour
     private bool isError = false;
 
     private int mid;
+
+    private AudioSource m_Source;
+
     //ScriptableObject로 만든 스킬과 스킬 발동될 확률 넣기
     private void Start()
     {
+        m_Source = GetComponent<AudioSource>();
         float per = 0;
         foreach (var skill in skills)
         {
@@ -74,6 +77,7 @@ public class EnemySkill : MonoBehaviour
         skills[mid].skill.User = gameObject;
         //그 해당되는 스킬을 사용하고 싶다.
         skills[mid].skill.UseSkill();
+        m_Source.Play();
         //그 해당되는 스킬의 쿨타임만큼 기다린다.
         yield return new WaitForSeconds(skills[mid].skill.CoolTime);
 
