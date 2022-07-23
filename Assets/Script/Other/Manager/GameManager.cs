@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
             player = GameObject.Find("Player");
             curScene = SceneManager.GetActiveScene().buildIndex;
         }
+        IsStopPlayerInput = false;
     }
     private void Update()
     {
@@ -194,5 +195,7 @@ public class GameManager : MonoBehaviour
     public bool IsStopAttack { get; set; }
     public int StealCopyCurIndex { get; set; }
     public bool IsSkillMaxCountError { get; set; }
+
+    public bool IsStopPlayerInput { get; set; }
 
 }

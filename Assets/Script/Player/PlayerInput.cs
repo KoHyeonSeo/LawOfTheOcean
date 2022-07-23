@@ -53,22 +53,25 @@ public class PlayerInput : MonoBehaviour
     }
     void Update()
     {
-        XAxisDir = Input.GetAxis(XAxis);
-        ZAxisDir = Input.GetAxis(ZAxis);
-        YAxisDir = Input.GetButtonDown(YAxis);
-        XMouseOut = Input.GetAxis(XMouseName);
-        YMouseOut = Input.GetAxis(YMouseName);
-        MousePosition = Input.mousePosition;
-        EscButton = Input.GetButtonDown(CancelName);
-        ExplainButton = Input.GetButton(ExplainName);
-        MapButton = Input.GetKey(KeyCode.M);
-        if (!GameManager.instance.IsStopAttack)
+        if (!GameManager.instance.IsStopPlayerInput)
         {
-            CopiedSkillUseButton = Input.GetButtonDown(CopiedSkillUseName);
-            IsShootingButton = Input.GetButtonDown(ShootButton);
-            SwapButton = Input.GetButtonDown(SwapName);
-            if (!StealSkillButton)
-                StealSkillButton = Input.GetButtonDown(StealName);
+            XAxisDir = Input.GetAxis(XAxis);
+            ZAxisDir = Input.GetAxis(ZAxis);
+            YAxisDir = Input.GetButtonDown(YAxis);
+            XMouseOut = Input.GetAxis(XMouseName);
+            YMouseOut = Input.GetAxis(YMouseName);
+            MousePosition = Input.mousePosition;
+            ExplainButton = Input.GetButton(ExplainName);
+            MapButton = Input.GetKey(KeyCode.M);
+            if (!GameManager.instance.IsStopAttack)
+            {
+                CopiedSkillUseButton = Input.GetButtonDown(CopiedSkillUseName);
+                IsShootingButton = Input.GetButtonDown(ShootButton);
+                SwapButton = Input.GetButtonDown(SwapName);
+                if (!StealSkillButton)
+                    StealSkillButton = Input.GetButtonDown(StealName);
+            }
         }
+        EscButton = Input.GetButtonDown(CancelName);
     }
 }
