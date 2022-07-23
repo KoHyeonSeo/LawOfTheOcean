@@ -15,11 +15,11 @@ public class StartTrigger : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Contains("Player") && isOnce)
+        if (other.gameObject.name.Contains("Player"))
         {
             if (boss.GetComponent<EnemyHealth>().DeadCheck == true)
             {
-                SceneManager.LoadScene(5);
+                SceneManager.LoadScene(6);
             }
             else if (isOnce)
             {
