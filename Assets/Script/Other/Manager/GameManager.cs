@@ -107,6 +107,10 @@ public class GameManager : MonoBehaviour
                 {
                     SceneManager.LoadScene(6);
                 }
+                else if (Input.GetKey(KeyCode.Alpha7))
+                {
+                    SceneManager.LoadScene(7);
+                }
                 else if (Input.GetKeyDown(KeyCode.KeypadPlus)&&player)
                 {
                     player.GetComponent<PlayerMove>().Speed += 10;
