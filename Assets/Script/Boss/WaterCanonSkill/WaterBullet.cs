@@ -8,12 +8,13 @@ public class WaterBullet : MonoBehaviour
     public float BulletDamage { get; set; }
     private void OnTriggerEnter(Collider other)
     {
-        //Player라면 데미지 깎음
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.tag != BulletUser.tag)
         {
-            other.gameObject.GetComponent<PlayerHealth>().Damage(BulletDamage);
+            //Player라면 데미지 깎음
+            if (other.gameObject.CompareTag("Player"))
+            {
+                other.gameObject.GetComponent<PlayerHealth>().Damage(BulletDamage);
+            }
         }
-        //총알 삭제
-        Destroy(gameObject);
     }
 }

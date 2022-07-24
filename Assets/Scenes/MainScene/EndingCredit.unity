@@ -852,8 +852,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\n\n\nThank you for Playing!\n\n\n\n\n\n\n\n\n\n\n\n[ Programmers ]\n\nJunghoon
     Shin\n\nHyeonseo Ko\n\n\n\n\n\n\n\n\n\n\n\n\n[ Special Thanks to ]\n\nYoungho
-    Lee\n\nHyunjin Kim\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[ Team ]\n\n\uC218\uC0B0\uC2DC\uC7A5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLaw
-    of the Ocean\n"
+    Lee\n\nHyunjin Kim\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[ Team ]\n\n\uC218\uC0B0\uC2DC\uC7A5\n\n\n\n\n\n\n\n\n\n\n\n\n\nLaw
+    of the Ocean\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ee30595e884838e46aa1860818afa280, type: 2}
   m_sharedMaterial: {fileID: -5758892356534488312, guid: ee30595e884838e46aa1860818afa280, type: 2}
