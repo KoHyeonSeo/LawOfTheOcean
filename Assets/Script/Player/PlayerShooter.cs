@@ -20,7 +20,7 @@ public class PlayerShooter : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 mousepos = playerInput.MousePosition;
+        Vector3 mousepos = new Vector3(Screen.width / 2, Screen.height / 2);
        
         mousepos.z = bulletMaxDistance;
         Vector3 v = Camera.main.ScreenToWorldPoint(mousepos);
