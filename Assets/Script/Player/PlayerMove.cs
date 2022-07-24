@@ -11,15 +11,13 @@ public class PlayerMove : MonoBehaviour
     public GameObject normal;
     public GameObject swim;
     GameObject diver;
-    GameObject swimm;
     Rigidbody rigid;
     public Animator anim;
-    public Animator swimAnim;
     public GameObject gun;
     float currentTime;
     float fireTime = 1;
     public Transform target;
-    
+    bool swimm = true;
     float x;
     float z;
    Vector3 div;
@@ -45,8 +43,8 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
 
-        diver = GameObject.Find("DiverAnim");
-        swimm = GameObject.Find("Swim");
+        target = transform.GetChild(0);
+        div = target.transform.position;
         playerInput = GetComponent<PlayerInput>();
         Quaternion quaternion = Quaternion.identity;
         quaternion.eulerAngles = initialRotation;
@@ -134,7 +132,7 @@ public class PlayerMove : MonoBehaviour
         //Camera.main.transform.position = normal.transform.position;
         //Camera.main.transform.rotation = normal.transform.rotation;
         
-        
+        print(div);
         currentTime = 0;
         gun.SetActive(false);
         anim.SetBool("Idle", true);
@@ -142,14 +140,11 @@ public class PlayerMove : MonoBehaviour
         anim.SetBool("Fire", false);
         if (playerInput.IsShootingButton)
         {
-            diver.SetActive(true);
-            swimm.SetActive(false);
             state = State.Shoot;
         }
         if (z > 0)
         {
             //swimm = true;
-
             state = State.Swim;
         }
     }
@@ -160,11 +155,8 @@ public class PlayerMove : MonoBehaviour
         //Camera.main.transform.position = Vector3.Lerp(swim.transform.position,transform.position,Time.deltaTime);
         //Camera.main.transform.rotation = swim.transform.rotation;
         gun.SetActive(false);
-        diver.SetActive(false);
-        swimm.SetActive(true);
-        anim.SetBool("Move", true);
         anim.SetBool("Fire", false);
-        swimAnim.SetBool("Move", true);
+        anim.SetBool("Move", true);
         anim.SetBool("Idle", false);
         //if (swim == true)
         //{
@@ -176,15 +168,11 @@ public class PlayerMove : MonoBehaviour
 
         if (playerInput.IsShootingButton)
         {
-            diver.SetActive(true);
-            swimm.SetActive(false);
             //target.transform.position = target.transform.position + new Vector3(0,0,-1);
             state = State.Shoot;
         }
         if (z <= 0)
         {
-            diver.SetActive(true);
-            swimm.SetActive(false);
             //target.transform.position = target.transform.position + new Vector3(0,0,-1);
             state = State.Idle;
         }
@@ -203,8 +191,6 @@ public class PlayerMove : MonoBehaviour
 
         if (currentTime >= fireTime && z <= 0)
         {
-            diver.SetActive(true);
-            swimm.SetActive(false);
             state = State.Idle;
         }
         if (currentTime >= fireTime && z > 0)
@@ -214,8 +200,6 @@ public class PlayerMove : MonoBehaviour
         }
         if (playerInput.IsShootingButton)
         {
-            diver.SetActive(true);
-            swimm.SetActive(false);
             currentTime = 0;
         }
 
