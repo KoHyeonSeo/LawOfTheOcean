@@ -1603,12 +1603,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0.10196078, b: 0, a: 1}
   color2: {r: 1, g: 0.16320226, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &422519763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3402,12 +3402,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0.10196078, b: 0, a: 1}
   color2: {r: 1, g: 0.16320226, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &1056695506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4917,12 +4917,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0.10196078, b: 0, a: 1}
   color2: {r: 1, g: 0.16320226, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &1655225190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5276,12 +5276,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0.10196078, b: 0, a: 1}
   color2: {r: 1, g: 0.16320226, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &1877867723
 MonoBehaviour:
   m_ObjectHideFlags: 0
