@@ -10,9 +10,11 @@ public class PlayerMove : MonoBehaviour
     public GameObject shoot;
     public GameObject normal;
     public GameObject swim;
+    GameObject swimms;
     GameObject diver;
     Rigidbody rigid;
     public Animator anim;
+    public Animator anims;
     public GameObject gun;
     float currentTime;
     float fireTime = 1;
@@ -42,6 +44,8 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        swimms = GameObject.Find("Swim");
+        diver = GameObject.Find("DiverAnim");
 
         target = transform.GetChild(0);
         div = target.transform.position;
@@ -140,10 +144,14 @@ public class PlayerMove : MonoBehaviour
         anim.SetBool("Fire", false);
         if (playerInput.IsShootingButton)
         {
+            diver.SetActive(true);
+            swimms.SetActive(false);
             state = State.Shoot;
         }
         if (z > 0)
         {
+            diver.SetActive(false);
+            swimms.SetActive(true);
             //swimm = true;
             state = State.Swim;
         }
@@ -151,12 +159,13 @@ public class PlayerMove : MonoBehaviour
 
     void UpdateSwim()
     {
+
         currentTime = 0;
         //Camera.main.transform.position = Vector3.Lerp(swim.transform.position,transform.position,Time.deltaTime);
         //Camera.main.transform.rotation = swim.transform.rotation;
         gun.SetActive(false);
         anim.SetBool("Fire", false);
-        anim.SetBool("Move", true);
+        anims.SetBool("Move", true);
         anim.SetBool("Idle", false);
         //if (swim == true)
         //{
@@ -168,11 +177,15 @@ public class PlayerMove : MonoBehaviour
 
         if (playerInput.IsShootingButton)
         {
+            diver.SetActive(true);
+            swimms.SetActive(false);
             //target.transform.position = target.transform.position + new Vector3(0,0,-1);
             state = State.Shoot;
         }
         if (z <= 0)
         {
+            diver.SetActive(true);
+            swimms.SetActive(false);
             //target.transform.position = target.transform.position + new Vector3(0,0,-1);
             state = State.Idle;
         }
@@ -191,15 +204,21 @@ public class PlayerMove : MonoBehaviour
 
         if (currentTime >= fireTime && z <= 0)
         {
+            diver.SetActive(true);
+            swimms.SetActive(false);
             state = State.Idle;
         }
         if (currentTime >= fireTime && z > 0)
         {
+            diver.SetActive(false);
+            swimms.SetActive(true);
             //swimm = true;
             state = State.Swim;
         }
         if (playerInput.IsShootingButton)
         {
+            diver.SetActive(true);
+            swimms.SetActive(false);
             currentTime = 0;
         }
 
