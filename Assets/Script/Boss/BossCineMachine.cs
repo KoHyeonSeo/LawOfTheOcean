@@ -9,6 +9,8 @@ public class BossCineMachine : MonoBehaviour
     public Transform target;
     private new Animation animation;
     [SerializeField] private AnimationClip[] animations;
+    float currentTime;
+    float createTime = 17;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,21 @@ public class BossCineMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentTime += Time.deltaTime;
+        if (currentTime < createTime)
+        {
+            animation.clip = animations[1];
+            animation.Play();
+        }
+        else
+        {
+            animation.clip = animations[0];
+            animation.Play();
+        }
         dir = target.position - transform.position + new Vector3(-5,-5,0);
         dir.Normalize();
         speed += Time.deltaTime;
-        animation.clip = animations[0];
-        animation.Play();
+        
         transform.position += dir * speed * Time.deltaTime;
     }
 }
