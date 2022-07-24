@@ -136,7 +136,7 @@ public class SwordFish : MonoBehaviour
         else
         {
             //Debug.Log("Follow ป๓ลย");
-            dir = detection.Target.transform.position - transform.position - new Vector3(0, 2f, 0);
+            dir = detection.Target.transform.position - transform.position - new Vector3(0, 5f, 0);
             Vector3 newDir = Vector3.RotateTowards(transform.forward, dir.normalized, turnSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDir.normalized);
             transform.position += dir.normalized * speed * Time.deltaTime;
