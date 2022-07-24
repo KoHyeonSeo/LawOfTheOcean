@@ -13,6 +13,7 @@ public class EnemySummon : MonoBehaviour
     float blowCurrentTime;
     float swordCurrentTime;
     int i;
+    public float range = 5;
     [SerializeField]   float summonTime = 2;
     EnemyHealth enemyHealth;
 
@@ -35,7 +36,7 @@ public class EnemySummon : MonoBehaviour
             if (jellyCurrentTime > summonTime)
             { 
             GameObject jelly = Instantiate(jellyFactory);
-            jelly.transform.position = transform.position;
+            jelly.transform.position = transform.position + new Vector3(Random.value * range, Random.value * range, Random.value * range); 
                 jelly.name = jellyFactory.name + "a" + i;
                 i++;
                 jellyCurrentTime = 0;
@@ -51,7 +52,7 @@ public class EnemySummon : MonoBehaviour
             if (blowCurrentTime > summonTime)
             {
                 GameObject blow = Instantiate(blowFactory);
-                blow.transform.position = transform.position;
+                blow.transform.position = transform.position + new Vector3(Random.value * range, Random.value * range, Random.value * range); 
                 blow.name = blowFactory.name + "a" + i;
                 i++;
                 blowCurrentTime = 0;
@@ -64,7 +65,7 @@ public class EnemySummon : MonoBehaviour
             if (swordCurrentTime > summonTime)
             {
                 GameObject sword = Instantiate(swordFactory);
-                sword.transform.position = transform.position;
+                sword.transform.position = transform.position + new Vector3(Random.value * range, Random.value * range, Random.value * range); 
                 sword.name = swordFactory.name + "a" + i;
                 i++;
                 swordCurrentTime = 0;
