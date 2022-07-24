@@ -27,7 +27,7 @@ public class JellyFishBullet : MonoBehaviour
         target = player.transform;
         if (User == player)
         {
-            Vector3 mousepos = playerInput.MousePosition;
+            Vector3 mousepos = new Vector3(Screen.width / 2, Screen.height / 2);
             mousepos.z = skillMaxDistance;
             cdir = Camera.main.ScreenToWorldPoint(mousepos);
             dir = cdir - transform.position;
