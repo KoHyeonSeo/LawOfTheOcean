@@ -428,8 +428,8 @@ Transform:
   m_GameObject: {fileID: 518751979605622316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 518751979605582346}
   - {fileID: 518751979605582344}
@@ -502,6 +502,7 @@ MonoBehaviour:
   enemySkill: {fileID: 11400000, guid: f5bd43027dadfff4cb513183ed0eb66f, type: 2}
   enemyHealth: 100
   isHurt: 0
+  isStolen: 0
 --- !u!114 &518751978698350542
 MonoBehaviour:
   m_ObjectHideFlags: 0
