@@ -525,7 +525,7 @@ MonoBehaviour:
   createTime: 1
   attackTime: 1
   detect: 20
-  attackDistance: 5
+  attackDistance: 10
   firstDetect: 20
   state: 0
   hide: 1

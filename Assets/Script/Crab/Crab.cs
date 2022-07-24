@@ -24,7 +24,7 @@ public class Crab : MonoBehaviour
     private new Animation animation;
     private EnemyHealth health;
     private EnemyStopSkill enemyStopSkill;
-
+    bool dead = false;
     private State hurtState;
     GameObject target;
     
@@ -54,6 +54,7 @@ public class Crab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dead = true;
         hurtState = State.Move;
         state = State.Idle;
         target = GameObject.Find("Player");
@@ -253,8 +254,12 @@ public class Crab : MonoBehaviour
     }
     private void Die()
     {
+        if (dead == true)
+        { 
         animation.clip = animations[4];
         animation.Play();
+            dead = false;
+        }
     }
 
   

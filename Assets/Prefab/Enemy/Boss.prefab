@@ -39053,10 +39053,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4bbc0b57e77a44480212329e77705f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 2000
   currentHealth: 100
   enemySkill: {fileID: 0}
-  enemyHealth: 1000
+  enemyHealth: 2000
   isHurt: 0
   isStolen: 0
 --- !u!114 &8050712697944007759
