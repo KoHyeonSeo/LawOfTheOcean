@@ -300,7 +300,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 943887895739407452, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_Text
@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6078264576099006199, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6078264576226924182, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_IsActive
@@ -2676,7 +2676,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8555221571274208263, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_Name
-      value: PlayerFin
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208284, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_RootOrder
@@ -2692,7 +2692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208284, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 227.8
+      value: 455.4
       objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208284, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4196,12 +4196,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &833733676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4266,12 +4266,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Contrast: 9
+    - _Contrast: 5
     - _Fade: 0
     - _Shear: 1
-    - _Size: 4.5
+    - _Size: 1
     - _Skew: 0
-    - _Speed: 0.5
+    - _Speed: 0.3
     m_Colors:
     - _Color1: {r: 1, g: 0, b: 0, a: 1}
     - _Color2: {r: 1, g: 0, b: 0, a: 0}
@@ -6005,12 +6005,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &1110632160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6784,12 +6784,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &1269242603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6930,7 +6930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1304676456
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9667,12 +9667,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &1897530128
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -614,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &237104082
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1044,7 +1044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6107685742145847445, guid: b317d886bf3e8ff4ba6f719cf6ef01a8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b317d886bf3e8ff4ba6f719cf6ef01a8, type: 3}
@@ -1418,12 +1418,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 0.8490566, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0.036886595, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &520591312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2225,12 +2225,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 0.8490566, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0.036886595, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &844435555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3379,12 +3379,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Contrast: 9
+    - _Contrast: 5
     - _Fade: 0
     - _Shear: 1
-    - _Size: 4.5
+    - _Size: 1
     - _Skew: 0
-    - _Speed: 0.5
+    - _Speed: 0.3
     m_Colors:
     - _Color1: {r: 0.8490566, g: 0, b: 0, a: 1}
     - _Color2: {r: 1, g: 0.036886595, b: 0, a: 0}
@@ -3442,12 +3442,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 0.8490566, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0.036886595, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &1189039634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4516,7 +4516,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8555221571274208263, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_Name
-      value: PlayerFin
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208284, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_RootOrder
@@ -4524,15 +4524,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208284, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 109.6
+      value: 65.2
       objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208284, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.42
+      value: 34.8
       objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208284, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 227.8
+      value: 147.3
       objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208284, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4617,12 +4617,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 0.8490566, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0.036886595, b: 0, a: 0}
-  speed: 0.5
-  size: 4.5
+  speed: 0.3
+  size: 1
   skew: 0
   shear: 1
   fade: 0
-  contrast: 9
+  contrast: 5
 --- !u!114 &1526814921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4810,11 +4810,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3175005455831564930, guid: 075ae18ca97372d4c841d7a351a1e1bf, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3175005455831564930, guid: 075ae18ca97372d4c841d7a351a1e1bf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3175005456035441089, guid: 075ae18ca97372d4c841d7a351a1e1bf, type: 3}
       propertyPath: m_Pivot.x
@@ -4906,7 +4906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3175005456035441149, guid: 075ae18ca97372d4c841d7a351a1e1bf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075ae18ca97372d4c841d7a351a1e1bf, type: 3}
