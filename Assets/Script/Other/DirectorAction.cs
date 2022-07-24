@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class DirectorAction : MonoBehaviour
 {
     private PlayableDirector pd;
+    [SerializeField] private int sceneNum = 7;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class DirectorAction : MonoBehaviour
     {
         if (pd.duration - pd.time <= 0.05f)
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(sceneNum);
         }
     }
 }
