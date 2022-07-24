@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f38a2e6e9a274e54cb01a0d43e7b8540, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -2081,7 +2081,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Ahora el mundo se arrodillar\xE1 ante nosotros.\n\uC774\uC81C \uC138\uACC4\uB294
-    \uC6B0\uB9AC\uC5D0\uAC8C \uBB34\uB98E\uC744 \uAFC7\uC744 \uAC70\uC57C. "
+    \uC6B0\uB9AC\uC5D0\uAC8C \uBB34\uB98E\uC744 \uAFC7\uC744 \uAC81\uB2C8\uB2E4. "
 --- !u!222 &810769206
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3196,7 +3196,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Una ballena tonta intervino y retras\xF3 la adquisici\xF3n de armas nucleares.\n\uBA4D\uCCAD\uD55C
     \uACE0\uB798\uAC00 \uAC1C\uC785\uD574\uC11C \uD575\uBB34\uAE30 \uD68D\uB4DD\uC744
-    \uC9C0\uC5F0\uC2DC\uCF30\uC5B4."
+    \uC9C0\uC5F0\uC2DC\uCF30\uC5B4\uC694."
 --- !u!222 &1326058828
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3971,7 +3971,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Brian, soy yo.\n\uBE0C\uB77C\uC774\uC5B8, \uB098\uC57C."
+  m_Text: "Brian(Boss), soy yo.\n\uBCF4\uC2A4, \uC800\uC608\uC694."
 --- !u!222 &1452816416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5699,7 +5699,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Hubo un peque\xF1o rev\xE9s en el plan.\n\uACC4\uD68D\uC5D0 \uC57D\uAC04\uC758
-    \uCC28\uC9C8\uC774 \uC788\uC5C8\uC5B4."
+    \uCC28\uC9C8\uC774 \uC788\uC5C8\uC5B4\uC694."
 --- !u!222 &1565727558
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6657,7 +6657,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.8636363, y: 1}
+    m_SensorSize: {x: 1.5539305, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
