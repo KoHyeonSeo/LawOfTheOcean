@@ -298,13 +298,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 575321532129402457, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48.24
+      objectReference: {fileID: 0}
     - target: {fileID: 943887895739407452, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_Text
-      value: "\uCE68\uBB35..."
+      value: Silence...
       objectReference: {fileID: 0}
     - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_Color.a
@@ -321,7 +325,7 @@ PrefabInstance:
     - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: a26b5df0d8091a844ba998b683ee09d5, type: 3}
+      objectReference: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
     - target: {fileID: 2893451117836424676, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
