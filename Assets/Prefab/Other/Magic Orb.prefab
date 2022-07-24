@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4015850864555988}
   - component: {fileID: 198683964593574260}
   - component: {fileID: 199740422434755458}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4733,7 +4733,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c4305187fbd4b464cae2d8ce5e3df9cf, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4795,7 +4794,7 @@ GameObject:
   - component: {fileID: 4485151109746918}
   - component: {fileID: 198111710524089246}
   - component: {fileID: 199578419139126016}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9552,7 +9551,7 @@ GameObject:
   - component: {fileID: 4827232773872640}
   - component: {fileID: 198347528150434826}
   - component: {fileID: 199976004462319922}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14278,7 +14277,7 @@ GameObject:
   - component: {fileID: 4149530738903622}
   - component: {fileID: 198470868727049936}
   - component: {fileID: 199894735345823932}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18942,7 +18941,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19004,7 +19002,7 @@ GameObject:
   - component: {fileID: 4753197992899194}
   - component: {fileID: 198951959689354048}
   - component: {fileID: 199293778347593414}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23788,9 +23786,9 @@ GameObject:
   - component: {fileID: 4667868370430098}
   - component: {fileID: 5119775882891877509}
   - component: {fileID: -7723398733771983586}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Magic Orb
-  m_TagString: DontDestroyObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23829,7 +23827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86496089b8403343b78f71447d892f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
 --- !u!135 &-7723398733771983586
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23841,7 +23839,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1940178129794352
 GameObject:
@@ -23853,7 +23851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4162544056945390}
   - component: {fileID: 108369614880845956}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23948,7 +23946,7 @@ GameObject:
   - component: {fileID: 4354392012451544}
   - component: {fileID: 198267160947838692}
   - component: {fileID: 199393909710585820}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Small Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -298,6 +298,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 943887895739407452, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
+      propertyPath: m_Text
+      value: "\uCE68\uBB35..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656493751067269132, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: a26b5df0d8091a844ba998b683ee09d5, type: 3}
     - target: {fileID: 4667500890960572992, guid: dc45be6842b932e478574c1743e1ccf4, type: 3}
       propertyPath: mapImage
       value: 
@@ -1440,26 +1464,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7505876803038805606, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
-      propertyPath: skills.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7505876803038805606, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
-      propertyPath: skills.Array.data[0].skill
-      value: 
-      objectReference: {fileID: 11400000, guid: d333f403868ae5d4995ebc9e5bb896eb, type: 2}
-    - target: {fileID: 7505876803038805606, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
-      propertyPath: skills.Array.data[1].skill
-      value: 
-      objectReference: {fileID: 11400000, guid: db1e2b96a1dfeb84798bc7b9f8e9b01e, type: 2}
-    - target: {fileID: 7505876803038805606, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
-      propertyPath: skills.Array.data[2].skill
-      value: 
-      objectReference: {fileID: 11400000, guid: f5bd43027dadfff4cb513183ed0eb66f, type: 2}
-    - target: {fileID: 7505876803038805606, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
-      propertyPath: skills.Array.data[3].skill
-      value: 
-      objectReference: {fileID: 11400000, guid: a62cb4050bf6b934ba95063bb3e05ad3, type: 2}
     - target: {fileID: 7505876803038805607, guid: 403f8def104fd22439e845bd1a7e49a4, type: 3}
       propertyPath: m_Name
       value: GameManager

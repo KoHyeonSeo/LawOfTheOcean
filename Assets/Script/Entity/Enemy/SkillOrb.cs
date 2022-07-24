@@ -17,8 +17,8 @@ public class SkillOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dir = player.position + player.forward - transform.position ;
-        transform.position += speed * dir * Time.deltaTime;
+        dir = player.position - new Vector3(0, 5f, 0) - transform.position;
+        transform.position += speed * dir.normalized * Time.deltaTime;
 
     }
     private void OnTriggerEnter(Collider other)
