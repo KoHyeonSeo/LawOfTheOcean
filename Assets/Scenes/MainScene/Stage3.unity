@@ -1093,7 +1093,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Contrast: 1
-    - _Fade: 1
+    - _Fade: 0
     - _Shear: 1
     - _Size: 15
     - _Skew: 0
