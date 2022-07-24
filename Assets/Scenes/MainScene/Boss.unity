@@ -982,7 +982,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32631
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -5732,13 +5732,17 @@ PrefabInstance:
       propertyPath: crab
       value: 
       objectReference: {fileID: 380531334}
+    - target: {fileID: 827339330835005766, guid: 09f08da82b5a579478f9b703858597b4, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 827339330835005770, guid: 09f08da82b5a579478f9b703858597b4, type: 3}
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 827339330835005770, guid: 09f08da82b5a579478f9b703858597b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 117.9
+      value: 114.1
       objectReference: {fileID: 0}
     - target: {fileID: 827339330835005770, guid: 09f08da82b5a579478f9b703858597b4, type: 3}
       propertyPath: m_LocalPosition.y
