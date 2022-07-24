@@ -26,10 +26,7 @@ public class PlayerHealth : EntityHealth
     {
         if (!IsUnbeatable)
         {
-            if (!source.isPlaying)
-            {
-                source.PlayOneShot(hurtSound);
-            }
+            source.PlayOneShot(hurtSound);
             IsHurt = true;
             base.Damage(power);
         }
