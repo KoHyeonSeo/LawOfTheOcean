@@ -10,18 +10,17 @@ public class PlayerMove : MonoBehaviour
     public GameObject shoot;
     public GameObject normal;
     public GameObject swim;
+    GameObject diver;
     Rigidbody rigid;
     public Animator anim;
     public GameObject gun;
     float currentTime;
     float fireTime = 1;
-    float cameraTime = 0.1f;
-    bool fire = false;
-    bool idle = false;
-    bool move = false;
+    public Transform target;
+    bool swimm = true;
     float x;
     float z;
-
+   Vector3 div;
     public enum State
     {
         Idle,
@@ -43,11 +42,15 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        target = transform.GetChild(0);
+        div = target.transform.position;
         playerInput = GetComponent<PlayerInput>();
         Quaternion quaternion = Quaternion.identity;
         quaternion.eulerAngles = initialRotation;
-        Camera.main.transform.position = normal.transform.position;
-        Camera.main.transform.rotation = normal.transform.rotation;
+        
+        //Camera.main.transform.position = normal.transform.position;
+        //Camera.main.transform.rotation = normal.transform.rotation;
     }
 
 
@@ -126,8 +129,10 @@ public class PlayerMove : MonoBehaviour
     }
     void UpdateIdle()
     {
-        Camera.main.transform.position = normal.transform.position;
-        Camera.main.transform.rotation = normal.transform.rotation;
+        //Camera.main.transform.position = normal.transform.position;
+        //Camera.main.transform.rotation = normal.transform.rotation;
+        
+        print(div);
         currentTime = 0;
         gun.SetActive(false);
         anim.SetBool("Idle", true);
@@ -139,6 +144,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (z > 0)
         {
+            //swimm = true;
             state = State.Swim;
         }
     }
@@ -146,26 +152,36 @@ public class PlayerMove : MonoBehaviour
     void UpdateSwim()
     {
         currentTime = 0;
-        Camera.main.transform.position = Vector3.Lerp(swim.transform.position,transform.position,Time.deltaTime);
-        Camera.main.transform.rotation = swim.transform.rotation;
+        //Camera.main.transform.position = Vector3.Lerp(swim.transform.position,transform.position,Time.deltaTime);
+        //Camera.main.transform.rotation = swim.transform.rotation;
         gun.SetActive(false);
         anim.SetBool("Fire", false);
         anim.SetBool("Move", true);
         anim.SetBool("Idle", false);
+        //if (swim == true)
+        //{
+        //    target.transform.position = target.transform.position - new Vector3(0, 0, -1);
+
+        //    swimm = false;
+        //}
+    
+
         if (playerInput.IsShootingButton)
         {
+            //target.transform.position = target.transform.position + new Vector3(0,0,-1);
             state = State.Shoot;
         }
         if (z <= 0)
         {
+            //target.transform.position = target.transform.position + new Vector3(0,0,-1);
             state = State.Idle;
         }
     }
 
     void UpdateShoot()
     {
-        Camera.main.transform.position = shoot.transform.position;
-        Camera.main.transform.rotation = shoot.transform.rotation;
+        //Camera.main.transform.position = shoot.transform.position;
+        //Camera.main.transform.rotation = shoot.transform.rotation;
         
         anim.SetBool("Fire", true);
         anim.SetBool("Move", false);
@@ -179,6 +195,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (currentTime >= fireTime && z > 0)
         {
+            //swimm = true;
             state = State.Swim;
         }
         if (playerInput.IsShootingButton)
@@ -186,6 +203,6 @@ public class PlayerMove : MonoBehaviour
             currentTime = 0;
         }
 
-        }
+    }
 
 }
