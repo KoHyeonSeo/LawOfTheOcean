@@ -64,7 +64,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3802141636922168802
 RectTransform:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
@@ -1301,12 +1301,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 575321533546578862, guid: acb2aff5b4327ec459ede5aedeb836eb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -63.36
+      value: -52.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656493750203794939, guid: acb2aff5b4327ec459ede5aedeb836eb, type: 3}
+      propertyPath: m_Text
+      value: Silence...
       objectReference: {fileID: 0}
     - target: {fileID: 2656493750203794939, guid: acb2aff5b4327ec459ede5aedeb836eb, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: a26b5df0d8091a844ba998b683ee09d5, type: 3}
+      objectReference: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
     - target: {fileID: 2656493750203794939, guid: acb2aff5b4327ec459ede5aedeb836eb, type: 3}
       propertyPath: m_FontData.m_FontStyle
       value: 1
