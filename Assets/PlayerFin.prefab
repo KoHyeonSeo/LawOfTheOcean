@@ -11610,7 +11610,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8555221571274208263}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 4.6566123e-10, w: 1}
   m_LocalPosition: {x: 109.6, y: 26.42, z: 227.8}
   m_LocalScale: {x: 3.687, y: 3.6870005, z: 3.6870003}
   m_ConstrainProportionsScale: 0
@@ -11697,7 +11697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialRotation: {x: 0, y: 0, z: 0}
-  speed: 8
+  speed: 5
   shoot: {fileID: 8393369829724587254}
   normal: {fileID: 8393369828398107258}
   swim: {fileID: 8393369830166312762}
@@ -11731,7 +11731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2646081926838936625, guid: 765976d4c22cbd34d8d5def3f9e05758, type: 3}
-  bulletMaxDistance: 20
+  bulletMaxDistance: 950
   firePos: {fileID: 7319616951846862121}
 --- !u!114 &8555221571274208280
 MonoBehaviour:
@@ -11748,7 +11748,7 @@ MonoBehaviour:
   maxHealth: 200
   currentHealth: 200
   playerHealth: 200
-  hurtSound: {fileID: 8300000, guid: e1a7904b08036b94da28b421fca2eefe, type: 3}
+  hurtSound: {fileID: 0}
 --- !u!114 &4916029028864072539
 MonoBehaviour:
   m_ObjectHideFlags: 0
