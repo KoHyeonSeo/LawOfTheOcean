@@ -69,10 +69,10 @@ public class UISkillCopy : MonoBehaviour
         curScreen.width = Screen.width;
         curScreen.height = Screen.height; 
 
-        effect1.initial = new Vector3(Screen.width / 2, Screen.height - Screen.height / 6, 0);
-        effect2.initial = new Vector3(Screen.width / 2, Screen.height / 6, 0);
-        effect3.initial = new Vector3(Screen.width / 15, Screen.height / 2, 0);
-        effect4.initial = new Vector3(Screen.width - Screen.width / 15, Screen.height / 2, 0);
+        effect1.initial = new Vector3(Screen.width / 2, Screen.height - Screen.height / 5, 0);
+        effect2.initial = new Vector3(Screen.width / 2, Screen.height / 5, 0);
+        effect3.initial = new Vector3(Screen.width / 14, Screen.height / 2, 0);
+        effect4.initial = new Vector3(Screen.width - Screen.width / 14, Screen.height / 2, 0);
 
         skillEffect1 = skillUseObject.transform.GetChild(0).gameObject;
         skillEffect2 = skillUseObject.transform.GetChild(1).gameObject;
@@ -103,10 +103,10 @@ public class UISkillCopy : MonoBehaviour
             curScreen.width = Screen.width;
             curScreen.height = Screen.height;
 
-            effect1.initial = new Vector3(Screen.width / 2, Screen.height - Screen.height / 6, 0);
-            effect2.initial = new Vector3(Screen.width / 2, Screen.height / 6, 0);
-            effect3.initial = new Vector3(Screen.width / 15, Screen.height / 2, 0);
-            effect4.initial = new Vector3(Screen.width - Screen.width / 15, Screen.height / 2, 0);
+            effect1.initial = new Vector3(Screen.width / 2, Screen.height - Screen.height / 5, 0);
+            effect2.initial = new Vector3(Screen.width / 2, Screen.height / 5, 0);
+            effect3.initial = new Vector3(Screen.width / 14, Screen.height / 2, 0);
+            effect4.initial = new Vector3(Screen.width - Screen.width / 14, Screen.height / 2, 0);
 
             effect1.afterPosition = skillEffect1.transform.position + new Vector3(0, Screen.height / 2, 0);
             effect2.afterPosition = skillEffect2.transform.position + new Vector3(0, -Screen.height / 2, 0);
