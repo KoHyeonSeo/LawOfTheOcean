@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : EntityHealth
 {
     [SerializeField] private float playerHealth = 100;
+    [SerializeField] private AudioClip hurtSound;
+    private AudioSource source;
     public bool IsUnbeatable { get; set; }
     private void Awake()
     {
@@ -14,10 +16,18 @@ public class PlayerHealth : EntityHealth
         this.MaxHealth = playerHealth;
         IsUnbeatable = false;
     }
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();   
+    }
     public override void Damage(float power)
     {
         if (!IsUnbeatable)
         {
+            if (!source.isPlaying)
+            {
+                source.PlayOneShot(hurtSound);
+            }
             base.Damage(power);
         }
     }

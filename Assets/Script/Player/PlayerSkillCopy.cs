@@ -48,7 +48,10 @@ public class PlayerSkillCopy : MonoBehaviour
         if (GameManager.instance.IsStealUse && !once)
         {
             once = true;
-            source.PlayOneShot(useSkillClip);
+            if (!source.isPlaying)
+            {
+                source.PlayOneShot(useSkillClip);
+            }
         }
         else if (!GameManager.instance.IsStealUse)
         {
