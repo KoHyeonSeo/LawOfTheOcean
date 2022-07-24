@@ -9,12 +9,14 @@ public class PlayerHealth : EntityHealth
     [SerializeField] private AudioClip hurtSound;
     private AudioSource source;
     public bool IsUnbeatable { get; set; }
+    public bool IsHurt { get; set; }
     private void Awake()
     {
         this.DeadCheck = false;
         this.Health = playerHealth;
         this.MaxHealth = playerHealth;
         IsUnbeatable = false;
+        IsHurt = false;
     }
     private void Start()
     {
@@ -28,6 +30,7 @@ public class PlayerHealth : EntityHealth
             {
                 source.PlayOneShot(hurtSound);
             }
+            IsHurt = true;
             base.Damage(power);
         }
     }
