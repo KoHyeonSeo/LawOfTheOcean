@@ -3616,9 +3616,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1130581496}
     m_Modifications:
+    - target: {fileID: 1009388893663016, guid: 30ce1337c7e883448a740b36c657abe8, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1870622365912642, guid: 30ce1337c7e883448a740b36c657abe8, type: 3}
       propertyPath: m_Name
       value: Pillar_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870622365912642, guid: 30ce1337c7e883448a740b36c657abe8, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4519505700374510, guid: 30ce1337c7e883448a740b36c657abe8, type: 3}
       propertyPath: m_RootOrder
@@ -3869,6 +3877,14 @@ PrefabInstance:
     - target: {fileID: 1552601256050668, guid: 8d55ec0e96e52ba459950896cbe6f1e4, type: 3}
       propertyPath: m_Name
       value: Durga_Free_Standing (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552601256050668, guid: 8d55ec0e96e52ba459950896cbe6f1e4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646438655024674, guid: 8d55ec0e96e52ba459950896cbe6f1e4, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4946543244206486, guid: 8d55ec0e96e52ba459950896cbe6f1e4, type: 3}
       propertyPath: m_RootOrder
@@ -5082,7 +5098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986501479}
   - component: {fileID: 986501478}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7624,6 +7640,14 @@ PrefabInstance:
     - target: {fileID: 1606569669090166, guid: 590d927f63be3ce44bca618d073bb102, type: 3}
       propertyPath: m_Name
       value: Small_Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606569669090166, guid: 590d927f63be3ce44bca618d073bb102, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907659185960228, guid: 590d927f63be3ce44bca618d073bb102, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4123989887538996, guid: 590d927f63be3ce44bca618d073bb102, type: 3}
       propertyPath: m_RootOrder
