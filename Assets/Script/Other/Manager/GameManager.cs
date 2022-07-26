@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     private void Start()
     {
         IsStealUse = false;
@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
             curScene = SceneManager.GetActiveScene().buildIndex;
         }
         IsStopPlayerInput = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     private void Update()
     {
