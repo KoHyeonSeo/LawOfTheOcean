@@ -85,5 +85,15 @@ public class PlayerInput : MonoBehaviour
             SwapButton = false;
         }
         EscButton = Input.GetButtonDown(CancelName);
+        if (EscButton)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 }
