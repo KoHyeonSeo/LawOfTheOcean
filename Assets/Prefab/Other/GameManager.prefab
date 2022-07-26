@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6279526db0966774a9110e51c20f663f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMod: 0
+  debugMod: 1
   skillMaxCnt: 10
   currentSkillCnt: 0
   skills:
