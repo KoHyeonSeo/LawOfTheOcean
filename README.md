@@ -119,7 +119,7 @@
 ---
 ## <b>스크립트</b>
 ---
-### <b>고현서</b>
+### <b>Hyeonseo Ko (고현서)</b>
 ### Manager
 - GameManager.cs (주로 게임 데이터 보관 및 전달)
 - UIManager.cs  (UI에 필요한 정보들 전달)
