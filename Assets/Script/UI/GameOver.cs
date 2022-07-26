@@ -8,6 +8,6 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     public void PlayerGameOver()
     {
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene(2);
     }
 }
