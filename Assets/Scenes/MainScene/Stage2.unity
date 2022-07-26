@@ -4269,6 +4269,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: abf27350afca8f04d910e13518f0a454, type: 3}
+    - target: {fileID: 8555221571274208256, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
+      propertyPath: speed
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 8555221571274208263, guid: 73a295fc6c45ab249b5ecf12f4a4d2be, type: 3}
       propertyPath: m_Name
       value: Player

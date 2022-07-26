@@ -53,13 +53,13 @@ public class PlayerInput : MonoBehaviour
     }
     void Update()
     {
+        XAxisDir = Input.GetAxis(XAxis);
+        ZAxisDir = Input.GetAxis(ZAxis);
+        YAxisDir = Input.GetButtonDown(YAxis);
+        XMouseOut = Input.GetAxis(XMouseName);
+        YMouseOut = Input.GetAxis(YMouseName);
         if (!GameManager.instance.IsStopPlayerInput)
         {
-            XAxisDir = Input.GetAxis(XAxis);
-            ZAxisDir = Input.GetAxis(ZAxis);
-            YAxisDir = Input.GetButtonDown(YAxis);
-            XMouseOut = Input.GetAxis(XMouseName);
-            YMouseOut = Input.GetAxis(YMouseName);
             MousePosition = Input.mousePosition;
             ExplainButton = Input.GetButton(ExplainName);
             MapButton = Input.GetKey(KeyCode.M);
@@ -71,6 +71,18 @@ public class PlayerInput : MonoBehaviour
                 if (!StealSkillButton)
                     StealSkillButton = Input.GetButtonDown(StealName);
             }
+            else
+            {
+                IsShootingButton = false;
+                SwapButton = false;
+            }
+        }
+        else
+        {
+            MapButton = false;
+            ExplainButton = false;
+            IsShootingButton = false;
+            SwapButton = false;
         }
         EscButton = Input.GetButtonDown(CancelName);
     }
