@@ -16697,7 +16697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialRotation: {x: 0, y: 0, z: 0}
-  speed: 8
+  speed: 13
   shoot: {fileID: 6319401721788072498}
   normal: {fileID: 6319401720497179838}
   swim: {fileID: 6319401722231370238}
