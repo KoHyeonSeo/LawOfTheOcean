@@ -41,8 +41,8 @@ public class UI_Hurt : MonoBehaviour
         curScreen.width = Screen.width;
         curScreen.height = Screen.height;
 
-        effect1.initial = new Vector3(Screen.width / 2, Screen.height - Screen.height / 8, 0);
-        effect2.initial = new Vector3(Screen.width / 2, Screen.height / 8, 0);
+        effect1.initial = new Vector3(Screen.width / 2, Screen.height - Screen.height / 10, 0);
+        effect2.initial = new Vector3(Screen.width / 2, Screen.height / 10, 0);
         effect3.initial = new Vector3(Screen.width / 17, Screen.height / 2, 0);
         effect4.initial = new Vector3(Screen.width - Screen.width / 17, Screen.height / 2, 0);
 
