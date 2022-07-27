@@ -24,5 +24,9 @@ public class DirectorAction : MonoBehaviour
         {
             SceneManager.LoadScene(sceneNum);
         }
+        if (Input.GetButtonDown("Jump"))
+        {
+            SceneManager.LoadScene(sceneNum);
+        }
     }
 }
