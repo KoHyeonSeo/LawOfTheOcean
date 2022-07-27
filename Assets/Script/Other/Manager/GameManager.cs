@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex != curScene)
         {
             curScene = SceneManager.GetActiveScene().buildIndex;
-            if (curScene != 0)
+            if (curScene != 0 && curScene != 8)
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
