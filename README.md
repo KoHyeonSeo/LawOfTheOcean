@@ -170,6 +170,7 @@
 - UISetting.cs
 - UISkillCopy.cs
 - UIPlayerSilence.cs
+- UIBossDead.cs
 ---
 
 
