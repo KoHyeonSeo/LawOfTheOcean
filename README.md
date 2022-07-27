@@ -1,65 +1,60 @@
 # LawOfTheOcean
-## 개요
+## Outline
 ---
-팀명: 수산시장<br>
-제목: Law of the ocean<br>
-모티브로 한 게임: feed and grow, subnautica, Star Fox 64<br>
-게임 스토리: 주인공 Billano는 자신의 동료 Sara와 함께 바닷속 보물을 찾는다. 보물을 발견한 Sara가 Billano에게 연락을 하는 순간 커다란 고래에게 공격을 당하고 고래에게 보물을 빼앗기게 된다. 보물을 되찾기 위해 주인공 Billano가 되어 떠나는 바닷속 슈팅게임
+Team name: Fish Market<br>
+Title: Law of the ocean<br>
+Games with a motif: feed and grow, subnautica, Star Fox 64<br>
+Story: The main character, Billano, explored the treasure under the sea with his colleague Sara. When Sara, who finds the treasure, contacts Billano, Sara is attacked by a large whale and gets lost by the whale.
+This is a shooting game in the sea where the main character becomes Billano to recover the treasure.
  <br>
-승리조건: 보스 씬까지 도달 후 보스와 싸워 승리 시 승리<br>
-패배조건: Hp가 0일 때<br>
-주요 타겟층: 모든 연령층
+Victory condition: After reaching the boss scene, fight the boss and win if you win<br>
+Defeat conditions: If the player is dead<br>
+Main Target: All
 <br>
-## 게임 구조
+## GameStructure
 ---
-### 시점
-- 1인칭 시점
-### GameManager  <b> - 고현서</b>
-- 각 뺏어온 스킬의 수를 저장 
+### point of view
+- first-person point of view
+### GameManager  
+- Save the number of skills each stolen
 ### Entity
 - EntityHealth.cs
 - PlayerHealth.cs
 -EnemyHealth.cs
 - player🤽
-    - PlayerInput.cs <b>- 고현서</b>
-    - PlayerMovement.cs <b> - 신정훈</b>
-    - PlayerSkill.cs <b>- 고현서</b>
-            - 기본공격: 총알 발사
-            - 스킬: Enemy Skill 강탈
+    - PlayerInput.cs 
+    - PlayerMovement.cs 
+    - PlayerSkill.cs 
+            - Basic Attack: Fire Bullet
+            - Skill: Steal Enemy Skills
 - Enemy
-    - 플레이어가 감지 범위에 도달했을 경우 공격,
-    - 감지범위에 벗어났을 경우 갈길 감 (맵의 끝에 DestroyZone 설치)
-    - EnemyMovement.cs (level 별)<b> - 신정훈</b>
-    - 게🦀 <b> - 신정훈</b>
-        - crabSkill.cs
-        - 적과 부딪치면 Hp 일정량 회복 스킬
-    - 해파리🐙 <b> - 신정훈</b>
-        - jellyFishSkill.cs
-        - 상대에게 전기를 날려 맞추면 상대 경직 효과 주기
-    - 복어🐡 <b>- 고현서</b>
-        - blowFishSkill.cs
-        - 플레이어가 일정 위치만큼 다가오면 몸을 확 부풀려 가시발사 데미지 준다. 
-    - 상어🦈 - 신정훈</b>
-        - SharkSkill.cs
-        - 갑자기 확 다가오는 스킬
-    - Boss(고래)🐋 <b> - 신정훈</b> <b>+ 고현서</b>
-        - 보스 등장 때 씨네머신 사용
-        - BossSkill(scriptable) -> 여러개
-
+    - Attack if player reaches detection range
+    - EnemyMovement.cs 
+    - Crab🦀 
+        - crabSkill.cs(scriptable)
+        - The skill to blow the opponent's skill and suck blood when he gets hit
+    - JellyFish🐙
+        - jellyFishSkill.cs(scriptable)
+        - The skill of sending electricity to the other person and making them unable to move when the other person is hit
+    - BlowFish🐡
+        - blowFishSkill.cs(scriptable)
+        - When the player approaches a certain position, the blowfish swells up and fires a thorn, and when the player is hit by the thorn, it is damaged.
+    - SwordFish🐟🔪
+        - SwordFishSkill.cs(scriptable)
+        - A skill that suddenly approaches
+    - Boss(Whale)🐋 
+        - BossSkill
+             - sprinklerSkill.cs(scriptable)
+             - waterSkill.cs(scriptable)
 ### UI
-- UIManager.cs <b>- 고현서</b>
-- 현재 레벨창 <b> - 신정훈</b>
-- 게임 초기창 <b>- 고현서</b>
-- 게임 오버 / 게임 스타트 <b> - 신정훈</b>
-- 체력(플레이어 & 고래) <b> - 신정훈</b>
-### Object
-- item.cs <b>- 고현서</b>
+- UIManager.cs 
+- The initial window of the game
+- GameOver / GameStart 
+- Health(Player & Enemy) 
+
 ### Skill Structure
 ![image](https://user-images.githubusercontent.com/76097749/177246976-2dbe747a-5673-4db8-b7d8-31cc574927ef.png)
 
-## 긴급!! 프로토 타입을 위한 정보 전달 UI 제작
-1. Player 체력 UI & 적 체력 UI - Jung
-2. 스킬 카피 했는 여부 + 스킬 swap 발동했는지 여부  + 스킬 swap 그거를 위한 스킬 정보 띄워주기 - Ko
 
 ---
 ## <b>피드백</b>
