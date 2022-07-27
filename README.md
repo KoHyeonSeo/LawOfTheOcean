@@ -172,7 +172,7 @@ Main Target: All
 ### Entity
 - Player
     - PlayerMove.cs (Player움직임 구현 및 애니메이션 제어)
-    - CameraRotate.Cs
+    - CameraRotate.cs
 - Enemy
     - JellyFish (스킬 적중시 일정시간동안 silence(공격불가))
         - JellyFish.cs
