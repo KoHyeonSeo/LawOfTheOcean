@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        curScene = SceneManager.GetActiveScene().buildIndex;
         IsStealUse = false;
         IsSkillMaxCountError = false;
         int cnt = 0;
@@ -64,14 +65,37 @@ public class GameManager : MonoBehaviour
         if (debugMod)
         {
             player = GameObject.Find("Player");
-            curScene = SceneManager.GetActiveScene().buildIndex;
         }
         IsStopPlayerInput = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
     private void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex != curScene)
+        {
+            curScene = SceneManager.GetActiveScene().buildIndex;
+            if (curScene != 0)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+        }
         if (debugMod)
         {
             if (SceneManager.GetActiveScene().buildIndex != curScene)

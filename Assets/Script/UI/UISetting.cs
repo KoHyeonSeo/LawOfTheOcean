@@ -18,11 +18,15 @@ public class UISetting : MonoBehaviour
         {
             if (canvas.activeSelf)
             {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
                 canvas.SetActive(false);
             }
             else
             {
                 canvas.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
         if (canvas.activeSelf)
