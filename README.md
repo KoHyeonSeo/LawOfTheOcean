@@ -173,4 +173,34 @@
 - UIBossDead.cs
 ---
 
+### <b>신정훈<b> 
+### Entity
+- Player
+    - PlayerMove.cs (Player움직임 구현 및 애니메이션 제어)
+    - CameraRotate.Cs
+- Enemy
+    - JellyFish (스킬 적중시 일정시간동안 silence(공격불가))
+        - JellyFish.cs
+        - JellySkill.cs (스킬 상속받아 사용)
+    - Crab
+        - Crab.cs (상대방의 체력을 빼앗아 회복)
+        - CrabSkill.cs (스킬 상속받아 사용)
+- Boss
+    - Boss.cs (보스등장 및 체력감소시 소환되는 Enemy관리)
+    - StartTrigger.cs
+    - EnemySummon.cs (보스 체력 일정량 감소시 Enmey 소환)
+
+### Object
+- JellyFishBullet.cs (JellyFish의 silence 스킬 bullet)
+- CrabBullet.cs (Crab의 체력뺏기 스킬 bullet)
+- JellyFishGOD.cs 
+- BlowFishGOD.cs 
+- SwordFishGOD.cs
+- PlayerBubble.cs
+- BossCineMachine.cs (시네머신 Boss 움직임 스크립트)
+### UI
+- MainMenu.cs (시작화면 UI)
+- GameOver.cs (GameOver화면 UI)
+- UIPlayerHP.cs
+- UIEnemyHP.cs
 
