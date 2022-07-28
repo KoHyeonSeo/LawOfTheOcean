@@ -198,4 +198,9 @@ Main Target: All
 - GameOver.cs (GameOver화면 UI)
 - UIPlayerHP.cs
 - UIEnemyHP.cs
-
+---
+## <b>아쉬웠던 점</b>
+---
+1. 문서화 작업의 부족
+2. 몇몇 코드의 깔끔하지 못한 구조와 사용
+3. 바다 그래픽 구현부의  
