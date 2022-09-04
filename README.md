@@ -55,6 +55,19 @@ Main Target: All
 ### Skill Structure
 ![image](https://user-images.githubusercontent.com/76097749/177246976-2dbe747a-5673-4db8-b7d8-31cc574927ef.png)
 
+<br>
+### Presentation (kr)
+![image](https://user-images.githubusercontent.com/76097749/188300691-229ba450-bc7b-46a3-9ed5-59606164ca51.png)
+![image](https://user-images.githubusercontent.com/76097749/188300710-fde365cd-505e-477f-a71e-2656d0d32b47.png)
+![image](https://user-images.githubusercontent.com/76097749/188300711-b5cc3211-a5a5-4b35-aa6e-f49c85fb76ab.png)
+![image](https://user-images.githubusercontent.com/76097749/188300715-ee87ff7a-82f0-40ac-bd85-06ef30b2bc00.png)
+![image](https://user-images.githubusercontent.com/76097749/188300719-f6749a3a-6cd8-4ad0-b002-18d434d3bd81.png)
+![image](https://user-images.githubusercontent.com/76097749/188300721-9b52ddb7-7841-4a5e-8268-91668e63a02d.png)
+![image](https://user-images.githubusercontent.com/76097749/188300723-c39f860d-ab81-42d8-a642-c8358022a96b.png)
+![image](https://user-images.githubusercontent.com/76097749/188300725-47a20087-9dac-4c9f-81f5-621218fd40e2.png)
+![image](https://user-images.githubusercontent.com/76097749/188300727-a20a2efa-1d49-44bb-adfa-2311b78911c8.png)
+![image](https://user-images.githubusercontent.com/76097749/188300729-315f3eb4-0956-42d2-b7c7-85a1acf3ac9f.png)
+
 
 ---
 ## <b>피드백</b>
