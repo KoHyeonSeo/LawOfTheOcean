@@ -56,7 +56,7 @@ Main Target: All
 ![image](https://user-images.githubusercontent.com/76097749/177246976-2dbe747a-5673-4db8-b7d8-31cc574927ef.png)
 
 <br>
-### Presentation (kr)
+### <b>Presentation (kr)</b>
 
 ![image](https://user-images.githubusercontent.com/76097749/188300691-229ba450-bc7b-46a3-9ed5-59606164ca51.png)<br>
 ![image](https://user-images.githubusercontent.com/76097749/188300710-fde365cd-505e-477f-a71e-2656d0d32b47.png)<br>
@@ -69,7 +69,9 @@ Main Target: All
 ![image](https://user-images.githubusercontent.com/76097749/188300727-a20a2efa-1d49-44bb-adfa-2311b78911c8.png)<br>
 ![image](https://user-images.githubusercontent.com/76097749/188300729-315f3eb4-0956-42d2-b7c7-85a1acf3ac9f.png)<br>
 
+### <b>Video</b>
 
+[![Youtube Badge](https://img.shields.io/badge/Youtube-ff0000?style=flat-square&logo=youtube&link=https://www.youtube.com/watch?v=8xBS5UGlgvg)](https://www.youtube.com/watch?v=8xBS5UGlgvg)
 ---
 ## <b>피드백</b>
 1. 30초 안에 핵심만 보여야함
