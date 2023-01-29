@@ -185,7 +185,7 @@ Main Target: All
 - UIBossDead.cs
 ---
 
-### <b>Jungoon Shin(신정훈)</b> 
+### <b>Junghoon Shin(신정훈)</b> 
 ### Entity
 - Player
     - PlayerMove.cs (Player움직임 구현 및 애니메이션 제어)
